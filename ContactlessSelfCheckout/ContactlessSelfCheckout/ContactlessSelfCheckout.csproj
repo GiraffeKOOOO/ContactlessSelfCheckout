@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IndexForm.cs">
+    <Compile Include="StartScreenForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IndexForm.Designer.cs">
-      <DependentUpon>IndexForm.cs</DependentUpon>
+    <Compile Include="StartScreenForm.Designer.cs">
+      <DependentUpon>StartScreenForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="IndexForm.resx">
-      <DependentUpon>IndexForm.cs</DependentUpon>
+    <EmbeddedResource Include="StartScreenForm.resx">
+      <DependentUpon>StartScreenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

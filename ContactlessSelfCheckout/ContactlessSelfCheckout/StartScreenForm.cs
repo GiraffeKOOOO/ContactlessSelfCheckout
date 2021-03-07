@@ -11,9 +11,9 @@ using System.IO;
 
 namespace ContactlessSelfCheckout
 {
-    public partial class IndexForm : Form
+    public partial class StartScreenForm : Form
     {
-        public IndexForm()
+        public StartScreenForm()
         {
             InitializeComponent();
             Console.WriteLine("hello world");

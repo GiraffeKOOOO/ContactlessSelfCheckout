@@ -1,6 +1,6 @@
 ﻿namespace ContactlessSelfCheckout
 {
-    partial class IndexForm
+    partial class StartScreenForm
     {
         /// <summary>
         /// Required designer variable.
