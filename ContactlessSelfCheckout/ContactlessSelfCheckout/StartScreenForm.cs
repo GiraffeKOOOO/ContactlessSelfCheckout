@@ -19,5 +19,19 @@ namespace ContactlessSelfCheckout
             Console.WriteLine("hello world");
         }
 
+        private void startButton_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Start button pressed");
+        }
+
+        private void ownBagButton_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Own bag button pressed");
+        }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Help button pressed");
+        }
     }
 }
