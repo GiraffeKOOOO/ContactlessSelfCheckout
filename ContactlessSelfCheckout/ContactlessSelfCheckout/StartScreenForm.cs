@@ -16,7 +16,6 @@ namespace ContactlessSelfCheckout
         public StartScreenForm()
         {
             InitializeComponent();
-            Console.WriteLine("hello world");
         }
 
         private void startButton_Click(object sender, EventArgs e)
