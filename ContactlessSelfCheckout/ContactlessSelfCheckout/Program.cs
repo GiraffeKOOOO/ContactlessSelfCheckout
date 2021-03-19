@@ -16,7 +16,7 @@ namespace ContactlessSelfCheckout
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartScreenForm());
+            Application.Run(new CallibrationForm());
         }
     }
 }

@@ -84,7 +84,7 @@
             // 
             this.helpButton.BackColor = System.Drawing.Color.Silver;
             this.helpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.helpButton.Location = new System.Drawing.Point(12, 627);
+            this.helpButton.Location = new System.Drawing.Point(23, 627);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(118, 90);
             this.helpButton.TabIndex = 4;
