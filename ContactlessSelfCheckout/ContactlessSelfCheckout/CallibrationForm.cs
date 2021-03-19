@@ -20,34 +20,44 @@ namespace ContactlessSelfCheckout
             InitializeComponent();
         }
 
-         public FilterInfoCollection filterInfoCollection;
-         public VideoCaptureDevice videoCaptureDevice;
+         private FilterInfoCollection CaptureDevices;
+         private VideoCaptureDevice videoSource;
 
         private void CallibrationForm_Load(object sender, EventArgs e)
         {
-            filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            foreach (FilterInfo filterInfo in filterInfoCollection)
-                comboBox1.Items.Add(filterInfo.Name);
+            CaptureDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach (FilterInfo Device in CaptureDevices) 
+            {
+                comboBox1.Items.Add(Device.Name);
+            }
             comboBox1.SelectedIndex = 0;
-            VideoCaptureDevice = new VideoCaptureDevice();
+            videoSource = new VideoCaptureDevice();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            videoCaptureDevice = new VideoCaptureDevice(filterInfoCollection[comboBox1.SelectedIndex].MonikerString);
-            videoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
-            videoCaptureDevice.Start();
+            videoSource = new VideoCaptureDevice(CaptureDevices[comboBox1.SelectedIndex].MonikerString);
+            videoSource.NewFrame += new NewFrameEventHandler(VideoSource_NewFrame);
+            videoSource.Start();
         }
 
-        private void VideoCaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        private void VideoSource_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            cameraDisplayBox.Image = (Bitmap).eventArgs.Frame.Clone();
+            cameraDisplayBox.Image = (Bitmap)eventArgs.Frame.Clone();
         }
 
         private void CallibrationForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (videoCaptureDevice.IsRunning == true)
-                videoCaptureDevice.Stop();
+            if (videoSource.IsRunning == true) 
+            {
+                videoSource.Stop();
+            }
+            Application.Exit(null);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            videoSource.Stop();
         }
     }
 }

@@ -76,6 +76,7 @@
             this.cameraDisplayBox.Location = new System.Drawing.Point(222, 209);
             this.cameraDisplayBox.Name = "cameraDisplayBox";
             this.cameraDisplayBox.Size = new System.Drawing.Size(565, 471);
+            this.cameraDisplayBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.cameraDisplayBox.TabIndex = 6;
             this.cameraDisplayBox.TabStop = false;
             // 
@@ -105,6 +106,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "stop";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // CallibrationForm
             // 
