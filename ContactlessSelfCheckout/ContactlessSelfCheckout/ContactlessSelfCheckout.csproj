@@ -55,34 +55,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CallibrationForm.cs">
+    <Compile Include="FormCallibration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CallibrationForm.Designer.cs">
-      <DependentUpon>CallibrationForm.cs</DependentUpon>
+    <Compile Include="FormCallibration.Designer.cs">
+      <DependentUpon>FormCallibration.cs</DependentUpon>
     </Compile>
-    <Compile Include="BasketListForm.cs">
+    <Compile Include="FormBasketList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BasketListForm.Designer.cs">
-      <DependentUpon>BasketListForm.cs</DependentUpon>
+    <Compile Include="FormBasketList.Designer.cs">
+      <DependentUpon>FormBasketList.cs</DependentUpon>
     </Compile>
-    <Compile Include="StartScreenForm.cs">
+    <Compile Include="FormHelp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StartScreenForm.Designer.cs">
-      <DependentUpon>StartScreenForm.cs</DependentUpon>
+    <Compile Include="FormHelp.Designer.cs">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs" />
+    <Compile Include="FormStartScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStartScreen.Designer.cs">
+      <DependentUpon>FormStartScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BasketListForm.resx">
-      <DependentUpon>BasketListForm.cs</DependentUpon>
+    <EmbeddedResource Include="FormBasketList.resx">
+      <DependentUpon>FormBasketList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CallibrationForm.resx">
-      <DependentUpon>CallibrationForm.cs</DependentUpon>
+    <EmbeddedResource Include="FormCallibration.resx">
+      <DependentUpon>FormCallibration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StartScreenForm.resx">
-      <DependentUpon>StartScreenForm.cs</DependentUpon>
+    <EmbeddedResource Include="FormHelp.resx">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStartScreen.resx">
+      <DependentUpon>FormStartScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

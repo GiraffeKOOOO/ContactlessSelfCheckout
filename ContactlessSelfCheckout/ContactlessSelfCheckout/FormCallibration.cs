@@ -13,9 +13,9 @@ using AForge.Video.DirectShow;
 
 namespace ContactlessSelfCheckout
 {
-    public partial class CallibrationForm : Form
+    public partial class FormCallibration : Form
     {
-        public CallibrationForm()
+        public FormCallibration()
         {
             InitializeComponent();
             {

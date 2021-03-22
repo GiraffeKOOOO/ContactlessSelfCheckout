@@ -11,16 +11,20 @@ using System.IO;
 
 namespace ContactlessSelfCheckout
 {
-    public partial class StartScreenForm : Form
+    public partial class FormStartScreen : Form
     {
-        public StartScreenForm()
+        public string formTitle = "Start";
+        public FormStartScreen()
         {
             InitializeComponent();
         }
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Start button pressed");
+            // This function creates a new object for the FormBasketList, hides the current form, and shows the new form
+            FormBasketList formBasketList = new FormBasketList();
+            this.Hide();
+            formBasketList.Show();
         }
 
         private void ownBagButton_Click(object sender, EventArgs e)
@@ -30,7 +34,10 @@ namespace ContactlessSelfCheckout
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Help button pressed");
+            // This function creates a new object for the FormHelp, hides the current form, and shows the new form
+            FormHelp formHelp = new FormHelp(formTitle);
+            this.Hide();
+            formHelp.Show();
         }
     }
 }

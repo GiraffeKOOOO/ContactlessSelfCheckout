@@ -1,6 +1,6 @@
 ﻿namespace ContactlessSelfCheckout
 {
-    partial class CallibrationForm
+    partial class FormCallibration
     {
         /// <summary>
         /// Required designer variable.
