@@ -33,8 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,16 +55,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IndexForm.cs">
+    <Compile Include="FormCallibration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IndexForm.Designer.cs">
-      <DependentUpon>IndexForm.cs</DependentUpon>
+    <Compile Include="FormCallibration.Designer.cs">
+      <DependentUpon>FormCallibration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBasketList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBasketList.Designer.cs">
+      <DependentUpon>FormBasketList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHelp.Designer.cs">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs" />
+    <Compile Include="FormStartScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStartScreen.Designer.cs">
+      <DependentUpon>FormStartScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="IndexForm.resx">
-      <DependentUpon>IndexForm.cs</DependentUpon>
+    <EmbeddedResource Include="FormBasketList.resx">
+      <DependentUpon>FormBasketList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCallibration.resx">
+      <DependentUpon>FormCallibration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHelp.resx">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStartScreen.resx">
+      <DependentUpon>FormStartScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
