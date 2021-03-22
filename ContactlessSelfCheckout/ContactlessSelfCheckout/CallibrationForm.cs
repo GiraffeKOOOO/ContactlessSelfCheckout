@@ -18,46 +18,50 @@ namespace ContactlessSelfCheckout
         public CallibrationForm()
         {
             InitializeComponent();
-        }
-
-         private FilterInfoCollection CaptureDevices;
-         private VideoCaptureDevice videoSource;
-
-        private void CallibrationForm_Load(object sender, EventArgs e)
-        {
-            CaptureDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            foreach (FilterInfo Device in CaptureDevices) 
             {
-                comboBox1.Items.Add(Device.Name);
+                VideoCaptureDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+                foreach (FilterInfo VideoCaptureDevice in VideoCaptureDevices)
+                {
+                    comboBox1.Items.Add(VideoCaptureDevice.Name);
+                }
+                comboBox1.SelectedIndex = 0;
             }
-            comboBox1.SelectedIndex = 0;
-            videoSource = new VideoCaptureDevice();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private FilterInfoCollection VideoCaptureDevices;
+        private VideoCaptureDevice FinalVideo;
+
+        private void btnRestart_Click(object sender, EventArgs e)
         {
-            videoSource = new VideoCaptureDevice(CaptureDevices[comboBox1.SelectedIndex].MonikerString);
-            videoSource.NewFrame += new NewFrameEventHandler(VideoSource_NewFrame);
-            videoSource.Start();
+            FinalVideo = new VideoCaptureDevice(VideoCaptureDevices[0].MonikerString);
+            FinalVideo.NewFrame += new NewFrameEventHandler(FinalVideo_NewFrame);
+            FinalVideo.Start();
         }
 
-        private void VideoSource_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        private void FinalVideo_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            cameraDisplayBox.Image = (Bitmap)eventArgs.Frame.Clone();
+            Bitmap video = (Bitmap)eventArgs.Frame.Clone();
+            imgCameraDisplay.Image = video;
+
         }
 
         private void CallibrationForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (videoSource.IsRunning == true) 
+            if (FinalVideo.IsRunning == true) 
             {
-                videoSource.Stop();
+                FinalVideo.Stop();
             }
             Application.Exit(null);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            videoSource.Stop();
+            FinalVideo.Stop();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

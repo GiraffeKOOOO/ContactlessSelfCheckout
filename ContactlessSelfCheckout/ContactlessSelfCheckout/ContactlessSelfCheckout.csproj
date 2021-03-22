@@ -61,6 +61,12 @@
     <Compile Include="CallibrationForm.Designer.cs">
       <DependentUpon>CallibrationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BasketListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BasketListForm.Designer.cs">
+      <DependentUpon>BasketListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StartScreenForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BasketListForm.resx">
+      <DependentUpon>BasketListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CallibrationForm.resx">
       <DependentUpon>CallibrationForm.cs</DependentUpon>
     </EmbeddedResource>
