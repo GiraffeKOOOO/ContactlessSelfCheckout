@@ -13,6 +13,7 @@ namespace ContactlessSelfCheckout
     public partial class FormBasketList : Form
     {
         public string formTitle = "BasketList";
+        private Object[] basket = new Object[3] { "Cucumber", "Pear", "Coconut"};
         public FormBasketList()
         {
             InitializeComponent();
@@ -38,6 +39,16 @@ namespace ContactlessSelfCheckout
             FormVegetables formVegetables= new FormVegetables();
             this.Hide();
             formVegetables.Show();
+        }
+
+        private void imgTableBorder_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblBasketCounter_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

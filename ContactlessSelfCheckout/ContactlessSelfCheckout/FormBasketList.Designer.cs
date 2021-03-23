@@ -205,6 +205,7 @@
             this.lblBasketCounter.TabIndex = 16;
             this.lblBasketCounter.Text = "000";
             this.lblBasketCounter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblBasketCounter.Click += new System.EventHandler(this.lblBasketCounter_Click);
             // 
             // lblTotal
             // 
@@ -328,6 +329,7 @@
             this.imgTableBorder.Size = new System.Drawing.Size(593, 498);
             this.imgTableBorder.TabIndex = 25;
             this.imgTableBorder.TabStop = false;
+            this.imgTableBorder.Click += new System.EventHandler(this.imgTableBorder_Click);
             // 
             // imgTotalBorder
             // 

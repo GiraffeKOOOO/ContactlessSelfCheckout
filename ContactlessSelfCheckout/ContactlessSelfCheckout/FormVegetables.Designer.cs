@@ -33,6 +33,8 @@
             this.btnHelp = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btnVegetableCucumber = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblAlphabetSearch
@@ -71,6 +73,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnVegetableCucumber);
             this.panel1.Location = new System.Drawing.Point(12, 94);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(984, 517);
@@ -88,6 +91,15 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnVegetableCucumber
+            // 
+            this.btnVegetableCucumber.Location = new System.Drawing.Point(0, 0);
+            this.btnVegetableCucumber.Name = "btnVegetableCucumber";
+            this.btnVegetableCucumber.Size = new System.Drawing.Size(103, 47);
+            this.btnVegetableCucumber.TabIndex = 0;
+            this.btnVegetableCucumber.Text = "Cucumber";
+            this.btnVegetableCucumber.UseVisualStyleBackColor = true;
+            // 
             // FormVegetables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -101,6 +113,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormVegetables";
             this.Text = "Contactless Self-Checkout";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +126,6 @@
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnVegetableCucumber;
     }
 }
