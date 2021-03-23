@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormVegetables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVegetables.Designer.cs">
+      <DependentUpon>FormVegetables.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOwnBag.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormVegetables.resx">
+      <DependentUpon>FormVegetables.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBasketList.resx">
       <DependentUpon>FormBasketList.cs</DependentUpon>
     </EmbeddedResource>

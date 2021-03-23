@@ -10,18 +10,12 @@ using System.Windows.Forms;
 
 namespace ContactlessSelfCheckout
 {
-    public partial class FormBasketList : Form
+    public partial class FormVegetables : Form
     {
-        public string formTitle = "BasketList";
-        public FormBasketList()
+        public string formTitle = "Vegetables";
+        public FormVegetables()
         {
             InitializeComponent();
-        }
-
-        private void BasketListForm_Load(object sender, EventArgs e)
-        {
-            Item myItem = new Item();
-            Console.WriteLine(myItem.itemPrice);
         }
 
         private void btnHelp_Click(object sender, EventArgs e)
@@ -32,12 +26,12 @@ namespace ContactlessSelfCheckout
             formHelp.Show();
         }
 
-        private void btnVegetables_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            // This function creates a new object for the FormVegetables, hides the current form, and shows the new form
-            FormVegetables formVegetables= new FormVegetables();
+            // This function creates a new object for the FormHelp, hides the current form, and shows the new form
+            FormBasketList formBasketList = new FormBasketList();
             this.Hide();
-            formVegetables.Show();
+            formBasketList.Show();
         }
     }
 }

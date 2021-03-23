@@ -48,21 +48,21 @@
             this.lblItemName = new System.Windows.Forms.Label();
             this.lblItemPriceExample = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblItemPrice = new System.Windows.Forms.Label();
             this.imgItemCounterBorder = new System.Windows.Forms.PictureBox();
             this.imgTitleBorder = new System.Windows.Forms.PictureBox();
-            this.imgTotalBorder = new System.Windows.Forms.PictureBox();
             this.imgTableBorder = new System.Windows.Forms.PictureBox();
-            this.lblItemPrice = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.imgTotalBorder = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgShoppingCart)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgItemCounterBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTitleBorder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgTotalBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTableBorder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgTotalBorder)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBasketList
@@ -138,6 +138,7 @@
             this.btnVegetables.TabIndex = 10;
             this.btnVegetables.Text = "Vegetables";
             this.btnVegetables.UseVisualStyleBackColor = false;
+            this.btnVegetables.Click += new System.EventHandler(this.btnVegetables_Click);
             // 
             // btnFruit
             // 
@@ -273,6 +274,34 @@
             this.panel1.Size = new System.Drawing.Size(596, 617);
             this.panel1.TabIndex = 22;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Black;
+            this.pictureBox2.Location = new System.Drawing.Point(476, 52);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1, 498);
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 93);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(589, 1);
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblItemPrice
+            // 
+            this.lblItemPrice.AutoSize = true;
+            this.lblItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblItemPrice.Location = new System.Drawing.Point(510, 61);
+            this.lblItemPrice.Name = "lblItemPrice";
+            this.lblItemPrice.Size = new System.Drawing.Size(56, 25);
+            this.lblItemPrice.TabIndex = 26;
+            this.lblItemPrice.Text = "Price";
+            // 
             // imgItemCounterBorder
             // 
             this.imgItemCounterBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -291,15 +320,6 @@
             this.imgTitleBorder.TabIndex = 23;
             this.imgTitleBorder.TabStop = false;
             // 
-            // imgTotalBorder
-            // 
-            this.imgTotalBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgTotalBorder.Location = new System.Drawing.Point(2, 566);
-            this.imgTotalBorder.Name = "imgTotalBorder";
-            this.imgTotalBorder.Size = new System.Drawing.Size(593, 50);
-            this.imgTotalBorder.TabIndex = 22;
-            this.imgTotalBorder.TabStop = false;
-            // 
             // imgTableBorder
             // 
             this.imgTableBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -309,33 +329,14 @@
             this.imgTableBorder.TabIndex = 25;
             this.imgTableBorder.TabStop = false;
             // 
-            // lblItemPrice
+            // imgTotalBorder
             // 
-            this.lblItemPrice.AutoSize = true;
-            this.lblItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblItemPrice.Location = new System.Drawing.Point(510, 61);
-            this.lblItemPrice.Name = "lblItemPrice";
-            this.lblItemPrice.Size = new System.Drawing.Size(56, 25);
-            this.lblItemPrice.TabIndex = 26;
-            this.lblItemPrice.Text = "Price";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 93);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(589, 1);
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Black;
-            this.pictureBox2.Location = new System.Drawing.Point(476, 52);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1, 498);
-            this.pictureBox2.TabIndex = 28;
-            this.pictureBox2.TabStop = false;
+            this.imgTotalBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgTotalBorder.Location = new System.Drawing.Point(2, 566);
+            this.imgTotalBorder.Name = "imgTotalBorder";
+            this.imgTotalBorder.Size = new System.Drawing.Size(593, 50);
+            this.imgTotalBorder.TabIndex = 22;
+            this.imgTotalBorder.TabStop = false;
             // 
             // FormBasketList
             // 
@@ -358,18 +359,19 @@
             this.Controls.Add(this.lblInstruction);
             this.Controls.Add(this.lblBasketList);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormBasketList";
             this.Text = "Contactless Self-Checkout";
             this.Load += new System.EventHandler(this.BasketListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgShoppingCart)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgItemCounterBorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTitleBorder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgTotalBorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTableBorder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgTotalBorder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

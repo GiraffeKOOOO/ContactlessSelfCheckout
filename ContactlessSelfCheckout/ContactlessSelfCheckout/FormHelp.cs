@@ -30,14 +30,19 @@ namespace ContactlessSelfCheckout
                     formStartScreen.Show();
                     this.Hide();
                     break;
+                case "OwnBag":
+                    FormOwnBag formOwnBag = new FormOwnBag();
+                    formOwnBag.Show();
+                    this.Hide();
+                    break;
                 case "BasketList":
                     FormBasketList formBasketList = new FormBasketList();
                     formBasketList.Show();
                     this.Hide();
                     break;
-                case "OwnBag":
-                    FormOwnBag formOwnBag = new FormOwnBag();
-                    formOwnBag.Show();
+                case "Vegetables":
+                    FormVegetables formVegetables= new FormVegetables();
+                    formVegetables.Show();
                     this.Hide();
                     break;
                 default:

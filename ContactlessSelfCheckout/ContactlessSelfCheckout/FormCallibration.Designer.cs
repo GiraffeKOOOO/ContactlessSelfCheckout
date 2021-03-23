@@ -109,7 +109,7 @@
             this.comboBox1.TabIndex = 10;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // CallibrationForm
+            // FormCallibration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,7 +121,8 @@
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblInstruction);
             this.Controls.Add(this.lblScreenTitle);
-            this.Name = "CallibrationForm";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "FormCallibration";
             this.Text = "Contactless Self-Checkout";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CallibrationForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.imgCameraDisplay)).EndInit();

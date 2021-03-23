@@ -102,6 +102,7 @@
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblInstruction);
             this.Controls.Add(this.btnStart);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormOwnBag";
             this.Text = "Contactless Self-Checkout";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

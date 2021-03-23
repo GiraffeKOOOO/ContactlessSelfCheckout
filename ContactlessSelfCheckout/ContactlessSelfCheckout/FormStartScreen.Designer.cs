@@ -92,7 +92,7 @@
             this.btnHelp.UseVisualStyleBackColor = false;
             this.btnHelp.Click += new System.EventHandler(this.helpButton_Click);
             // 
-            // StartScreenForm
+            // FormStartScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -102,8 +102,10 @@
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblInstruction);
             this.Controls.Add(this.lblScreenTitle);
-            this.Name = "StartScreenForm";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "FormStartScreen";
             this.Text = "Contactless Self-checkout";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
