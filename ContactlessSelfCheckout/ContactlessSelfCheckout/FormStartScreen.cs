@@ -29,7 +29,10 @@ namespace ContactlessSelfCheckout
 
         private void ownBagButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Own bag button pressed");
+            // This function creates a new object for the FormOwnBag, hides the current form, and shows the new form
+            FormOwnBag formOwnBag= new FormOwnBag();
+            this.Hide();
+            formOwnBag.Show();
         }
 
         private void helpButton_Click(object sender, EventArgs e)

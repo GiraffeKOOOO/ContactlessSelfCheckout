@@ -35,6 +35,11 @@ namespace ContactlessSelfCheckout
                     formBasketList.Show();
                     this.Hide();
                     break;
+                case "OwnBag":
+                    FormOwnBag formOwnBag = new FormOwnBag();
+                    formOwnBag.Show();
+                    this.Hide();
+                    break;
                 default:
                     Console.Write("No screen title provided");
                     break;
