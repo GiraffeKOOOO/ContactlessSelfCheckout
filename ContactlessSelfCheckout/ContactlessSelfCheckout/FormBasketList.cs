@@ -31,5 +31,6 @@ namespace ContactlessSelfCheckout
             this.Hide();
             formHelp.Show();
         }
+
     }
 }

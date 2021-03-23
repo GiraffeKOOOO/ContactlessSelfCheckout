@@ -46,22 +46,32 @@
             this.lblTotalSum = new System.Windows.Forms.Label();
             this.btnRemoveItem = new System.Windows.Forms.Button();
             this.lblItemName = new System.Windows.Forms.Label();
-            this.lblItemPrice = new System.Windows.Forms.Label();
+            this.lblItemPriceExample = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.imgBasketSeperator = new System.Windows.Forms.PictureBox();
+            this.imgItemCounterBorder = new System.Windows.Forms.PictureBox();
+            this.imgTitleBorder = new System.Windows.Forms.PictureBox();
+            this.imgTotalBorder = new System.Windows.Forms.PictureBox();
+            this.imgTableBorder = new System.Windows.Forms.PictureBox();
+            this.lblItemPrice = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgShoppingCart)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgBasketSeperator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgItemCounterBorder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgTitleBorder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgTotalBorder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgTableBorder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBasketList
             // 
             this.lblBasketList.AutoSize = true;
-            this.lblBasketList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblBasketList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblBasketList.Location = new System.Drawing.Point(12, 16);
             this.lblBasketList.Name = "lblBasketList";
-            this.lblBasketList.Size = new System.Drawing.Size(155, 27);
+            this.lblBasketList.Size = new System.Drawing.Size(153, 25);
             this.lblBasketList.TabIndex = 0;
             this.lblBasketList.Text = "Your Basket List";
             // 
@@ -122,7 +132,7 @@
             // 
             this.btnVegetables.BackColor = System.Drawing.Color.Silver;
             this.btnVegetables.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.btnVegetables.Location = new System.Drawing.Point(607, 107);
+            this.btnVegetables.Location = new System.Drawing.Point(614, 107);
             this.btnVegetables.Name = "btnVegetables";
             this.btnVegetables.Size = new System.Drawing.Size(181, 101);
             this.btnVegetables.TabIndex = 10;
@@ -144,7 +154,7 @@
             // 
             this.btnBakery.BackColor = System.Drawing.Color.Silver;
             this.btnBakery.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.btnBakery.Location = new System.Drawing.Point(607, 268);
+            this.btnBakery.Location = new System.Drawing.Point(614, 268);
             this.btnBakery.Name = "btnBakery";
             this.btnBakery.Size = new System.Drawing.Size(181, 101);
             this.btnBakery.TabIndex = 12;
@@ -166,7 +176,7 @@
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Silver;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.btnSearch.Location = new System.Drawing.Point(607, 422);
+            this.btnSearch.Location = new System.Drawing.Point(614, 420);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(181, 101);
             this.btnSearch.TabIndex = 14;
@@ -198,22 +208,20 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblTotal.Location = new System.Drawing.Point(12, 582);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(58, 27);
+            this.lblTotal.Size = new System.Drawing.Size(56, 25);
             this.lblTotal.TabIndex = 17;
             this.lblTotal.Text = "Total";
             // 
             // lblTotalSum
             // 
             this.lblTotalSum.AutoSize = true;
-            this.lblTotalSum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTotalSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblTotalSum.Location = new System.Drawing.Point(455, 521);
+            this.lblTotalSum.Location = new System.Drawing.Point(455, 578);
             this.lblTotalSum.Name = "lblTotalSum";
-            this.lblTotalSum.Size = new System.Drawing.Size(112, 27);
+            this.lblTotalSum.Size = new System.Drawing.Size(110, 25);
             this.lblTotalSum.TabIndex = 18;
             this.lblTotalSum.Text = "£1,000,000";
             // 
@@ -231,52 +239,111 @@
             // lblItemName
             // 
             this.lblItemName.AutoSize = true;
-            this.lblItemName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblItemName.Location = new System.Drawing.Point(12, 61);
+            this.lblItemName.Location = new System.Drawing.Point(7, 61);
             this.lblItemName.Name = "lblItemName";
-            this.lblItemName.Size = new System.Drawing.Size(51, 27);
+            this.lblItemName.Size = new System.Drawing.Size(49, 25);
             this.lblItemName.TabIndex = 20;
             this.lblItemName.Text = "Item";
+            // 
+            // lblItemPriceExample
+            // 
+            this.lblItemPriceExample.AutoSize = true;
+            this.lblItemPriceExample.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblItemPriceExample.Location = new System.Drawing.Point(483, 103);
+            this.lblItemPriceExample.Name = "lblItemPriceExample";
+            this.lblItemPriceExample.Size = new System.Drawing.Size(110, 25);
+            this.lblItemPriceExample.TabIndex = 21;
+            this.lblItemPriceExample.Text = "£1,000,000";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.lblItemPrice);
+            this.panel1.Controls.Add(this.lblItemPriceExample);
+            this.panel1.Controls.Add(this.lblTotalSum);
+            this.panel1.Controls.Add(this.imgItemCounterBorder);
+            this.panel1.Controls.Add(this.lblItemName);
+            this.panel1.Controls.Add(this.imgTitleBorder);
+            this.panel1.Controls.Add(this.imgTableBorder);
+            this.panel1.Controls.Add(this.imgTotalBorder);
+            this.panel1.Location = new System.Drawing.Point(5, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(596, 617);
+            this.panel1.TabIndex = 22;
+            // 
+            // imgItemCounterBorder
+            // 
+            this.imgItemCounterBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgItemCounterBorder.Location = new System.Drawing.Point(192, 3);
+            this.imgItemCounterBorder.Name = "imgItemCounterBorder";
+            this.imgItemCounterBorder.Size = new System.Drawing.Size(286, 43);
+            this.imgItemCounterBorder.TabIndex = 24;
+            this.imgItemCounterBorder.TabStop = false;
+            // 
+            // imgTitleBorder
+            // 
+            this.imgTitleBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgTitleBorder.Location = new System.Drawing.Point(2, 3);
+            this.imgTitleBorder.Name = "imgTitleBorder";
+            this.imgTitleBorder.Size = new System.Drawing.Size(169, 43);
+            this.imgTitleBorder.TabIndex = 23;
+            this.imgTitleBorder.TabStop = false;
+            // 
+            // imgTotalBorder
+            // 
+            this.imgTotalBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgTotalBorder.Location = new System.Drawing.Point(2, 566);
+            this.imgTotalBorder.Name = "imgTotalBorder";
+            this.imgTotalBorder.Size = new System.Drawing.Size(593, 50);
+            this.imgTotalBorder.TabIndex = 22;
+            this.imgTotalBorder.TabStop = false;
+            // 
+            // imgTableBorder
+            // 
+            this.imgTableBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgTableBorder.Location = new System.Drawing.Point(2, 52);
+            this.imgTableBorder.Name = "imgTableBorder";
+            this.imgTableBorder.Size = new System.Drawing.Size(593, 498);
+            this.imgTableBorder.TabIndex = 25;
+            this.imgTableBorder.TabStop = false;
             // 
             // lblItemPrice
             // 
             this.lblItemPrice.AutoSize = true;
-            this.lblItemPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblItemPrice.Location = new System.Drawing.Point(455, 0);
+            this.lblItemPrice.Location = new System.Drawing.Point(510, 61);
             this.lblItemPrice.Name = "lblItemPrice";
-            this.lblItemPrice.Size = new System.Drawing.Size(112, 27);
-            this.lblItemPrice.TabIndex = 21;
-            this.lblItemPrice.Text = "£1,000,000";
+            this.lblItemPrice.Size = new System.Drawing.Size(56, 25);
+            this.lblItemPrice.TabIndex = 26;
+            this.lblItemPrice.Text = "Price";
             // 
-            // panel1
+            // pictureBox1
             // 
-            this.panel1.Controls.Add(this.lblItemPrice);
-            this.panel1.Controls.Add(this.lblTotalSum);
-            this.panel1.Location = new System.Drawing.Point(12, 61);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(567, 548);
-            this.panel1.TabIndex = 22;
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 93);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(589, 1);
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
             // 
-            // imgBasketSeperator
+            // pictureBox2
             // 
-            this.imgBasketSeperator.BackColor = System.Drawing.Color.Black;
-            this.imgBasketSeperator.Location = new System.Drawing.Point(594, -2);
-            this.imgBasketSeperator.Name = "imgBasketSeperator";
-            this.imgBasketSeperator.Size = new System.Drawing.Size(2, 738);
-            this.imgBasketSeperator.TabIndex = 23;
-            this.imgBasketSeperator.TabStop = false;
+            this.pictureBox2.BackColor = System.Drawing.Color.Black;
+            this.pictureBox2.Location = new System.Drawing.Point(476, 52);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1, 498);
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
             // 
             // FormBasketList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
-            this.Controls.Add(this.imgBasketSeperator);
-            this.Controls.Add(this.lblItemName);
-            this.Controls.Add(this.btnRemoveItem);
             this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.btnRemoveItem);
             this.Controls.Add(this.lblBasketCounter);
             this.Controls.Add(this.btnBarcode);
             this.Controls.Add(this.btnSearch);
@@ -297,7 +364,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgShoppingCart)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgBasketSeperator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgItemCounterBorder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgTitleBorder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgTotalBorder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgTableBorder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,8 +394,14 @@
         private System.Windows.Forms.Label lblTotalSum;
         private System.Windows.Forms.Button btnRemoveItem;
         private System.Windows.Forms.Label lblItemName;
-        private System.Windows.Forms.Label lblItemPrice;
+        private System.Windows.Forms.Label lblItemPriceExample;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox imgBasketSeperator;
+        private System.Windows.Forms.PictureBox imgItemCounterBorder;
+        private System.Windows.Forms.PictureBox imgTitleBorder;
+        private System.Windows.Forms.PictureBox imgTotalBorder;
+        private System.Windows.Forms.PictureBox imgTableBorder;
+        private System.Windows.Forms.Label lblItemPrice;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
