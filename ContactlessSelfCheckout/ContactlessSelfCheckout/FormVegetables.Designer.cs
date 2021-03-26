@@ -28,13 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblAlphabetSearch = new System.Windows.Forms.Label();
             this.lblAlphabetTitle = new System.Windows.Forms.Label();
             this.btnHelp = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlVegetableItems = new System.Windows.Forms.Panel();
             this.btnBack = new System.Windows.Forms.Button();
-            this.btnVegetableCucumber = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.db_ProductsDataSet = new ContactlessSelfCheckout.Db_ProductsDataSet();
+            this.dbProductsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tableProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.table_ProductTableAdapter = new ContactlessSelfCheckout.Db_ProductsDataSetTableAdapters.Table_ProductTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.db_ProductsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbProductsDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableProductBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAlphabetSearch
@@ -71,13 +77,12 @@
             this.btnHelp.UseVisualStyleBackColor = false;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
-            // panel1
+            // pnlVegetableItems
             // 
-            this.panel1.Controls.Add(this.btnVegetableCucumber);
-            this.panel1.Location = new System.Drawing.Point(12, 94);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(984, 517);
-            this.panel1.TabIndex = 8;
+            this.pnlVegetableItems.Location = new System.Drawing.Point(12, 155);
+            this.pnlVegetableItems.Name = "pnlVegetableItems";
+            this.pnlVegetableItems.Size = new System.Drawing.Size(984, 456);
+            this.pnlVegetableItems.TabIndex = 8;
             // 
             // btnBack
             // 
@@ -91,14 +96,24 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // btnVegetableCucumber
+            // db_ProductsDataSet
             // 
-            this.btnVegetableCucumber.Location = new System.Drawing.Point(0, 0);
-            this.btnVegetableCucumber.Name = "btnVegetableCucumber";
-            this.btnVegetableCucumber.Size = new System.Drawing.Size(103, 47);
-            this.btnVegetableCucumber.TabIndex = 0;
-            this.btnVegetableCucumber.Text = "Cucumber";
-            this.btnVegetableCucumber.UseVisualStyleBackColor = true;
+            this.db_ProductsDataSet.DataSetName = "Db_ProductsDataSet";
+            this.db_ProductsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dbProductsDataSetBindingSource
+            // 
+            this.dbProductsDataSetBindingSource.DataSource = this.db_ProductsDataSet;
+            this.dbProductsDataSetBindingSource.Position = 0;
+            // 
+            // tableProductBindingSource
+            // 
+            this.tableProductBindingSource.DataMember = "Table_Product";
+            this.tableProductBindingSource.DataSource = this.dbProductsDataSetBindingSource;
+            // 
+            // table_ProductTableAdapter
+            // 
+            this.table_ProductTableAdapter.ClearBeforeFill = true;
             // 
             // FormVegetables
             // 
@@ -106,14 +121,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlVegetableItems);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblAlphabetTitle);
             this.Controls.Add(this.lblAlphabetSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormVegetables";
             this.Text = "Contactless Self-Checkout";
-            this.panel1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.FormVegetables_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.db_ProductsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbProductsDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableProductBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,8 +142,11 @@
         private System.Windows.Forms.Label lblAlphabetSearch;
         private System.Windows.Forms.Label lblAlphabetTitle;
         private System.Windows.Forms.Button btnHelp;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlVegetableItems;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Button btnVegetableCucumber;
+        private System.Windows.Forms.BindingSource dbProductsDataSetBindingSource;
+        private Db_ProductsDataSet db_ProductsDataSet;
+        private System.Windows.Forms.BindingSource tableProductBindingSource;
+        private Db_ProductsDataSetTableAdapters.Table_ProductTableAdapter table_ProductTableAdapter;
     }
 }

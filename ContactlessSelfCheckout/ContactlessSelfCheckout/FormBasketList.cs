@@ -21,7 +21,7 @@ namespace ContactlessSelfCheckout
 
         private void BasketListForm_Load(object sender, EventArgs e)
         {
-            Item myItem = new Item();
+            Product myItem = new Product();
             Console.WriteLine(myItem.itemPrice);
         }
 

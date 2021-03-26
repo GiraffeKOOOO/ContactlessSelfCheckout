@@ -3,3 +3,10 @@
 ################################################################################
 
 /ContactlessSelfCheckout/ContactlessSelfCheckout/Database1.mdf
+/ContactlessSelfCheckout/ContactlessSelfCheckout/Database1DataSet.cs
+/ContactlessSelfCheckout/ContactlessSelfCheckout/Database1_log.ldf
+/ContactlessSelfCheckout/ContactlessSelfCheckout/Database1DataSet.xss
+/ContactlessSelfCheckout/ContactlessSelfCheckout/Database1DataSet.xsd
+/ContactlessSelfCheckout/ContactlessSelfCheckout/Database1DataSet.xsc
+/ContactlessSelfCheckout/ContactlessSelfCheckout/Database1DataSet.Designer.cs
+/ContactlessSelfCheckout/ContactlessSelfCheckout/obj/Debug/TempPE/Database1DataSet.Designer.cs.dll
