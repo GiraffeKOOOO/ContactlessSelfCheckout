@@ -13,7 +13,7 @@ namespace ContactlessSelfCheckout
     public partial class FormBasketList : Form
     {
         public string formTitle = "BasketList";
-        private Object[] basket = new Object[3] { "Cucumber", "Pear", "Coconut"};
+        private Object[] customerOrder = new Object[0];
         public FormBasketList()
         {
             InitializeComponent();
@@ -22,10 +22,10 @@ namespace ContactlessSelfCheckout
         private void BasketListForm_Load(object sender, EventArgs e)
         {
             Product myItem = new Product();
-            Console.WriteLine(myItem.itemPrice);
+            Console.WriteLine("hello");
         }
 
-        private void btnHelp_Click(object sender, EventArgs e)
+        private void BtnHelp_Click(object sender, EventArgs e)
         {
             // This function creates a new object for the FormHelp, hides the current form, and shows the new form
             FormHelp formHelp = new FormHelp(formTitle);
@@ -33,7 +33,7 @@ namespace ContactlessSelfCheckout
             formHelp.Show();
         }
 
-        private void btnVegetables_Click(object sender, EventArgs e)
+        private void BtnVegetables_Click(object sender, EventArgs e)
         {
             // This function creates a new object for the FormVegetables, hides the current form, and shows the new form
             FormVegetables formVegetables= new FormVegetables();
@@ -41,14 +41,5 @@ namespace ContactlessSelfCheckout
             formVegetables.Show();
         }
 
-        private void imgTableBorder_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblBasketCounter_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

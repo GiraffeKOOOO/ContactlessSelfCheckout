@@ -8,6 +8,9 @@ namespace ContactlessSelfCheckout
 {
     class Product
     {
-        public string itemPrice { get; set; }
+        public int productId;
+        public string productName;
+        public double itemPrice;
+        public string productCategory;
     }
 }

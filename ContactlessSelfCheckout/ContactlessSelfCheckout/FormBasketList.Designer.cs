@@ -115,7 +115,7 @@
             this.btnHelp.TabIndex = 6;
             this.btnHelp.Text = "Help";
             this.btnHelp.UseVisualStyleBackColor = false;
-            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            this.btnHelp.Click += new System.EventHandler(this.BtnHelp_Click);
             // 
             // button1
             // 
@@ -138,7 +138,7 @@
             this.btnVegetables.TabIndex = 10;
             this.btnVegetables.Text = "Vegetables";
             this.btnVegetables.UseVisualStyleBackColor = false;
-            this.btnVegetables.Click += new System.EventHandler(this.btnVegetables_Click);
+            this.btnVegetables.Click += new System.EventHandler(this.BtnVegetables_Click);
             // 
             // btnFruit
             // 
@@ -205,7 +205,6 @@
             this.lblBasketCounter.TabIndex = 16;
             this.lblBasketCounter.Text = "000";
             this.lblBasketCounter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblBasketCounter.Click += new System.EventHandler(this.lblBasketCounter_Click);
             // 
             // lblTotal
             // 
@@ -329,7 +328,6 @@
             this.imgTableBorder.Size = new System.Drawing.Size(593, 498);
             this.imgTableBorder.TabIndex = 25;
             this.imgTableBorder.TabStop = false;
-            this.imgTableBorder.Click += new System.EventHandler(this.imgTableBorder_Click);
             // 
             // imgTotalBorder
             // 
