@@ -13,7 +13,7 @@ namespace ContactlessSelfCheckout
     public partial class FormBasketList : Form
     {
         public string formTitle = "BasketList";
-        private Object[] customerOrder = new Object[0];
+        public Object[] customerOrder = new Object[0];
         public FormBasketList()
         {
             InitializeComponent();
@@ -21,8 +21,7 @@ namespace ContactlessSelfCheckout
 
         private void BasketListForm_Load(object sender, EventArgs e)
         {
-            Product myItem = new Product();
-            Console.WriteLine("hello");
+
         }
 
         private void BtnHelp_Click(object sender, EventArgs e)

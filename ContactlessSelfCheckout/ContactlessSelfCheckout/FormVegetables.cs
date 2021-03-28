@@ -38,21 +38,28 @@ namespace ContactlessSelfCheckout
 
         private void FormVegetables_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'db_ProductsDataSet.Table_Product' table. You can move, or remove it, as needed.
+            // This line of code loads data into the 'db_ProductsDataSet.Table_Product' table.
             this.table_ProductTableAdapter.Fill(this.db_ProductsDataSet.Table_Product);
-            string sqlQuery = "SELECT Product_Name FROM Table_Product WHERE Product_Category ='Vegetable';";
+            string sqlQuery = "SELECT * FROM Table_Product WHERE Product_Category ='Vegetable';";
             databaseHelper.readDataThroughAdapter(sqlQuery, dataTable);
 
             Point newLocation = new Point(5, 5);
             foreach (DataRow row in dataTable.Rows)
             {
+                string vegetableName = row["Product_Name"].ToString();
+
                 Button button = new Button
                 {
                     Size = new Size(120, 90),
                     Location = newLocation,
-                    Text = row["Product_Name"].ToString()
+                    Text = vegetableName
                 };
-                button.Click += delegate { Console.WriteLine($"{row["Product_Name"]} Button Pressed"); };
+
+                button.Click += delegate 
+                {
+                    Product vegetable = new Product(row["Product_ID"], row["Product_Name"].ToString(), row["Product_Category"].ToString(), (double)row["Product_Price"], (int)row["Product_Stock"]);
+                    Console.WriteLine(vegetable);
+                };
                 newLocation.Offset(button.Width + 20, 0);
                 pnlVegetableItems.Controls.Add(button);
             }

@@ -10,7 +10,16 @@ namespace ContactlessSelfCheckout
     {
         public int productId;
         public string productName;
-        public double itemPrice;
         public string productCategory;
+        public double productPrice;
+        public int productStock;
+        public Product(int productId, string productName, string productCategory, double productPrice, int productStock)
+        {
+            this.productId = productId;
+            this.productName = productName;
+            this.productCategory = productCategory;
+            this.productPrice = productPrice;
+            this.productStock = productStock;
+        }
     }
 }
