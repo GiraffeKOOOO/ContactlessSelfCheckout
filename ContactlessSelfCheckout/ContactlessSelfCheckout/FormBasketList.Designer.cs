@@ -46,7 +46,6 @@
             this.lblTotalSum = new System.Windows.Forms.Label();
             this.btnRemoveItem = new System.Windows.Forms.Button();
             this.lblItemName = new System.Windows.Forms.Label();
-            this.lblItemPriceExample = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -247,22 +246,11 @@
             this.lblItemName.TabIndex = 20;
             this.lblItemName.Text = "Item";
             // 
-            // lblItemPriceExample
-            // 
-            this.lblItemPriceExample.AutoSize = true;
-            this.lblItemPriceExample.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblItemPriceExample.Location = new System.Drawing.Point(483, 103);
-            this.lblItemPriceExample.Name = "lblItemPriceExample";
-            this.lblItemPriceExample.Size = new System.Drawing.Size(110, 25);
-            this.lblItemPriceExample.TabIndex = 21;
-            this.lblItemPriceExample.Text = "£1,000,000";
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lblItemPrice);
-            this.panel1.Controls.Add(this.lblItemPriceExample);
             this.panel1.Controls.Add(this.lblTotalSum);
             this.panel1.Controls.Add(this.imgItemCounterBorder);
             this.panel1.Controls.Add(this.lblItemName);
@@ -363,6 +351,7 @@
             this.Name = "FormBasketList";
             this.Text = "Contactless Self-Checkout";
             this.Load += new System.EventHandler(this.BasketListForm_Load);
+            this.Shown += new System.EventHandler(this.FormBasketList_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.imgShoppingCart)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -396,7 +385,6 @@
         private System.Windows.Forms.Label lblTotalSum;
         private System.Windows.Forms.Button btnRemoveItem;
         private System.Windows.Forms.Label lblItemName;
-        private System.Windows.Forms.Label lblItemPriceExample;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox imgItemCounterBorder;
         private System.Windows.Forms.PictureBox imgTitleBorder;

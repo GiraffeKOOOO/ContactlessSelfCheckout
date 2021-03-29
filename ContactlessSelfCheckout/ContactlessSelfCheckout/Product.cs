@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace ContactlessSelfCheckout
 {
-    class Product
+    public class Product
     {
         public int productId;
         public string productName;
         public string productCategory;
-        public double productPrice;
+        public decimal productPrice;
         public int productStock;
-        public Product(int productId, string productName, string productCategory, int productPrice, int productStock)
+        public Product(int productId, string productName, string productCategory, decimal productPrice, int productStock)
         {
             this.productId = productId;
             this.productName = productName;

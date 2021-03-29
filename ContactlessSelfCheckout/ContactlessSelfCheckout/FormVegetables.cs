@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace ContactlessSelfCheckout
 {
     public partial class FormVegetables : Form
     {
-        public string formTitle = "Vegetables";
+        public readonly string formTitle = "Vegetables";
         readonly DatabaseHelper databaseHelper = new DatabaseHelper();
         readonly DataTable dataTable = new DataTable();
         public FormVegetables()
@@ -40,35 +41,65 @@ namespace ContactlessSelfCheckout
         {
             // Load data into the 'db_ProductsDataSet.Table_Product' table.
             this.table_ProductTableAdapter.Fill(this.db_ProductsDataSet.Table_Product);
+
+            // Specifying the query to only select products of category 'Vegetable'
             string sqlQuery = "SELECT * FROM Table_Product WHERE Product_Category ='Vegetable';";
             databaseHelper.ReadDataThroughAdapter(sqlQuery, dataTable);
 
+            // creating a new point variable to allow for the product buttons to be in different locations
             Point newLocation = new Point(5, 5);
+
+            // foreach loop to iterate through the products pulled from the database
             foreach (DataRow row in dataTable.Rows)
             {
-                int vegetableId = (int)row["Product_ID"];
-                string vegetableName = row["Product_Name"].ToString();
-                string vegetableCategory = row["Product_Category"].ToString();
-                int vegetablePrice = (int)row["Product_Price"];
-                int vegetableStock = (int)row["Product_Stock"];
+                // storing the data from the database in to variables for easier manipulation and object creation
+                int productID = (int)row["Product_ID"];
+                string productName = row["Product_Name"].ToString();
+                string productCategory = row["Product_Category"].ToString();
+                decimal productPrice = (decimal)row["Product_Price"];
+                int productStock = (int)row["Product_Stock"];
 
+                // changing the properties of the button based on the details of the product from the database
                 Button button = new Button
                 {
                     Size = new Size(120, 90),
                     Location = newLocation,
-                    Text = vegetableName
+                    Text = productName
                 };
 
                 button.Click += delegate 
                 {
-                    //Product vegetable = new Product(row["Product_ID"], row["Product_Name"].ToString(), row["Product_Category"].ToString(), (double)row["Product_Price"], (int)row["Product_Stock"]);
-                    //Console.WriteLine(vegetable);
+                    // creating a product object to be added to the order list
+                    Product product = new Product(productID, productName, productCategory, productPrice, productStock);
 
-                    Console.WriteLine("vegetable id :" + vegetableId);
-                    Console.WriteLine("vegetable name :" + vegetableName);
-                    Console.WriteLine("vegetable category :" + vegetableCategory);
-                    Console.WriteLine("vegetable price :" + vegetablePrice);
-                    Console.WriteLine("vegetable stock :" + vegetableStock);
+                    // Console.WriteLine("vegetable id :" + product.productId);
+                    // Console.WriteLine("vegetable name :" + product.productName);
+                    // Console.WriteLine("vegetable category :" + product.productCategory);
+                    // Console.WriteLine("vegetable price :" + product.productPrice);
+                    // Console.WriteLine("vegetable stock :" + product.productStock);
+
+                    FormBasketList formBasketList = new FormBasketList();
+                    formBasketList.orderList.Add(product);
+                    if (formBasketList.orderList.Count >= 1)
+                    {
+                        Console.WriteLine("Not empty");
+                        Console.WriteLine(formBasketList.orderList.Count);
+                        Console.WriteLine(formBasketList.orderList[0]);
+                    }
+                    /*
+                    Console.WriteLine(formBasketList.orderList.Count);
+
+                    formBasketList.AddToOrder(product);
+
+                    if (formBasketList.orderList.Count >= 1)
+                    {
+                        Console.WriteLine("There is something in the array list");
+                    }
+                    else
+                    {
+                        Console.WriteLine("EMPTY");
+                    }
+                    */
                 };
                 newLocation.Offset(button.Width + 20, 0);
                 pnlVegetableItems.Controls.Add(button);

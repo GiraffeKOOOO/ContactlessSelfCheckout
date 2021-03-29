@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace ContactlessSelfCheckout
 {
     public partial class FormBasketList : Form
     {
         public string formTitle = "BasketList";
-        public Object[] customerOrder = new Object[0];
+        // public ArrayList orderList = new ArrayList();
+        public List<Product> orderList = new List<Product>();
+
         public FormBasketList()
         {
             InitializeComponent();
@@ -23,7 +26,38 @@ namespace ContactlessSelfCheckout
         {
 
         }
+        private void FormBasketList_Shown(object sender, EventArgs e)
+        {
+            Console.WriteLine("Form shown");
+            lblBasketCounter.Text = CounterStringFormatting(orderList.Count);
 
+            foreach (var orderItem in orderList)
+            {
+                Console.WriteLine("Item is:" + orderItem);
+            }
+
+        }
+
+        private string CounterStringFormatting(int counterSize)
+        {
+            string formattedString = "0";
+
+            if (counterSize < 10) 
+            {
+                formattedString = $"00" + counterSize.ToString();
+            }
+            else if (counterSize > 10 && counterSize < 99)
+            {
+                formattedString = $"0" + counterSize.ToString();
+            }
+            else if (counterSize > 99)
+            {
+                formattedString = counterSize.ToString();
+            }
+
+            return formattedString;
+
+        }
         private void BtnHelp_Click(object sender, EventArgs e)
         {
             // This function creates a new object for the FormHelp, hides the current form, and shows the new form
