@@ -88,7 +88,7 @@
             this.btnRestart.TabIndex = 8;
             this.btnRestart.Text = "restart";
             this.btnRestart.UseVisualStyleBackColor = true;
-            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
+            this.btnRestart.Click += new System.EventHandler(this.BtnRestart_Click);
             // 
             // btnStop
             // 
@@ -98,7 +98,7 @@
             this.btnStop.TabIndex = 9;
             this.btnStop.Text = "stop";
             this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.button2_Click);
+            this.btnStop.Click += new System.EventHandler(this.Button2_Click);
             // 
             // comboBox1
             // 
@@ -107,7 +107,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 10;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // FormCallibration
             // 

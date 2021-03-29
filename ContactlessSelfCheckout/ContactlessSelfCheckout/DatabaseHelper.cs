@@ -10,13 +10,13 @@ namespace ContactlessSelfCheckout
 {
     class DatabaseHelper
     {
-        private static SqlConnection connection = new SqlConnection();
-        private static SqlCommand command = new SqlCommand();
-        private static SqlDataAdapter DbAdapter = new SqlDataAdapter();
+        private static readonly SqlConnection connection = new SqlConnection();
+        private static readonly SqlCommand command = new SqlCommand();
+        private SqlDataAdapter DbAdapter = new SqlDataAdapter();
 
-        private static string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|Db_Products.mdf;Integrated Security=True";
+        private static readonly string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|Db_Products.mdf;Integrated Security=True";
 
-        public void createConnection()
+        public void CreateConnection()
         {
             try
             {
@@ -33,18 +33,18 @@ namespace ContactlessSelfCheckout
             }
         }
 
-        public void closeConnection()
+        public void CloseConnection()
         {
             connection.Close();
         }
 
-        public void readDataThroughAdapter(string query, DataTable tableName)
+        public void ReadDataThroughAdapter(string query, DataTable tableName)
         {
             try
             {
                 if (connection.State == ConnectionState.Closed)
                 {
-                    createConnection();
+                    CreateConnection();
                 }
 
                 command.Connection = connection;

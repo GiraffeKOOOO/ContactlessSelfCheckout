@@ -12,7 +12,7 @@ namespace ContactlessSelfCheckout
 {
     public partial class FormHelp : Form
     {
-        private string switchFormTitle;
+        private readonly string switchFormTitle;
         public FormHelp(string formTitle)
         {
             InitializeComponent();
@@ -20,7 +20,7 @@ namespace ContactlessSelfCheckout
             switchFormTitle = formTitle;
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void BtnBack_Click(object sender, EventArgs e)
         {
             // switch for returning to the previous screen, takes in the string variable from the screen on which the help button was called, and uses the string as the cases
             switch (switchFormTitle) 

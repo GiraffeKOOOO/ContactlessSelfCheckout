@@ -19,7 +19,7 @@ namespace ContactlessSelfCheckout
             InitializeComponent();
         }
 
-        private void startButton_Click(object sender, EventArgs e)
+        private void StartButton_Click(object sender, EventArgs e)
         {
             // This function creates a new object for the FormBasketList, hides the current form, and shows the new form
             FormBasketList formBasketList = new FormBasketList();
@@ -27,7 +27,7 @@ namespace ContactlessSelfCheckout
             formBasketList.Show();
         }
 
-        private void ownBagButton_Click(object sender, EventArgs e)
+        private void OwnBagButton_Click(object sender, EventArgs e)
         {
             // This function creates a new object for the FormOwnBag, hides the current form, and shows the new form
             FormOwnBag formOwnBag= new FormOwnBag();
@@ -35,7 +35,7 @@ namespace ContactlessSelfCheckout
             formOwnBag.Show();
         }
 
-        private void helpButton_Click(object sender, EventArgs e)
+        private void HelpButton_Click(object sender, EventArgs e)
         {
             // This function creates a new object for the FormHelp, hides the current form, and shows the new form
             FormHelp formHelp = new FormHelp(formTitle);

@@ -66,7 +66,7 @@
             this.btnStart.TabIndex = 2;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = false;
-            this.btnStart.Click += new System.EventHandler(this.startButton_Click);
+            this.btnStart.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // btnOwnBag
             // 
@@ -78,7 +78,7 @@
             this.btnOwnBag.TabIndex = 3;
             this.btnOwnBag.Text = "I have my own bag";
             this.btnOwnBag.UseVisualStyleBackColor = false;
-            this.btnOwnBag.Click += new System.EventHandler(this.ownBagButton_Click);
+            this.btnOwnBag.Click += new System.EventHandler(this.OwnBagButton_Click);
             // 
             // btnHelp
             // 
@@ -90,7 +90,7 @@
             this.btnHelp.TabIndex = 4;
             this.btnHelp.Text = "Help";
             this.btnHelp.UseVisualStyleBackColor = false;
-            this.btnHelp.Click += new System.EventHandler(this.helpButton_Click);
+            this.btnHelp.Click += new System.EventHandler(this.HelpButton_Click);
             // 
             // FormStartScreen
             // 

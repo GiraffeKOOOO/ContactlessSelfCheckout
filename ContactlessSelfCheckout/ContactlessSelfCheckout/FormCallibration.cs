@@ -28,10 +28,10 @@ namespace ContactlessSelfCheckout
             }
         }
 
-        private FilterInfoCollection VideoCaptureDevices;
+        private readonly FilterInfoCollection VideoCaptureDevices;
         private VideoCaptureDevice FinalVideo;
 
-        private void btnRestart_Click(object sender, EventArgs e)
+        private void BtnRestart_Click(object sender, EventArgs e)
         {
             FinalVideo = new VideoCaptureDevice(VideoCaptureDevices[0].MonikerString);
             FinalVideo.NewFrame += new NewFrameEventHandler(FinalVideo_NewFrame);
@@ -54,14 +54,10 @@ namespace ContactlessSelfCheckout
             Application.Exit(null);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             FinalVideo.Stop();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

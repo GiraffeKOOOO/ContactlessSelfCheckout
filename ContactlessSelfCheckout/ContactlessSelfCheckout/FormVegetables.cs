@@ -13,8 +13,8 @@ namespace ContactlessSelfCheckout
     public partial class FormVegetables : Form
     {
         public string formTitle = "Vegetables";
-        DatabaseHelper databaseHelper = new DatabaseHelper();
-        DataTable dataTable = new DataTable();
+        readonly DatabaseHelper databaseHelper = new DatabaseHelper();
+        readonly DataTable dataTable = new DataTable();
         public FormVegetables()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace ContactlessSelfCheckout
             formHelp.Show();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void BtnBack_Click(object sender, EventArgs e)
         {
             // This function creates a new object for the FormHelp, hides the current form, and shows the new form
             FormBasketList formBasketList = new FormBasketList();
@@ -38,15 +38,19 @@ namespace ContactlessSelfCheckout
 
         private void FormVegetables_Load(object sender, EventArgs e)
         {
-            // This line of code loads data into the 'db_ProductsDataSet.Table_Product' table.
+            // Load data into the 'db_ProductsDataSet.Table_Product' table.
             this.table_ProductTableAdapter.Fill(this.db_ProductsDataSet.Table_Product);
             string sqlQuery = "SELECT * FROM Table_Product WHERE Product_Category ='Vegetable';";
-            databaseHelper.readDataThroughAdapter(sqlQuery, dataTable);
+            databaseHelper.ReadDataThroughAdapter(sqlQuery, dataTable);
 
             Point newLocation = new Point(5, 5);
             foreach (DataRow row in dataTable.Rows)
             {
+                int vegetableId = (int)row["Product_ID"];
                 string vegetableName = row["Product_Name"].ToString();
+                string vegetableCategory = row["Product_Category"].ToString();
+                int vegetablePrice = (int)row["Product_Price"];
+                int vegetableStock = (int)row["Product_Stock"];
 
                 Button button = new Button
                 {
@@ -57,14 +61,20 @@ namespace ContactlessSelfCheckout
 
                 button.Click += delegate 
                 {
-                    Product vegetable = new Product(row["Product_ID"], row["Product_Name"].ToString(), row["Product_Category"].ToString(), (double)row["Product_Price"], (int)row["Product_Stock"]);
-                    Console.WriteLine(vegetable);
+                    //Product vegetable = new Product(row["Product_ID"], row["Product_Name"].ToString(), row["Product_Category"].ToString(), (double)row["Product_Price"], (int)row["Product_Stock"]);
+                    //Console.WriteLine(vegetable);
+
+                    Console.WriteLine("vegetable id :" + vegetableId);
+                    Console.WriteLine("vegetable name :" + vegetableName);
+                    Console.WriteLine("vegetable category :" + vegetableCategory);
+                    Console.WriteLine("vegetable price :" + vegetablePrice);
+                    Console.WriteLine("vegetable stock :" + vegetableStock);
                 };
                 newLocation.Offset(button.Width + 20, 0);
                 pnlVegetableItems.Controls.Add(button);
             }
 
-            databaseHelper.closeConnection();
+            databaseHelper.CloseConnection();
         }
 
     }
