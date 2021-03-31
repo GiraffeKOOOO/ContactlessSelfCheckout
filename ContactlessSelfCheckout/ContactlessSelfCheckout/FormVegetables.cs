@@ -59,6 +59,7 @@ namespace ContactlessSelfCheckout
                 decimal productPrice = (decimal)row["Product_Price"];
                 int productStock = (int)row["Product_Stock"];
 
+
                 // changing the properties of the button based on the details of the product from the database
                 Button button = new Button
                 {
@@ -69,37 +70,12 @@ namespace ContactlessSelfCheckout
 
                 button.Click += delegate 
                 {
-                    // creating a product object to be added to the order list
+                    // creating a product object to be added to the basket list
                     Product product = new Product(productID, productName, productCategory, productPrice, productStock);
 
-                    // Console.WriteLine("vegetable id :" + product.productId);
-                    // Console.WriteLine("vegetable name :" + product.productName);
-                    // Console.WriteLine("vegetable category :" + product.productCategory);
-                    // Console.WriteLine("vegetable price :" + product.productPrice);
-                    // Console.WriteLine("vegetable stock :" + product.productStock);
-
                     FormBasketList formBasketList = new FormBasketList();
-                    formBasketList.orderList.Add(product);
-                    if (formBasketList.orderList.Count >= 1)
-                    {
-                        Console.WriteLine("Not empty");
-                        Console.WriteLine(formBasketList.orderList.Count);
-                        Console.WriteLine(formBasketList.orderList[0]);
-                    }
-                    /*
-                    Console.WriteLine(formBasketList.orderList.Count);
-
-                    formBasketList.AddToOrder(product);
-
-                    if (formBasketList.orderList.Count >= 1)
-                    {
-                        Console.WriteLine("There is something in the array list");
-                    }
-                    else
-                    {
-                        Console.WriteLine("EMPTY");
-                    }
-                    */
+                    formBasketList.AddProductToList();
+                    
                 };
                 newLocation.Offset(button.Width + 20, 0);
                 pnlVegetableItems.Controls.Add(button);

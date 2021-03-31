@@ -8,14 +8,14 @@ namespace ContactlessSelfCheckout
 {
     public class Product
     {
-        public int productId;
+        public int productID;
         public string productName;
         public string productCategory;
         public decimal productPrice;
         public int productStock;
-        public Product(int productId, string productName, string productCategory, decimal productPrice, int productStock)
+        public Product(int productID, string productName, string productCategory, decimal productPrice, int productStock)
         {
-            this.productId = productId;
+            this.productID = productID;
             this.productName = productName;
             this.productCategory = productCategory;
             this.productPrice = productPrice;

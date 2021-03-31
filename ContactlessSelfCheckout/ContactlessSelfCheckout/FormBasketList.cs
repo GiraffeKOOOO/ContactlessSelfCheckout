@@ -14,12 +14,12 @@ namespace ContactlessSelfCheckout
     public partial class FormBasketList : Form
     {
         public string formTitle = "BasketList";
-        // public ArrayList orderList = new ArrayList();
-        public List<Product> orderList = new List<Product>();
+        public List<Product> basketList = new List<Product>();
 
         public FormBasketList()
         {
             InitializeComponent();
+            //basketList.Add(new Product(4, "Guava", "Vegetable", 1, 1));
         }
 
         private void BasketListForm_Load(object sender, EventArgs e)
@@ -28,14 +28,20 @@ namespace ContactlessSelfCheckout
         }
         private void FormBasketList_Shown(object sender, EventArgs e)
         {
-            Console.WriteLine("Form shown");
-            lblBasketCounter.Text = CounterStringFormatting(orderList.Count);
+            Console.WriteLine("Basket count is: " + basketList.Count);
+            lblBasketCounter.Text = CounterStringFormatting(basketList.Count);
 
-            foreach (var orderItem in orderList)
+            foreach (var basketItem in basketList)
             {
-                Console.WriteLine("Item is:" + orderItem);
+                Console.WriteLine("Item: " + basketItem.productName);
             }
-
+        }
+        public void AddProductToList() 
+        {
+            // Console.WriteLine("Basket count is: " + basketList.Count);
+            // this.basketList.Add(product);
+            basketList.Add(new Product(44, "GuavaAAAAA", "Vegetable", 1, 1));
+            Console.WriteLine("added to the list");
         }
 
         private string CounterStringFormatting(int counterSize)
@@ -46,11 +52,11 @@ namespace ContactlessSelfCheckout
             {
                 formattedString = $"00" + counterSize.ToString();
             }
-            else if (counterSize > 10 && counterSize < 99)
+            else if (counterSize >= 10 || counterSize < 100)
             {
                 formattedString = $"0" + counterSize.ToString();
             }
-            else if (counterSize > 99)
+            else if (counterSize >= 100)
             {
                 formattedString = counterSize.ToString();
             }
@@ -69,9 +75,14 @@ namespace ContactlessSelfCheckout
         private void BtnVegetables_Click(object sender, EventArgs e)
         {
             // This function creates a new object for the FormVegetables, hides the current form, and shows the new form
+            /*
             FormVegetables formVegetables= new FormVegetables();
             this.Hide();
             formVegetables.Show();
+            */
+
+            this.basketList.Add(new Product(44, "GuavaAAAAA", "Vegetable", 1, 1));
+            Console.WriteLine("added to the list");
         }
 
     }
