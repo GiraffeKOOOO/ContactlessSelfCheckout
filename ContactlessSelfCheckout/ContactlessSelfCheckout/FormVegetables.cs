@@ -14,6 +14,7 @@ namespace ContactlessSelfCheckout
     public partial class FormVegetables : Form
     {
         public readonly string formTitle = "Vegetables";
+        private readonly FormBasketList formBasketList = new FormBasketList();
         readonly DatabaseHelper databaseHelper = new DatabaseHelper();
         readonly DataTable dataTable = new DataTable();
         public FormVegetables()
@@ -31,8 +32,7 @@ namespace ContactlessSelfCheckout
 
         private void BtnBack_Click(object sender, EventArgs e)
         {
-            // This function creates a new object for the FormHelp, hides the current form, and shows the new form
-            FormBasketList formBasketList = new FormBasketList();
+            // This function hides the current form returning the user to the basket list
             this.Hide();
             formBasketList.Show();
         }
@@ -72,10 +72,7 @@ namespace ContactlessSelfCheckout
                 {
                     // creating a product object to be added to the basket list
                     Product product = new Product(productID, productName, productCategory, productPrice, productStock);
-
-                    FormBasketList formBasketList = new FormBasketList();
-                    formBasketList.AddProductToList();
-                    
+                    formBasketList.AddProductToList(product);
                 };
                 newLocation.Offset(button.Width + 20, 0);
                 pnlVegetableItems.Controls.Add(button);

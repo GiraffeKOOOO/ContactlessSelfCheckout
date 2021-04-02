@@ -19,33 +19,48 @@ namespace ContactlessSelfCheckout
         public FormBasketList()
         {
             InitializeComponent();
-            //basketList.Add(new Product(4, "Guava", "Vegetable", 1, 1));
         }
 
-        private void BasketListForm_Load(object sender, EventArgs e)
+        private void RefreshForm()
         {
 
         }
-        private void FormBasketList_Shown(object sender, EventArgs e)
+
+        public void AddProductToList(Product product) 
         {
-            Console.WriteLine("Basket count is: " + basketList.Count);
+            // this function allows for adding of products from buttons in other forms
+            basketList.Add(product);
+            UpdateCounter();
+            CreateNewLabel(product.productName);
+            // reposition the labels?
+        }
+
+        public void UpdateCounter() 
+        {
+            // this function should be called whenever the counter needs to be refreshed
             lblBasketCounter.Text = CounterStringFormatting(basketList.Count);
-
-            foreach (var basketItem in basketList)
-            {
-                Console.WriteLine("Item: " + basketItem.productName);
-            }
         }
-        public void AddProductToList() 
+
+        private void CreateNewLabel(String productName)
         {
-            // Console.WriteLine("Basket count is: " + basketList.Count);
-            // this.basketList.Add(product);
-            basketList.Add(new Product(44, "GuavaAAAAA", "Vegetable", 1, 1));
-            Console.WriteLine("added to the list");
+            // this function creates new text labels to appear in the list of products in the basket
+            Point newLocation = new Point(5, 100);
+
+            Label lblNewProduct = new Label
+            {
+                Text = productName,
+                Location = newLocation,
+                Font = new Font("Microsoft Sans Serif", 15),
+                AutoSize = true,
+                ForeColor = Color.Black
+            };
+            pnlBasketList.Controls.Add(lblNewProduct);
+            lblNewProduct.BringToFront();
         }
 
         private string CounterStringFormatting(int counterSize)
         {
+            // this function is for formatting the counter display, making sure the zeros appear even if the basket count is single or double digit
             string formattedString = "0";
 
             if (counterSize < 10) 
@@ -74,16 +89,14 @@ namespace ContactlessSelfCheckout
 
         private void BtnVegetables_Click(object sender, EventArgs e)
         {
-            // This function creates a new object for the FormVegetables, hides the current form, and shows the new form
-            /*
-            FormVegetables formVegetables= new FormVegetables();
-            this.Hide();
+            // This function creates a new object for the FormVegetables, and shows the new form directly on top of the previous form
+            FormVegetables formVegetables = new FormVegetables();
             formVegetables.Show();
-            */
-
-            this.basketList.Add(new Product(44, "GuavaAAAAA", "Vegetable", 1, 1));
-            Console.WriteLine("added to the list");
+            formVegetables.Left = this.Left;
+            formVegetables.Top = this.Top;
+            this.Hide();
         }
 
+        
     }
 }

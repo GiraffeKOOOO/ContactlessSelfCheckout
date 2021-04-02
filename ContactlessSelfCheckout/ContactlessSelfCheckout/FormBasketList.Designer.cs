@@ -46,22 +46,22 @@
             this.lblTotalSum = new System.Windows.Forms.Label();
             this.btnRemoveItem = new System.Windows.Forms.Button();
             this.lblItemName = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pnlBasketList = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblItemPrice = new System.Windows.Forms.Label();
             this.imgItemCounterBorder = new System.Windows.Forms.PictureBox();
             this.imgTitleBorder = new System.Windows.Forms.PictureBox();
-            this.imgTableBorder = new System.Windows.Forms.PictureBox();
             this.imgTotalBorder = new System.Windows.Forms.PictureBox();
+            this.imgTableBorder = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgShoppingCart)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pnlBasketList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgItemCounterBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTitleBorder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgTableBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTotalBorder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgTableBorder)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBasketList
@@ -246,30 +246,21 @@
             this.lblItemName.TabIndex = 20;
             this.lblItemName.Text = "Item";
             // 
-            // panel1
+            // pnlBasketList
             // 
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.lblItemPrice);
-            this.panel1.Controls.Add(this.lblTotalSum);
-            this.panel1.Controls.Add(this.imgItemCounterBorder);
-            this.panel1.Controls.Add(this.lblItemName);
-            this.panel1.Controls.Add(this.imgTitleBorder);
-            this.panel1.Controls.Add(this.imgTableBorder);
-            this.panel1.Controls.Add(this.imgTotalBorder);
-            this.panel1.Location = new System.Drawing.Point(5, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(596, 617);
-            this.panel1.TabIndex = 22;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Black;
-            this.pictureBox2.Location = new System.Drawing.Point(476, 52);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1, 498);
-            this.pictureBox2.TabIndex = 28;
-            this.pictureBox2.TabStop = false;
+            this.pnlBasketList.Controls.Add(this.pictureBox1);
+            this.pnlBasketList.Controls.Add(this.pictureBox2);
+            this.pnlBasketList.Controls.Add(this.lblItemPrice);
+            this.pnlBasketList.Controls.Add(this.lblTotalSum);
+            this.pnlBasketList.Controls.Add(this.imgItemCounterBorder);
+            this.pnlBasketList.Controls.Add(this.lblItemName);
+            this.pnlBasketList.Controls.Add(this.imgTitleBorder);
+            this.pnlBasketList.Controls.Add(this.imgTotalBorder);
+            this.pnlBasketList.Controls.Add(this.imgTableBorder);
+            this.pnlBasketList.Location = new System.Drawing.Point(5, 4);
+            this.pnlBasketList.Name = "pnlBasketList";
+            this.pnlBasketList.Size = new System.Drawing.Size(596, 617);
+            this.pnlBasketList.TabIndex = 22;
             // 
             // pictureBox1
             // 
@@ -279,6 +270,15 @@
             this.pictureBox1.Size = new System.Drawing.Size(589, 1);
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Black;
+            this.pictureBox2.Location = new System.Drawing.Point(476, 52);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1, 498);
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
             // 
             // lblItemPrice
             // 
@@ -308,15 +308,6 @@
             this.imgTitleBorder.TabIndex = 23;
             this.imgTitleBorder.TabStop = false;
             // 
-            // imgTableBorder
-            // 
-            this.imgTableBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgTableBorder.Location = new System.Drawing.Point(2, 52);
-            this.imgTableBorder.Name = "imgTableBorder";
-            this.imgTableBorder.Size = new System.Drawing.Size(593, 498);
-            this.imgTableBorder.TabIndex = 25;
-            this.imgTableBorder.TabStop = false;
-            // 
             // imgTotalBorder
             // 
             this.imgTotalBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -325,6 +316,15 @@
             this.imgTotalBorder.Size = new System.Drawing.Size(593, 50);
             this.imgTotalBorder.TabIndex = 22;
             this.imgTotalBorder.TabStop = false;
+            // 
+            // imgTableBorder
+            // 
+            this.imgTableBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgTableBorder.Location = new System.Drawing.Point(2, 52);
+            this.imgTableBorder.Name = "imgTableBorder";
+            this.imgTableBorder.Size = new System.Drawing.Size(593, 498);
+            this.imgTableBorder.TabIndex = 25;
+            this.imgTableBorder.TabStop = false;
             // 
             // FormBasketList
             // 
@@ -346,21 +346,19 @@
             this.Controls.Add(this.lblBasket);
             this.Controls.Add(this.lblInstruction);
             this.Controls.Add(this.lblBasketList);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlBasketList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormBasketList";
             this.Text = "Contactless Self-Checkout";
-            this.Load += new System.EventHandler(this.BasketListForm_Load);
-            this.Shown += new System.EventHandler(this.FormBasketList_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.imgShoppingCart)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.pnlBasketList.ResumeLayout(false);
+            this.pnlBasketList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgItemCounterBorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTitleBorder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgTableBorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTotalBorder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgTableBorder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,7 +383,7 @@
         private System.Windows.Forms.Label lblTotalSum;
         private System.Windows.Forms.Button btnRemoveItem;
         private System.Windows.Forms.Label lblItemName;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlBasketList;
         private System.Windows.Forms.PictureBox imgItemCounterBorder;
         private System.Windows.Forms.PictureBox imgTitleBorder;
         private System.Windows.Forms.PictureBox imgTotalBorder;
