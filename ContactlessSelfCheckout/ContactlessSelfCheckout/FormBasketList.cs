@@ -90,7 +90,7 @@ namespace ContactlessSelfCheckout
         private void BtnVegetables_Click(object sender, EventArgs e)
         {
             // This function creates a new object for the FormVegetables, and shows the new form directly on top of the previous form
-            FormVegetables formVegetables = new FormVegetables();
+            FormVegetables formVegetables = new FormVegetables(this);
             formVegetables.Show();
             formVegetables.Left = this.Left;
             formVegetables.Top = this.Top;

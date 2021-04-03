@@ -14,11 +14,12 @@ namespace ContactlessSelfCheckout
     public partial class FormVegetables : Form
     {
         public readonly string formTitle = "Vegetables";
-        private readonly FormBasketList formBasketList = new FormBasketList();
+        private readonly FormBasketList formBasketList ;
         readonly DatabaseHelper databaseHelper = new DatabaseHelper();
         readonly DataTable dataTable = new DataTable();
-        public FormVegetables()
+        public FormVegetables(FormBasketList formBasketListRef)
         {
+            formBasketList = formBasketListRef;
             InitializeComponent();
         }
 

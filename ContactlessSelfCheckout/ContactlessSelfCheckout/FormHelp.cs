@@ -15,6 +15,7 @@ namespace ContactlessSelfCheckout
         private readonly string switchFormTitle;
         public FormHelp(string formTitle)
         {
+            
             InitializeComponent();
             // override the class string variable for the switch from the previous screen
             switchFormTitle = formTitle;
@@ -38,11 +39,6 @@ namespace ContactlessSelfCheckout
                 case "BasketList":
                     FormBasketList formBasketList = new FormBasketList();
                     formBasketList.Show();
-                    this.Hide();
-                    break;
-                case "Vegetables":
-                    FormVegetables formVegetables= new FormVegetables();
-                    formVegetables.Show();
                     this.Hide();
                     break;
                 default:
