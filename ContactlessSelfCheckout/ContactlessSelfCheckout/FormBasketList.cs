@@ -21,17 +21,12 @@ namespace ContactlessSelfCheckout
             InitializeComponent();
         }
 
-        private void RefreshForm()
-        {
-
-        }
-
         public void AddProductToList(Product product) 
         {
             // this function allows for adding of products from buttons in other forms
             basketList.Add(product);
             UpdateCounter();
-            CreateNewLabel(product.productName);
+            CreateListLabel(product.productName, product.productPrice);
             // reposition the labels?
         }
 
@@ -41,21 +36,33 @@ namespace ContactlessSelfCheckout
             lblBasketCounter.Text = CounterStringFormatting(basketList.Count);
         }
 
-        private void CreateNewLabel(String productName)
+        private void CreateListLabel(String productName, decimal productPrice)
         {
             // this function creates new text labels to appear in the list of products in the basket
-            Point newLocation = new Point(5, 100);
+            Point nameLabelLocation = new Point(5, 100);
+            Point priceLabelLocation = new Point(500, 100);
 
-            Label lblNewProduct = new Label
+            Label lblProductName = new Label
             {
                 Text = productName,
-                Location = newLocation,
+                Location = nameLabelLocation,
                 Font = new Font("Microsoft Sans Serif", 15),
                 AutoSize = true,
                 ForeColor = Color.Black
             };
-            pnlBasketList.Controls.Add(lblNewProduct);
-            lblNewProduct.BringToFront();
+            pnlBasketList.Controls.Add(lblProductName);
+            lblProductName.BringToFront();
+
+            Label lblProductPrice = new Label
+            {
+                Text = "£ " + productPrice.ToString(),
+                Location = priceLabelLocation,
+                Font = new Font("Microsoft Sans Serif", 15),
+                AutoSize = true,
+                ForeColor = Color.Black
+            };
+            pnlBasketList.Controls.Add(lblProductPrice);
+            lblProductPrice.BringToFront();
         }
 
         private string CounterStringFormatting(int counterSize)
@@ -83,8 +90,10 @@ namespace ContactlessSelfCheckout
         {
             // This function creates a new object for the FormHelp, hides the current form, and shows the new form
             FormHelp formHelp = new FormHelp(formTitle);
-            this.Hide();
             formHelp.Show();
+            formHelp.Left = this.Left;
+            formHelp.Top = this.Top;
+            this.Hide();
         }
 
         private void BtnVegetables_Click(object sender, EventArgs e)

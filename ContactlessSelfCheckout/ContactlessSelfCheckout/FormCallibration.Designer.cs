@@ -69,6 +69,7 @@
             this.btnHelp.TabIndex = 5;
             this.btnHelp.Text = "Help";
             this.btnHelp.UseVisualStyleBackColor = false;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // imgCameraDisplay
             // 
@@ -122,6 +123,7 @@
             this.Controls.Add(this.lblScreenTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormCallibration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contactless Self-Checkout";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CallibrationForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.imgCameraDisplay)).EndInit();

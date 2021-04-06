@@ -22,16 +22,20 @@ namespace ContactlessSelfCheckout
         {
             // This function creates a new object for the FormHelp, hides the current form, and shows the new form
             FormHelp formHelp = new FormHelp(formTitle);
-            this.Hide();
             formHelp.Show();
+            formHelp.Left = this.Left;
+            formHelp.Top = this.Top;
+            this.Hide();
         }
 
         private void BtnStart_Click(object sender, EventArgs e)
         {
             // This function creates a new object for the FormBasketList, hides the current form, and shows the new form
             FormBasketList formBasketList= new FormBasketList();
-            this.Hide();
             formBasketList.Show();
+            formBasketList.Left = this.Left;
+            formBasketList.Top = this.Top;
+            this.Hide();
         }
     }
 }

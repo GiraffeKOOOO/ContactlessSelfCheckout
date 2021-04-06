@@ -127,6 +127,7 @@
             this.Controls.Add(this.lblAlphabetSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormVegetables";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contactless Self-Checkout";
             this.Load += new System.EventHandler(this.FormVegetables_Load);
             ((System.ComponentModel.ISupportInitialize)(this.db_ProductsDataSet)).EndInit();
