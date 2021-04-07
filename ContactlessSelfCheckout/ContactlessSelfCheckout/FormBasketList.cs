@@ -32,7 +32,6 @@ namespace ContactlessSelfCheckout
             RepositionLabels();
             CalculateTotal(product.productPrice);
             UpdateTotalLbl();
-            // calculate total
         }
 
         public void UpdateCounter() 
@@ -116,11 +115,13 @@ namespace ContactlessSelfCheckout
 
         private decimal CalculateTotal(decimal productCost)
         {
+            // function for calculating the basket total
             basketTotal += productCost;
             return basketTotal;
         }
         private void UpdateTotalLbl()
         {
+            // function for changing the text of the total cost label to match the total cost
             lblTotalSum.Text = "£ " + basketTotal.ToString();   
         }
 

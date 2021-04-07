@@ -24,6 +24,15 @@ namespace ContactlessSelfCheckout
         }
         private void FormVegetables_Load(object sender, EventArgs e)
         {
+            GenerateButtons();
+            GenerateAlphabet();
+        }
+
+
+        private void GenerateButtons()
+        {
+            // this function collects all the items in the database that are vegetables, and creates them in to buttons
+
             // Load data into the 'db_ProductsDataSet.Table_Product' table.
             this.table_ProductTableAdapter.Fill(this.db_ProductsDataSet.Table_Product);
 
@@ -48,6 +57,7 @@ namespace ContactlessSelfCheckout
                 // changing the properties of the button based on the details of the product from the database
                 Button button = new Button
                 {
+                    Name = productName,
                     Size = new Size(120, 80),
                     Location = newLocation,
                     Text = productName,
@@ -55,7 +65,7 @@ namespace ContactlessSelfCheckout
 
                 };
 
-                button.Click += delegate 
+                button.Click += delegate
                 {
                     // creating a product object to be added to the basket list
                     Product product = new Product(productID, productName, productCategory, productPrice, productStock);
@@ -63,12 +73,68 @@ namespace ContactlessSelfCheckout
                 };
                 // adjusting the location for the next button
                 newLocation.Offset(button.Width + 30, 0);
+                // adding the button to the main panel of this form
                 pnlVegetableItems.Controls.Add(button);
             }
 
             databaseHelper.CloseConnection();
         }
 
+        private void GenerateAlphabet()
+        {
+            // this function generates the clickable alphabet at the top of the form that allows for filtering
+
+            // initialising the alphabet array
+            char[] alphabet = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+
+            // initialising the array of buttons created
+            var vegetableButtons = pnlVegetableItems.Controls.OfType<Button>();
+            
+            // dimensions of the panel, used for calculations of button width
+            int maxWidth = pnlAlphabet.Width;
+            int maxButtonWidth = maxWidth / alphabet.Length;
+
+            // creating a new point variable to allow for the product buttons to be in different locations
+            Point newLocation = new Point(4, 6);
+
+            // foreach loop to go over the characters in the alphabet and create them in to buttons
+            foreach (var letter in alphabet)
+            {
+                Button characterButton = new Button
+                {
+                    Name = letter.ToString(),
+                    Size = new Size(maxButtonWidth-5, 35),
+                    Location = newLocation,
+                    Text = letter.ToString(),
+                    Font = new Font("Microsoft Sans Serif", 16),
+                };
+
+                characterButton.Click += delegate
+                {
+                    Point sortedLocation = new Point(5, 5);
+                    foreach (var vegetableButton in vegetableButtons)
+                    {
+                        // show all the buttons to allow for looping
+                        vegetableButton.Show();
+
+                        if (!vegetableButton.Text.StartsWith(characterButton.Name))
+                        {
+                            vegetableButton.Hide();
+                        }
+                        else
+                        {
+                            vegetableButton.Location = sortedLocation;
+                            sortedLocation.Offset(vegetableButton.Width + 30, 0);
+                        }
+                    }
+                };
+
+                // adjusting the location for the next button
+                newLocation.Offset(characterButton.Width + 5, 0);
+                // adding the character buttons to the alphabet search panel
+                pnlAlphabet.Controls.Add(characterButton);
+            }
+        }
         private void BtnHelp_Click(object sender, EventArgs e)
         {
             // This function creates a new object for the FormHelp, hides the current form, and shows the new form

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblAlphabetSearch = new System.Windows.Forms.Label();
             this.lblAlphabetTitle = new System.Windows.Forms.Label();
             this.btnHelp = new System.Windows.Forms.Button();
             this.pnlVegetableItems = new System.Windows.Forms.Panel();
@@ -38,22 +37,11 @@
             this.dbProductsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.table_ProductTableAdapter = new ContactlessSelfCheckout.Db_ProductsDataSetTableAdapters.Table_ProductTableAdapter();
+            this.pnlAlphabet = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.db_ProductsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbProductsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableProductBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblAlphabetSearch
-            // 
-            this.lblAlphabetSearch.AutoSize = true;
-            this.lblAlphabetSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblAlphabetSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlphabetSearch.Location = new System.Drawing.Point(17, 42);
-            this.lblAlphabetSearch.Name = "lblAlphabetSearch";
-            this.lblAlphabetSearch.Size = new System.Drawing.Size(975, 33);
-            this.lblAlphabetSearch.TabIndex = 0;
-            this.lblAlphabetSearch.Text = "A   B   C   D   E   F   G   H   I   J   K   L   M   N   O   P   Q   R   S   T   U" +
-    "   V   X   Y   Z";
             // 
             // lblAlphabetTitle
             // 
@@ -117,16 +105,24 @@
             // 
             this.table_ProductTableAdapter.ClearBeforeFill = true;
             // 
+            // pnlAlphabet
+            // 
+            this.pnlAlphabet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlAlphabet.Location = new System.Drawing.Point(3, 37);
+            this.pnlAlphabet.Name = "pnlAlphabet";
+            this.pnlAlphabet.Size = new System.Drawing.Size(1001, 52);
+            this.pnlAlphabet.TabIndex = 10;
+            // 
             // FormVegetables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.pnlAlphabet);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.pnlVegetableItems);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblAlphabetTitle);
-            this.Controls.Add(this.lblAlphabetSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormVegetables";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -141,8 +137,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblAlphabetSearch;
         private System.Windows.Forms.Label lblAlphabetTitle;
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Panel pnlVegetableItems;
@@ -151,5 +145,6 @@
         private Db_ProductsDataSet db_ProductsDataSet;
         private System.Windows.Forms.BindingSource tableProductBindingSource;
         private Db_ProductsDataSetTableAdapters.Table_ProductTableAdapter table_ProductTableAdapter;
+        private System.Windows.Forms.Panel pnlAlphabet;
     }
 }
