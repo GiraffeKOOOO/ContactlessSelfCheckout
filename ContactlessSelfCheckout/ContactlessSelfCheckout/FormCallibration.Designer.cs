@@ -69,6 +69,7 @@
             this.btnHelp.TabIndex = 5;
             this.btnHelp.Text = "Help";
             this.btnHelp.UseVisualStyleBackColor = false;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // imgCameraDisplay
             // 
@@ -88,7 +89,7 @@
             this.btnRestart.TabIndex = 8;
             this.btnRestart.Text = "restart";
             this.btnRestart.UseVisualStyleBackColor = true;
-            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
+            this.btnRestart.Click += new System.EventHandler(this.BtnRestart_Click);
             // 
             // btnStop
             // 
@@ -98,7 +99,7 @@
             this.btnStop.TabIndex = 9;
             this.btnStop.Text = "stop";
             this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.button2_Click);
+            this.btnStop.Click += new System.EventHandler(this.Button2_Click);
             // 
             // comboBox1
             // 
@@ -107,9 +108,8 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 10;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // CallibrationForm
+            // FormCallibration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,7 +121,9 @@
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblInstruction);
             this.Controls.Add(this.lblScreenTitle);
-            this.Name = "CallibrationForm";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "FormCallibration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contactless Self-Checkout";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CallibrationForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.imgCameraDisplay)).EndInit();

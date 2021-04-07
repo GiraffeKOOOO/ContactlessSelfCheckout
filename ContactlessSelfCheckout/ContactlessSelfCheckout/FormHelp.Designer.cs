@@ -37,7 +37,8 @@
             // 
             // btnBack
             // 
-            this.btnBack.BackColor = System.Drawing.Color.Silver;
+            this.btnBack.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.btnBack.Location = new System.Drawing.Point(445, 612);
             this.btnBack.Name = "btnBack";
@@ -45,7 +46,7 @@
             this.btnBack.TabIndex = 7;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // lblInstruction
             // 
@@ -76,8 +77,11 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblInstruction);
             this.Controls.Add(this.btnBack);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormHelp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contactless Self-Checkout";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

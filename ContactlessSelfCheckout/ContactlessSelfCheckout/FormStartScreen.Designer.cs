@@ -58,7 +58,8 @@
             // 
             // btnStart
             // 
-            this.btnStart.BackColor = System.Drawing.Color.Silver;
+            this.btnStart.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.btnStart.Location = new System.Drawing.Point(351, 298);
             this.btnStart.Name = "btnStart";
@@ -66,11 +67,12 @@
             this.btnStart.TabIndex = 2;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = false;
-            this.btnStart.Click += new System.EventHandler(this.startButton_Click);
+            this.btnStart.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // btnOwnBag
             // 
-            this.btnOwnBag.BackColor = System.Drawing.Color.Silver;
+            this.btnOwnBag.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnOwnBag.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOwnBag.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.btnOwnBag.Location = new System.Drawing.Point(351, 416);
             this.btnOwnBag.Name = "btnOwnBag";
@@ -78,11 +80,12 @@
             this.btnOwnBag.TabIndex = 3;
             this.btnOwnBag.Text = "I have my own bag";
             this.btnOwnBag.UseVisualStyleBackColor = false;
-            this.btnOwnBag.Click += new System.EventHandler(this.ownBagButton_Click);
+            this.btnOwnBag.Click += new System.EventHandler(this.OwnBagButton_Click);
             // 
             // btnHelp
             // 
-            this.btnHelp.BackColor = System.Drawing.Color.Silver;
+            this.btnHelp.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.btnHelp.Location = new System.Drawing.Point(23, 627);
             this.btnHelp.Name = "btnHelp";
@@ -90,9 +93,9 @@
             this.btnHelp.TabIndex = 4;
             this.btnHelp.Text = "Help";
             this.btnHelp.UseVisualStyleBackColor = false;
-            this.btnHelp.Click += new System.EventHandler(this.helpButton_Click);
+            this.btnHelp.Click += new System.EventHandler(this.HelpButton_Click);
             // 
-            // StartScreenForm
+            // FormStartScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -102,8 +105,11 @@
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblInstruction);
             this.Controls.Add(this.lblScreenTitle);
-            this.Name = "StartScreenForm";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "FormStartScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contactless Self-checkout";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
