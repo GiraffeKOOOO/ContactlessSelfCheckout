@@ -67,7 +67,8 @@
             // 
             // btnHelp
             // 
-            this.btnHelp.BackColor = System.Drawing.Color.Silver;
+            this.btnHelp.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.btnHelp.Location = new System.Drawing.Point(12, 627);
             this.btnHelp.Name = "btnHelp";
@@ -86,7 +87,8 @@
             // 
             // btnBack
             // 
-            this.btnBack.BackColor = System.Drawing.Color.Silver;
+            this.btnBack.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.btnBack.Location = new System.Drawing.Point(430, 627);
             this.btnBack.Name = "btnBack";

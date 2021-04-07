@@ -26,16 +26,19 @@ namespace ContactlessSelfCheckout
         private void BtnHelp_Click(object sender, EventArgs e)
         {
             // This function creates a new object for the FormHelp, hides the current form, and shows the new form
-            FormHelp formHelp = new FormHelp(formTitle);
-            this.Hide();
+            FormHelp formHelp = new FormHelp();
             formHelp.Show();
+            formHelp.Left = this.Left;
+            formHelp.Top = this.Top;
         }
 
         private void BtnBack_Click(object sender, EventArgs e)
         {
             // This function hides the current form returning the user to the basket list
-            this.Hide();
             formBasketList.Show();
+            formBasketList.Left = this.Left;
+            formBasketList.Top = this.Top;
+            this.Hide();
         }
 
         private void FormVegetables_Load(object sender, EventArgs e)

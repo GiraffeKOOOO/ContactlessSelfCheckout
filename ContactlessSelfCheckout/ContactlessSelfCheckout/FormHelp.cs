@@ -12,45 +12,14 @@ namespace ContactlessSelfCheckout
 {
     public partial class FormHelp : Form
     {
-        private readonly string switchFormTitle;
-        public FormHelp(string formTitle)
+        public FormHelp()
         {
-            
             InitializeComponent();
-            // override the class string variable for the switch from the previous screen
-            switchFormTitle = formTitle;
         }
 
         private void BtnBack_Click(object sender, EventArgs e)
         {
-            // switch for returning to the previous screen, takes in the string variable from the screen on which the help button was called, and uses the string as the cases
-            switch (switchFormTitle) 
-            {
-                case "Start":
-                    FormStartScreen formStartScreen = new FormStartScreen();
-                    formStartScreen.Show();
-                    formStartScreen.Left = this.Left;
-                    formStartScreen.Top = this.Top;
-                    this.Hide();
-                    break;
-                case "OwnBag":
-                    FormOwnBag formOwnBag = new FormOwnBag();
-                    formOwnBag.Show();
-                    formOwnBag.Left = this.Left;
-                    formOwnBag.Top = this.Top;
-                    this.Hide();
-                    break;
-                case "BasketList":
-                    FormBasketList formBasketList = new FormBasketList();
-                    formBasketList.Show();
-                    formBasketList.Left = this.Left;
-                    formBasketList.Top = this.Top;
-                    this.Hide();
-                    break;
-                default:
-                    Console.Write("No screen title provided");
-                    break;
-            }
+            this.Hide();
         }
     }
 }

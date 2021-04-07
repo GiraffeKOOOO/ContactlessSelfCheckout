@@ -42,8 +42,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnBarcode = new System.Windows.Forms.Button();
             this.lblBasketCounter = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.lblTotalSum = new System.Windows.Forms.Label();
             this.btnRemoveItem = new System.Windows.Forms.Button();
             this.lblItemName = new System.Windows.Forms.Label();
             this.pnlBasketList = new System.Windows.Forms.Panel();
@@ -52,8 +50,9 @@
             this.lblItemPrice = new System.Windows.Forms.Label();
             this.imgItemCounterBorder = new System.Windows.Forms.PictureBox();
             this.imgTitleBorder = new System.Windows.Forms.PictureBox();
+            this.lblTotalSum = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.imgTotalBorder = new System.Windows.Forms.PictureBox();
-            this.imgTableBorder = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgShoppingCart)).BeginInit();
             this.pnlBasketList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,7 +60,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgItemCounterBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTitleBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTotalBorder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgTableBorder)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBasketList
@@ -97,7 +95,7 @@
             // imgShoppingCart
             // 
             this.imgShoppingCart.Image = ((System.Drawing.Image)(resources.GetObject("imgShoppingCart.Image")));
-            this.imgShoppingCart.Location = new System.Drawing.Point(209, 12);
+            this.imgShoppingCart.Location = new System.Drawing.Point(209, 14);
             this.imgShoppingCart.Name = "imgShoppingCart";
             this.imgShoppingCart.Size = new System.Drawing.Size(33, 31);
             this.imgShoppingCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -106,7 +104,8 @@
             // 
             // btnHelp
             // 
-            this.btnHelp.BackColor = System.Drawing.Color.Silver;
+            this.btnHelp.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.btnHelp.Location = new System.Drawing.Point(12, 627);
             this.btnHelp.Name = "btnHelp";
@@ -118,9 +117,10 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Silver;
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.button1.Location = new System.Drawing.Point(669, 598);
+            this.button1.Location = new System.Drawing.Point(697, 568);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(241, 82);
             this.button1.TabIndex = 8;
@@ -129,9 +129,10 @@
             // 
             // btnVegetables
             // 
-            this.btnVegetables.BackColor = System.Drawing.Color.Silver;
+            this.btnVegetables.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnVegetables.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVegetables.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.btnVegetables.Location = new System.Drawing.Point(614, 107);
+            this.btnVegetables.Location = new System.Drawing.Point(629, 107);
             this.btnVegetables.Name = "btnVegetables";
             this.btnVegetables.Size = new System.Drawing.Size(181, 101);
             this.btnVegetables.TabIndex = 10;
@@ -141,9 +142,11 @@
             // 
             // btnFruit
             // 
-            this.btnFruit.BackColor = System.Drawing.Color.Silver;
+            this.btnFruit.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnFruit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnFruit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFruit.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.btnFruit.Location = new System.Drawing.Point(815, 107);
+            this.btnFruit.Location = new System.Drawing.Point(820, 107);
             this.btnFruit.Name = "btnFruit";
             this.btnFruit.Size = new System.Drawing.Size(181, 101);
             this.btnFruit.TabIndex = 11;
@@ -152,9 +155,10 @@
             // 
             // btnBakery
             // 
-            this.btnBakery.BackColor = System.Drawing.Color.Silver;
+            this.btnBakery.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnBakery.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBakery.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.btnBakery.Location = new System.Drawing.Point(614, 268);
+            this.btnBakery.Location = new System.Drawing.Point(629, 253);
             this.btnBakery.Name = "btnBakery";
             this.btnBakery.Size = new System.Drawing.Size(181, 101);
             this.btnBakery.TabIndex = 12;
@@ -163,9 +167,10 @@
             // 
             // btnMultipack
             // 
-            this.btnMultipack.BackColor = System.Drawing.Color.Silver;
+            this.btnMultipack.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnMultipack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMultipack.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.btnMultipack.Location = new System.Drawing.Point(815, 268);
+            this.btnMultipack.Location = new System.Drawing.Point(820, 253);
             this.btnMultipack.Name = "btnMultipack";
             this.btnMultipack.Size = new System.Drawing.Size(181, 101);
             this.btnMultipack.TabIndex = 13;
@@ -174,9 +179,10 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.Silver;
+            this.btnSearch.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.btnSearch.Location = new System.Drawing.Point(614, 420);
+            this.btnSearch.Location = new System.Drawing.Point(629, 389);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(181, 101);
             this.btnSearch.TabIndex = 14;
@@ -185,9 +191,10 @@
             // 
             // btnBarcode
             // 
-            this.btnBarcode.BackColor = System.Drawing.Color.Silver;
+            this.btnBarcode.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnBarcode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnBarcode.Location = new System.Drawing.Point(815, 422);
+            this.btnBarcode.Location = new System.Drawing.Point(820, 391);
             this.btnBarcode.Name = "btnBarcode";
             this.btnBarcode.Size = new System.Drawing.Size(181, 101);
             this.btnBarcode.TabIndex = 15;
@@ -198,36 +205,17 @@
             // 
             this.lblBasketCounter.AutoSize = true;
             this.lblBasketCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblBasketCounter.Location = new System.Drawing.Point(248, 18);
+            this.lblBasketCounter.Location = new System.Drawing.Point(250, 18);
             this.lblBasketCounter.Name = "lblBasketCounter";
             this.lblBasketCounter.Size = new System.Drawing.Size(45, 25);
             this.lblBasketCounter.TabIndex = 16;
             this.lblBasketCounter.Text = "000";
             this.lblBasketCounter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblTotal.Location = new System.Drawing.Point(12, 582);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(56, 25);
-            this.lblTotal.TabIndex = 17;
-            this.lblTotal.Text = "Total";
-            // 
-            // lblTotalSum
-            // 
-            this.lblTotalSum.AutoSize = true;
-            this.lblTotalSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblTotalSum.Location = new System.Drawing.Point(455, 578);
-            this.lblTotalSum.Name = "lblTotalSum";
-            this.lblTotalSum.Size = new System.Drawing.Size(110, 25);
-            this.lblTotalSum.TabIndex = 18;
-            this.lblTotalSum.Text = "£1,000,000";
-            // 
             // btnRemoveItem
             // 
-            this.btnRemoveItem.BackColor = System.Drawing.Color.Silver;
+            this.btnRemoveItem.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRemoveItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.btnRemoveItem.Location = new System.Drawing.Point(263, 627);
             this.btnRemoveItem.Name = "btnRemoveItem";
@@ -240,7 +228,7 @@
             // 
             this.lblItemName.AutoSize = true;
             this.lblItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblItemName.Location = new System.Drawing.Point(7, 61);
+            this.lblItemName.Location = new System.Drawing.Point(17, 11);
             this.lblItemName.Name = "lblItemName";
             this.lblItemName.Size = new System.Drawing.Size(49, 25);
             this.lblItemName.TabIndex = 20;
@@ -248,33 +236,31 @@
             // 
             // pnlBasketList
             // 
+            this.pnlBasketList.AutoScroll = true;
+            this.pnlBasketList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlBasketList.Controls.Add(this.pictureBox1);
             this.pnlBasketList.Controls.Add(this.pictureBox2);
             this.pnlBasketList.Controls.Add(this.lblItemPrice);
-            this.pnlBasketList.Controls.Add(this.lblTotalSum);
-            this.pnlBasketList.Controls.Add(this.imgItemCounterBorder);
             this.pnlBasketList.Controls.Add(this.lblItemName);
-            this.pnlBasketList.Controls.Add(this.imgTitleBorder);
-            this.pnlBasketList.Controls.Add(this.imgTotalBorder);
-            this.pnlBasketList.Controls.Add(this.imgTableBorder);
-            this.pnlBasketList.Location = new System.Drawing.Point(5, 4);
+            this.pnlBasketList.Location = new System.Drawing.Point(5, 59);
             this.pnlBasketList.Name = "pnlBasketList";
-            this.pnlBasketList.Size = new System.Drawing.Size(596, 617);
+            this.pnlBasketList.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.pnlBasketList.Size = new System.Drawing.Size(609, 506);
             this.pnlBasketList.TabIndex = 22;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 93);
+            this.pictureBox1.Location = new System.Drawing.Point(2, 46);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(589, 1);
+            this.pictureBox1.Size = new System.Drawing.Size(600, 1);
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Black;
-            this.pictureBox2.Location = new System.Drawing.Point(476, 52);
+            this.pictureBox2.Location = new System.Drawing.Point(476, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(1, 498);
             this.pictureBox2.TabIndex = 28;
@@ -284,7 +270,7 @@
             // 
             this.lblItemPrice.AutoSize = true;
             this.lblItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblItemPrice.Location = new System.Drawing.Point(510, 61);
+            this.lblItemPrice.Location = new System.Drawing.Point(512, 13);
             this.lblItemPrice.Name = "lblItemPrice";
             this.lblItemPrice.Size = new System.Drawing.Size(56, 25);
             this.lblItemPrice.TabIndex = 26;
@@ -293,38 +279,49 @@
             // imgItemCounterBorder
             // 
             this.imgItemCounterBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgItemCounterBorder.Location = new System.Drawing.Point(192, 3);
+            this.imgItemCounterBorder.Location = new System.Drawing.Point(197, 10);
             this.imgItemCounterBorder.Name = "imgItemCounterBorder";
             this.imgItemCounterBorder.Size = new System.Drawing.Size(286, 43);
-            this.imgItemCounterBorder.TabIndex = 24;
+            this.imgItemCounterBorder.TabIndex = 25;
             this.imgItemCounterBorder.TabStop = false;
             // 
             // imgTitleBorder
             // 
             this.imgTitleBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgTitleBorder.Location = new System.Drawing.Point(2, 3);
+            this.imgTitleBorder.Location = new System.Drawing.Point(5, 10);
             this.imgTitleBorder.Name = "imgTitleBorder";
             this.imgTitleBorder.Size = new System.Drawing.Size(169, 43);
-            this.imgTitleBorder.TabIndex = 23;
+            this.imgTitleBorder.TabIndex = 26;
             this.imgTitleBorder.TabStop = false;
+            // 
+            // lblTotalSum
+            // 
+            this.lblTotalSum.AutoSize = true;
+            this.lblTotalSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblTotalSum.Location = new System.Drawing.Point(535, 583);
+            this.lblTotalSum.Name = "lblTotalSum";
+            this.lblTotalSum.Size = new System.Drawing.Size(39, 25);
+            this.lblTotalSum.TabIndex = 27;
+            this.lblTotalSum.Text = "£ 0";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblTotal.Location = new System.Drawing.Point(22, 583);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(56, 25);
+            this.lblTotal.TabIndex = 28;
+            this.lblTotal.Text = "Total";
             // 
             // imgTotalBorder
             // 
             this.imgTotalBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgTotalBorder.Location = new System.Drawing.Point(2, 566);
+            this.imgTotalBorder.Location = new System.Drawing.Point(9, 571);
             this.imgTotalBorder.Name = "imgTotalBorder";
-            this.imgTotalBorder.Size = new System.Drawing.Size(593, 50);
-            this.imgTotalBorder.TabIndex = 22;
+            this.imgTotalBorder.Size = new System.Drawing.Size(605, 50);
+            this.imgTotalBorder.TabIndex = 29;
             this.imgTotalBorder.TabStop = false;
-            // 
-            // imgTableBorder
-            // 
-            this.imgTableBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgTableBorder.Location = new System.Drawing.Point(2, 52);
-            this.imgTableBorder.Name = "imgTableBorder";
-            this.imgTableBorder.Size = new System.Drawing.Size(593, 498);
-            this.imgTableBorder.TabIndex = 25;
-            this.imgTableBorder.TabStop = false;
             // 
             // FormBasketList
             // 
@@ -332,8 +329,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.lblTotal);
-            this.Controls.Add(this.btnRemoveItem);
+            this.Controls.Add(this.lblTotalSum);
+            this.Controls.Add(this.imgTotalBorder);
+            this.Controls.Add(this.lblBasketList);
+            this.Controls.Add(this.imgTitleBorder);
             this.Controls.Add(this.lblBasketCounter);
+            this.Controls.Add(this.imgShoppingCart);
+            this.Controls.Add(this.lblBasket);
+            this.Controls.Add(this.imgItemCounterBorder);
+            this.Controls.Add(this.btnRemoveItem);
             this.Controls.Add(this.btnBarcode);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnMultipack);
@@ -342,10 +346,7 @@
             this.Controls.Add(this.btnVegetables);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnHelp);
-            this.Controls.Add(this.imgShoppingCart);
-            this.Controls.Add(this.lblBasket);
             this.Controls.Add(this.lblInstruction);
-            this.Controls.Add(this.lblBasketList);
             this.Controls.Add(this.pnlBasketList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormBasketList";
@@ -359,7 +360,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgItemCounterBorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTitleBorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTotalBorder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgTableBorder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,17 +380,16 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnBarcode;
         private System.Windows.Forms.Label lblBasketCounter;
-        private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.Label lblTotalSum;
         private System.Windows.Forms.Button btnRemoveItem;
         private System.Windows.Forms.Label lblItemName;
         private System.Windows.Forms.Panel pnlBasketList;
-        private System.Windows.Forms.PictureBox imgItemCounterBorder;
-        private System.Windows.Forms.PictureBox imgTitleBorder;
-        private System.Windows.Forms.PictureBox imgTotalBorder;
-        private System.Windows.Forms.PictureBox imgTableBorder;
         private System.Windows.Forms.Label lblItemPrice;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgItemCounterBorder;
+        private System.Windows.Forms.PictureBox imgTitleBorder;
+        private System.Windows.Forms.Label lblTotalSum;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.PictureBox imgTotalBorder;
     }
 }
