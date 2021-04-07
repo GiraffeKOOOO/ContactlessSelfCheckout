@@ -38,7 +38,7 @@
             this.btnVegetables = new System.Windows.Forms.Button();
             this.btnFruit = new System.Windows.Forms.Button();
             this.btnBakery = new System.Windows.Forms.Button();
-            this.btnMultipack = new System.Windows.Forms.Button();
+            this.btnDrink = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnBarcode = new System.Windows.Forms.Button();
             this.lblBasketCounter = new System.Windows.Forms.Label();
@@ -165,17 +165,17 @@
             this.btnBakery.Text = "Bakery";
             this.btnBakery.UseVisualStyleBackColor = false;
             // 
-            // btnMultipack
+            // btnDrink
             // 
-            this.btnMultipack.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnMultipack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnMultipack.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.btnMultipack.Location = new System.Drawing.Point(820, 253);
-            this.btnMultipack.Name = "btnMultipack";
-            this.btnMultipack.Size = new System.Drawing.Size(181, 101);
-            this.btnMultipack.TabIndex = 13;
-            this.btnMultipack.Text = "Multipack";
-            this.btnMultipack.UseVisualStyleBackColor = false;
+            this.btnDrink.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnDrink.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDrink.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.btnDrink.Location = new System.Drawing.Point(820, 253);
+            this.btnDrink.Name = "btnDrink";
+            this.btnDrink.Size = new System.Drawing.Size(181, 101);
+            this.btnDrink.TabIndex = 13;
+            this.btnDrink.Text = "Drinks";
+            this.btnDrink.UseVisualStyleBackColor = false;
             // 
             // btnSearch
             // 
@@ -340,7 +340,7 @@
             this.Controls.Add(this.btnRemoveItem);
             this.Controls.Add(this.btnBarcode);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.btnMultipack);
+            this.Controls.Add(this.btnDrink);
             this.Controls.Add(this.btnBakery);
             this.Controls.Add(this.btnFruit);
             this.Controls.Add(this.btnVegetables);
@@ -376,7 +376,7 @@
         private System.Windows.Forms.Button btnVegetables;
         private System.Windows.Forms.Button btnFruit;
         private System.Windows.Forms.Button btnBakery;
-        private System.Windows.Forms.Button btnMultipack;
+        private System.Windows.Forms.Button btnDrink;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnBarcode;
         private System.Windows.Forms.Label lblBasketCounter;

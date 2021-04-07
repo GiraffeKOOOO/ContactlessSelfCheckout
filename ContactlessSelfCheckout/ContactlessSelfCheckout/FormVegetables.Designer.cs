@@ -80,9 +80,9 @@
             // 
             // pnlVegetableItems
             // 
-            this.pnlVegetableItems.Location = new System.Drawing.Point(12, 155);
+            this.pnlVegetableItems.Location = new System.Drawing.Point(12, 109);
             this.pnlVegetableItems.Name = "pnlVegetableItems";
-            this.pnlVegetableItems.Size = new System.Drawing.Size(984, 456);
+            this.pnlVegetableItems.Size = new System.Drawing.Size(984, 502);
             this.pnlVegetableItems.TabIndex = 8;
             // 
             // btnBack

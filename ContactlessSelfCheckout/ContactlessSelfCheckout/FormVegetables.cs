@@ -22,25 +22,6 @@ namespace ContactlessSelfCheckout
             formBasketList = formBasketListRef;
             InitializeComponent();
         }
-
-        private void BtnHelp_Click(object sender, EventArgs e)
-        {
-            // This function creates a new object for the FormHelp, hides the current form, and shows the new form
-            FormHelp formHelp = new FormHelp();
-            formHelp.Show();
-            formHelp.Left = this.Left;
-            formHelp.Top = this.Top;
-        }
-
-        private void BtnBack_Click(object sender, EventArgs e)
-        {
-            // This function hides the current form returning the user to the basket list
-            formBasketList.Show();
-            formBasketList.Left = this.Left;
-            formBasketList.Top = this.Top;
-            this.Hide();
-        }
-
         private void FormVegetables_Load(object sender, EventArgs e)
         {
             // Load data into the 'db_ProductsDataSet.Table_Product' table.
@@ -67,9 +48,11 @@ namespace ContactlessSelfCheckout
                 // changing the properties of the button based on the details of the product from the database
                 Button button = new Button
                 {
-                    Size = new Size(120, 90),
+                    Size = new Size(120, 80),
                     Location = newLocation,
-                    Text = productName
+                    Text = productName,
+                    Font = new Font("Microsoft Sans Serif", 12),
+
                 };
 
                 button.Click += delegate 
@@ -78,11 +61,30 @@ namespace ContactlessSelfCheckout
                     Product product = new Product(productID, productName, productCategory, productPrice, productStock);
                     formBasketList.AddProductToList(product);
                 };
-                newLocation.Offset(button.Width + 20, 0);
+                // adjusting the location for the next button
+                newLocation.Offset(button.Width + 30, 0);
                 pnlVegetableItems.Controls.Add(button);
             }
 
             databaseHelper.CloseConnection();
+        }
+
+        private void BtnHelp_Click(object sender, EventArgs e)
+        {
+            // This function creates a new object for the FormHelp, hides the current form, and shows the new form
+            FormHelp formHelp = new FormHelp();
+            formHelp.Show();
+            formHelp.Left = this.Left;
+            formHelp.Top = this.Top;
+        }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            // This function hides the current form returning the user to the basket list
+            formBasketList.Show();
+            formBasketList.Left = this.Left;
+            formBasketList.Top = this.Top;
+            this.Hide();
         }
 
     }
