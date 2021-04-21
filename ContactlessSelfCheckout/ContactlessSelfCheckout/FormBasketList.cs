@@ -143,6 +143,5 @@ namespace ContactlessSelfCheckout
             formVegetables.Top = this.Top;
             this.Hide();
         }
-
     }
 }

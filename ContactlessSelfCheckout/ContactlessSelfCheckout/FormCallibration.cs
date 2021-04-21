@@ -59,7 +59,7 @@ namespace ContactlessSelfCheckout
             FinalVideo.Stop();
         }
 
-        private void btnHelp_Click(object sender, EventArgs e)
+        private void BtnHelp_Click(object sender, EventArgs e)
         {
 
         }

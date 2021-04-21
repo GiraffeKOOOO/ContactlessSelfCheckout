@@ -38,6 +38,7 @@
             this.tableProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.table_ProductTableAdapter = new ContactlessSelfCheckout.Db_ProductsDataSetTableAdapters.Table_ProductTableAdapter();
             this.pnlAlphabet = new System.Windows.Forms.Panel();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.db_ProductsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbProductsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableProductBindingSource)).BeginInit();
@@ -113,6 +114,7 @@
             this.pnlAlphabet.Size = new System.Drawing.Size(1001, 52);
             this.pnlAlphabet.TabIndex = 10;
             // 
+            // 
             // FormVegetables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,5 +148,6 @@
         private System.Windows.Forms.BindingSource tableProductBindingSource;
         private Db_ProductsDataSetTableAdapters.Table_ProductTableAdapter table_ProductTableAdapter;
         private System.Windows.Forms.Panel pnlAlphabet;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

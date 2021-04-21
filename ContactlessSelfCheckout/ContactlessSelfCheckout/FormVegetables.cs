@@ -14,20 +14,22 @@ namespace ContactlessSelfCheckout
     public partial class FormVegetables : Form
     {
         public readonly string formTitle = "Vegetables";
-        private readonly FormBasketList formBasketList ;
+        private readonly FormBasketList formBasketList;
         readonly DatabaseHelper databaseHelper = new DatabaseHelper();
         readonly DataTable dataTable = new DataTable();
+        public bool QantitySelected { get; set; }
+
         public FormVegetables(FormBasketList formBasketListRef)
         {
             formBasketList = formBasketListRef;
             InitializeComponent();
+
         }
         private void FormVegetables_Load(object sender, EventArgs e)
         {
             GenerateButtons();
             GenerateAlphabet();
         }
-
 
         private void GenerateButtons()
         {
@@ -66,11 +68,20 @@ namespace ContactlessSelfCheckout
                 };
 
                 button.Click += delegate
-                {
-                    // creating a product object to be added to the basket list
-                    Product product = new Product(productID, productName, productCategory, productPrice, productStock);
-                    formBasketList.AddProductToList(product);
-                };
+               {
+                   // get the quantity from the user
+                   FormQuantityScreen formQuantityScreen = new FormQuantityScreen();
+                   formQuantityScreen.Show();
+                   formQuantityScreen.Top = this.Top;
+                   formQuantityScreen.Left = this.Left;
+
+                   // creating a product object to be added to the basket list
+
+                   // create an if statement for quantity selected here and create the products in a loop based on quantity here
+
+                   //Product product = new Product(productID, productName, productCategory, productPrice, productStock);
+                   //formBasketList.AddProductToList(product);
+               };
                 // adjusting the location for the next button
                 newLocation.Offset(button.Width + 30, 0);
                 // adding the button to the main panel of this form
@@ -89,7 +100,7 @@ namespace ContactlessSelfCheckout
 
             // initialising the array of buttons created
             var vegetableButtons = pnlVegetableItems.Controls.OfType<Button>();
-            
+
             // dimensions of the panel, used for calculations of button width
             int maxWidth = pnlAlphabet.Width;
             int maxButtonWidth = maxWidth / alphabet.Length;
@@ -98,12 +109,12 @@ namespace ContactlessSelfCheckout
             Point newLocation = new Point(4, 6);
 
             // foreach loop to go over the characters in the alphabet and create them in to buttons
-            foreach (var letter in alphabet)
+            foreach (char letter in alphabet)
             {
                 Button characterButton = new Button
                 {
                     Name = letter.ToString(),
-                    Size = new Size(maxButtonWidth-5, 35),
+                    Size = new Size(maxButtonWidth - 5, 35),
                     Location = newLocation,
                     Text = letter.ToString(),
                     Font = new Font("Microsoft Sans Serif", 16),
@@ -142,6 +153,7 @@ namespace ContactlessSelfCheckout
             formHelp.Show();
             formHelp.Left = this.Left;
             formHelp.Top = this.Top;
+
         }
 
         private void BtnBack_Click(object sender, EventArgs e)
