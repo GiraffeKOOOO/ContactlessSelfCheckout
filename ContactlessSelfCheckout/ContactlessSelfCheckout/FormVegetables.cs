@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
 
@@ -13,11 +12,9 @@ namespace ContactlessSelfCheckout
 {
     public partial class FormVegetables : Form
     {
-        public readonly string formTitle = "Vegetables";
         private readonly FormBasketList formBasketList;
         readonly DatabaseHelper databaseHelper = new DatabaseHelper();
         readonly DataTable dataTable = new DataTable();
-        public bool QantitySelected { get; set; }
 
         public FormVegetables(FormBasketList formBasketListRef)
         {
@@ -27,70 +24,9 @@ namespace ContactlessSelfCheckout
         }
         private void FormVegetables_Load(object sender, EventArgs e)
         {
-            GenerateButtons();
             GenerateAlphabet();
+            GenerateButtons();
         }
-
-        private void GenerateButtons()
-        {
-            // this function collects all the items in the database that are vegetables, and creates them in to buttons
-
-            // Load data into the 'db_ProductsDataSet.Table_Product' table.
-            this.table_ProductTableAdapter.Fill(this.db_ProductsDataSet.Table_Product);
-
-            // Specifying the query to only select products of category 'Vegetable'
-            string sqlQuery = "SELECT * FROM Table_Product WHERE Product_Category ='Vegetable';";
-            databaseHelper.ReadDataThroughAdapter(sqlQuery, dataTable);
-
-            // creating a new point variable to allow for the product buttons to be in different locations
-            Point newLocation = new Point(5, 5);
-
-            // foreach loop to iterate through the products pulled from the database
-            foreach (DataRow row in dataTable.Rows)
-            {
-                // storing the data from the database in to variables for easier manipulation and object creation
-                int productID = (int)row["Product_ID"];
-                string productName = row["Product_Name"].ToString();
-                string productCategory = row["Product_Category"].ToString();
-                decimal productPrice = (decimal)row["Product_Price"];
-                int productStock = (int)row["Product_Stock"];
-
-
-                // changing the properties of the button based on the details of the product from the database
-                Button button = new Button
-                {
-                    Name = productName,
-                    Size = new Size(120, 80),
-                    Location = newLocation,
-                    Text = productName,
-                    Font = new Font("Microsoft Sans Serif", 12),
-
-                };
-
-                button.Click += delegate
-               {
-                   // get the quantity from the user
-                   FormQuantityScreen formQuantityScreen = new FormQuantityScreen();
-                   formQuantityScreen.Show();
-                   formQuantityScreen.Top = this.Top;
-                   formQuantityScreen.Left = this.Left;
-
-                   // creating a product object to be added to the basket list
-
-                   // create an if statement for quantity selected here and create the products in a loop based on quantity here
-
-                   //Product product = new Product(productID, productName, productCategory, productPrice, productStock);
-                   //formBasketList.AddProductToList(product);
-               };
-                // adjusting the location for the next button
-                newLocation.Offset(button.Width + 30, 0);
-                // adding the button to the main panel of this form
-                pnlVegetableItems.Controls.Add(button);
-            }
-
-            databaseHelper.CloseConnection();
-        }
-
         private void GenerateAlphabet()
         {
             // this function generates the clickable alphabet at the top of the form that allows for filtering
@@ -146,6 +82,75 @@ namespace ContactlessSelfCheckout
                 pnlAlphabet.Controls.Add(characterButton);
             }
         }
+
+        private void GenerateButtons()
+        {
+            // this function collects all the items in the database that are vegetables, and creates them in to buttons
+
+            // Load data into the 'db_ProductsDataSet.Table_Product' table.
+            this.table_ProductTableAdapter.Fill(this.db_ProductsDataSet.Table_Product);
+
+            // Specifying the query to only select products of category 'Vegetable'
+            string sqlQuery = "SELECT * FROM Table_Product WHERE Product_Category ='Vegetable';";
+            databaseHelper.ReadDataThroughAdapter(sqlQuery, dataTable);
+
+            // creating a new point variable to allow for the product buttons to be in different locations
+            Point newLocation = new Point(5, 5);
+
+            // foreach loop to iterate through the products pulled from the database
+            foreach (DataRow row in dataTable.Rows)
+            {
+                // storing the data from the database in to variables for easier manipulation and object creation
+                int productID = (int)row["Product_ID"];
+                string productName = row["Product_Name"].ToString();
+                string productCategory = row["Product_Category"].ToString();
+                decimal productPrice = (decimal)row["Product_Price"];
+                int productStock = (int)row["Product_Stock"];
+
+
+                // changing the properties of the button based on the details of the product from the database
+                Button button = new Button
+                {
+                    Name = productName,
+                    Size = new Size(120, 80),
+                    Location = newLocation,
+                    Text = productName,
+                    Font = new Font("Microsoft Sans Serif", 12),
+
+                };
+
+                button.Click += delegate
+               {
+                   // get the quantity from the user by creating the quantity screen and passing down all the props to create the products in a for loop
+                   FormQuantityScreen formQuantityScreen = new FormQuantityScreen(this, productID, productName, productCategory, productPrice, productStock);
+                   formQuantityScreen.Show();
+                   formQuantityScreen.Top = this.Top;
+                   formQuantityScreen.Left = this.Left;
+                   this.Hide();
+               };
+                // adjusting the location for the next button
+                newLocation.Offset(button.Width + 30, 0);
+                // adding the button to the main panel of this form
+                pnlVegetableItems.Controls.Add(button);
+            }
+            databaseHelper.CloseConnection();
+        }
+
+        public void AddProduct(int productID, string productName, string productCategory, decimal productPrice, int productStock)
+        {
+            Product product = new Product(productID, productName, productCategory, productPrice, productStock);
+            formBasketList.AddProductToList(product);
+        }
+
+        public void CloseVegetableForm()
+        {
+            // this function is for being used in the quantity screen for closing this form and going back to the basket list
+            formBasketList.Show();
+            formBasketList.Left = this.Left;
+            formBasketList.Top = this.Top;
+            this.Hide();
+        }
+
         private void BtnHelp_Click(object sender, EventArgs e)
         {
             // This function creates a new object for the FormHelp, hides the current form, and shows the new form

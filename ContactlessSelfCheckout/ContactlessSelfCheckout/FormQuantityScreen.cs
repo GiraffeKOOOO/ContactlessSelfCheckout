@@ -5,32 +5,42 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ContactlessSelfCheckout
 {
     public partial class FormQuantityScreen : Form
     {
-        public int Quantity { get; set;}
-        
+        private readonly FormVegetables parent;
+        // taking in paramaters for adding products
+        private readonly int productIDRef;
+        private readonly string productNameRef;
+        private readonly string productCategoryRef;
+        private readonly decimal productPriceRef;
+        private readonly int productStockRef;
 
-        public FormQuantityScreen()
+        private int quantity;
+        public FormQuantityScreen(FormVegetables _parent, int productID, string productName, string productCategory, decimal productPrice, int productStock)
         {
+            parent = _parent;
+            productIDRef = productID;
+            productNameRef = productName;
+            productCategoryRef = productCategory;
+            productPriceRef = productPrice;
+            productStockRef = productStock;
             InitializeComponent();
         }
 
         private void FormQuantityScreen_Load(object sender, EventArgs e)
         {
-            Quantity = 0;
-            // quantitySelected = false;
+            quantity = 0;
             UpdateQuantity();
             GenerateButtons();
         }
 
         private void UpdateQuantity()
         {
-            lblQuantity.Text = Quantity.ToString();
+            lblQuantity.Text = quantity.ToString();
         }
 
         private void GenerateButtons() 
@@ -39,7 +49,6 @@ namespace ContactlessSelfCheckout
 
             int buttonWidth = (pnlNumpad.Width) / 3;
             int buttonHeight = (pnlNumpad.Height) / 3;
-
 
             // creating a new point variable to allow for the product buttons to be in different locations
             Point newLocation = new Point(4, 6);
@@ -57,7 +66,7 @@ namespace ContactlessSelfCheckout
 
                 numberButton.Click += delegate
                 {
-                    Quantity += number;
+                    quantity += number;
                     UpdateQuantity();
                 };
 
@@ -69,18 +78,27 @@ namespace ContactlessSelfCheckout
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
-            // quantitySelected = true;
+            // use the quantity in the for loop for creating products, then close both forms
+            for (int i = 0; i < quantity; i++)
+            {
+                parent.AddProduct(productIDRef, productNameRef, productCategoryRef, productPriceRef, productStockRef);
+            }
+            parent.CloseVegetableForm();
             this.Close();
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
-            Quantity = 0;
+            // quantity needs to be reset 0
+            quantity = 0;
             UpdateQuantity();
         }
 
         private void BtnBack_Click(object sender, EventArgs e)
         {
+            parent.Show();
+            parent.Left = this.Left;
+            parent.Top = this.Top;
             this.Close();
         }
 
