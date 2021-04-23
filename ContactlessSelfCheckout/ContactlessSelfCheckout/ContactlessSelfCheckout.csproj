@@ -81,6 +81,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Db_ProductsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FormQuantityScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuantityScreen.Designer.cs">
+      <DependentUpon>FormQuantityScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormVegetables.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormQuantityScreen.resx">
+      <DependentUpon>FormQuantityScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormVegetables.resx">
       <DependentUpon>FormVegetables.cs</DependentUpon>
     </EmbeddedResource>
