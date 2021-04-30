@@ -105,11 +105,13 @@
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblInstruction);
             this.Controls.Add(this.lblScreenTitle);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormStartScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contactless Self-checkout";
             this.TopMost = true;
+            this.Click += new System.EventHandler(this.FormStartScreen_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

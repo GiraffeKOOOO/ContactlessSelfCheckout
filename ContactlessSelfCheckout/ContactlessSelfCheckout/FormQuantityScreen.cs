@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ContactlessSelfCheckout
@@ -29,6 +30,14 @@ namespace ContactlessSelfCheckout
             productPriceRef = productPrice;
             productStockRef = productStock;
             InitializeComponent();
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
+        }
+
+        private void CursorAnimate()
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
+            Thread.Sleep(100);
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
         }
 
         private void FormQuantityScreen_Load(object sender, EventArgs e)
@@ -66,6 +75,7 @@ namespace ContactlessSelfCheckout
 
                 numberButton.Click += delegate
                 {
+                    CursorAnimate();
                     quantity += number;
                     UpdateQuantity();
                 };
@@ -78,6 +88,7 @@ namespace ContactlessSelfCheckout
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
+            CursorAnimate();
             // use the quantity in the for loop for creating products, then close both forms
             for (int i = 0; i < quantity; i++)
             {
@@ -89,6 +100,7 @@ namespace ContactlessSelfCheckout
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
+            CursorAnimate();
             // quantity needs to be reset 0
             quantity = 0;
             UpdateQuantity();
@@ -96,6 +108,7 @@ namespace ContactlessSelfCheckout
 
         private void BtnBack_Click(object sender, EventArgs e)
         {
+            CursorAnimate();
             parent.Show();
             parent.Left = this.Left;
             parent.Top = this.Top;
@@ -104,6 +117,7 @@ namespace ContactlessSelfCheckout
 
         private void BtnHelp_Click(object sender, EventArgs e)
         {
+            CursorAnimate();
             // This function creates a new object for the FormHelp, hides the current form, and shows the new form
             FormHelp formHelp = new FormHelp();
             formHelp.Show();
@@ -111,6 +125,5 @@ namespace ContactlessSelfCheckout
             formHelp.Top = this.Top;
         }
 
-        
     }
 }

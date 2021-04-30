@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 
 namespace ContactlessSelfCheckout
 {
@@ -17,10 +18,19 @@ namespace ContactlessSelfCheckout
         public FormStartScreen()
         {
             InitializeComponent();
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
+        }
+
+        private void CursorAnimate()
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
+            Thread.Sleep(100);
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
         }
 
         private void StartButton_Click(object sender, EventArgs e)
         {
+            CursorAnimate();
             // This function creates a new object for the FormBasketList, hides the current form, and shows the new form
             FormBasketList formBasketList = new FormBasketList();
             formBasketList.Show();
@@ -31,6 +41,7 @@ namespace ContactlessSelfCheckout
 
         private void OwnBagButton_Click(object sender, EventArgs e)
         {
+            CursorAnimate();
             // This function creates a new object for the FormOwnBag, hides the current form, and shows the new form
             FormOwnBag formOwnBag= new FormOwnBag();
             formOwnBag.Show();
@@ -41,11 +52,19 @@ namespace ContactlessSelfCheckout
 
         private void HelpButton_Click(object sender, EventArgs e)
         {
+            CursorAnimate();
             // This function creates a new object for the FormHelp, hides the current form, and shows the new form
             FormHelp formHelp = new FormHelp();
             formHelp.Show();
             formHelp.Left = this.Left;
             formHelp.Top = this.Top;
         }
+
+        private void FormStartScreen_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+        }
+
+       
     }
 }

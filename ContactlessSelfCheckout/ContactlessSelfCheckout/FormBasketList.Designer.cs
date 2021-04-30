@@ -223,6 +223,7 @@
             this.btnRemoveItem.TabIndex = 19;
             this.btnRemoveItem.Text = "Remove item";
             this.btnRemoveItem.UseVisualStyleBackColor = false;
+            this.btnRemoveItem.Click += new System.EventHandler(this.BtnRemoveItem_Click);
             // 
             // lblItemName
             // 
@@ -352,6 +353,7 @@
             this.Name = "FormBasketList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contactless Self-Checkout";
+            this.Click += new System.EventHandler(this.FormBasketList_Click);
             ((System.ComponentModel.ISupportInitialize)(this.imgShoppingCart)).EndInit();
             this.pnlBasketList.ResumeLayout(false);
             this.pnlBasketList.PerformLayout();

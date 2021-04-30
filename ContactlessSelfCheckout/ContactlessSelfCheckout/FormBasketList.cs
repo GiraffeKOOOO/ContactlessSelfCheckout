@@ -5,9 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
+using System.Threading;
 
 namespace ContactlessSelfCheckout
 {
@@ -21,6 +21,13 @@ namespace ContactlessSelfCheckout
         public FormBasketList()
         {
             InitializeComponent();
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
+        }
+        private void CursorAnimate()
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
+            Thread.Sleep(100);
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
         }
 
         public void AddProductToList(Product product) 
@@ -32,6 +39,7 @@ namespace ContactlessSelfCheckout
             RepositionLabels();
             CalculateTotal(product.productPrice);
             UpdateTotalLbl();
+            
         }
 
         public void UpdateCounter() 
@@ -127,6 +135,7 @@ namespace ContactlessSelfCheckout
 
         private void BtnHelp_Click(object sender, EventArgs e)
         {
+            CursorAnimate();
             // This function creates a new object for the FormHelp, hides the current form, and shows the new form
             FormHelp formHelp = new FormHelp();
             formHelp.Show();
@@ -136,12 +145,23 @@ namespace ContactlessSelfCheckout
 
         private void BtnVegetables_Click(object sender, EventArgs e)
         {
+            CursorAnimate();
             // This function creates a new object for the FormVegetables, and shows the new form directly on top of the previous form
             FormVegetables formVegetables = new FormVegetables(this);
             formVegetables.Show();
             formVegetables.Left = this.Left;
             formVegetables.Top = this.Top;
             this.Hide();
+        }
+
+        private void BtnRemoveItem_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+        }
+
+        private void FormBasketList_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
         }
     }
 }
