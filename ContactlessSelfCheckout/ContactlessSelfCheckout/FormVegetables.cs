@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections;
+using System.Threading;
 
 namespace ContactlessSelfCheckout
 {
@@ -20,7 +21,14 @@ namespace ContactlessSelfCheckout
         {
             formBasketList = formBasketListRef;
             InitializeComponent();
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
 
+        }
+        private void CursorAnimate()
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
+            Thread.Sleep(100);
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
         }
         private void FormVegetables_Load(object sender, EventArgs e)
         {
@@ -58,6 +66,7 @@ namespace ContactlessSelfCheckout
 
                 characterButton.Click += delegate
                 {
+                    CursorAnimate();
                     Point sortedLocation = new Point(5, 5);
                     foreach (var vegetableButton in vegetableButtons)
                     {
@@ -121,6 +130,7 @@ namespace ContactlessSelfCheckout
 
                 button.Click += delegate
                {
+                   CursorAnimate();
                    // get the quantity from the user by creating the quantity screen and passing down all the props to create the products in a for loop
                    FormQuantityScreen formQuantityScreen = new FormQuantityScreen(this, productID, productName, productCategory, productPrice, productStock);
                    formQuantityScreen.Show();
@@ -144,6 +154,7 @@ namespace ContactlessSelfCheckout
 
         public void CloseVegetableForm()
         {
+            CursorAnimate();
             // this function is for being used in the quantity screen for closing this form and going back to the basket list
             formBasketList.Show();
             formBasketList.Left = this.Left;
@@ -153,6 +164,7 @@ namespace ContactlessSelfCheckout
 
         private void BtnHelp_Click(object sender, EventArgs e)
         {
+            CursorAnimate();
             // This function creates a new object for the FormHelp, hides the current form, and shows the new form
             FormHelp formHelp = new FormHelp();
             formHelp.Show();
@@ -163,6 +175,7 @@ namespace ContactlessSelfCheckout
 
         private void BtnBack_Click(object sender, EventArgs e)
         {
+            CursorAnimate();
             // This function hides the current form returning the user to the basket list
             formBasketList.Show();
             formBasketList.Left = this.Left;
@@ -170,5 +183,9 @@ namespace ContactlessSelfCheckout
             this.Hide();
         }
 
+        private void FormVegetables_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+        }
     }
 }

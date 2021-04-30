@@ -114,7 +114,6 @@
             this.pnlAlphabet.Size = new System.Drawing.Size(1001, 52);
             this.pnlAlphabet.TabIndex = 10;
             // 
-            // 
             // FormVegetables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -130,6 +129,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contactless Self-Checkout";
             this.Load += new System.EventHandler(this.FormVegetables_Load);
+            this.Click += new System.EventHandler(this.FormVegetables_Click);
             ((System.ComponentModel.ISupportInitialize)(this.db_ProductsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbProductsDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableProductBindingSource)).EndInit();
