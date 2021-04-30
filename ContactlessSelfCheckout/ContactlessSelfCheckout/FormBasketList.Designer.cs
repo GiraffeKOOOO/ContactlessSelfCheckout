@@ -34,7 +34,7 @@
             this.lblBasket = new System.Windows.Forms.Label();
             this.imgShoppingCart = new System.Windows.Forms.PictureBox();
             this.btnHelp = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPay = new System.Windows.Forms.Button();
             this.btnVegetables = new System.Windows.Forms.Button();
             this.btnFruit = new System.Windows.Forms.Button();
             this.btnBakery = new System.Windows.Forms.Button();
@@ -115,17 +115,18 @@
             this.btnHelp.UseVisualStyleBackColor = false;
             this.btnHelp.Click += new System.EventHandler(this.BtnHelp_Click);
             // 
-            // button1
+            // btnPay
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.button1.Location = new System.Drawing.Point(697, 568);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(241, 82);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Finish and Pay";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnPay.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.btnPay.Location = new System.Drawing.Point(697, 568);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(241, 82);
+            this.btnPay.TabIndex = 8;
+            this.btnPay.Text = "Finish and Pay";
+            this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.BtnPay_Click);
             // 
             // btnVegetables
             // 
@@ -345,7 +346,7 @@
             this.Controls.Add(this.btnBakery);
             this.Controls.Add(this.btnFruit);
             this.Controls.Add(this.btnVegetables);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPay);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblInstruction);
             this.Controls.Add(this.pnlBasketList);
@@ -374,7 +375,7 @@
         private System.Windows.Forms.Label lblBasket;
         private System.Windows.Forms.PictureBox imgShoppingCart;
         private System.Windows.Forms.Button btnHelp;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Button btnVegetables;
         private System.Windows.Forms.Button btnFruit;
         private System.Windows.Forms.Button btnBakery;

@@ -163,5 +163,15 @@ namespace ContactlessSelfCheckout
         {
             CursorAnimate();
         }
+
+        private void BtnPay_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+            FormPay formPay = new FormPay(this);
+            formPay.Show();
+            formPay.Left = this.Left;
+            formPay.Top = this.Top;
+            this.Hide();
+        }
     }
 }

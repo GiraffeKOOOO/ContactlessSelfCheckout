@@ -79,6 +79,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Db_ProductsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FormPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPay.Designer.cs">
+      <DependentUpon>FormPay.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQuantityScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormPay.resx">
+      <DependentUpon>FormPay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormQuantityScreen.resx">
       <DependentUpon>FormQuantityScreen.cs</DependentUpon>
     </EmbeddedResource>
