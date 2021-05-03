@@ -85,6 +85,12 @@
     <Compile Include="FormPay.Designer.cs">
       <DependentUpon>FormPay.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPaymentMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPaymentMethod.Designer.cs">
+      <DependentUpon>FormPaymentMethod.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQuantityScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormPay.resx">
       <DependentUpon>FormPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPaymentMethod.resx">
+      <DependentUpon>FormPaymentMethod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuantityScreen.resx">
       <DependentUpon>FormQuantityScreen.cs</DependentUpon>
