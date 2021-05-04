@@ -76,7 +76,7 @@ namespace ContactlessSelfCheckout
                 numberButton.Click += delegate
                 {
                     CursorAnimate();
-                    quantity += number;
+                    quantity = number;
                     UpdateQuantity();
                 };
 

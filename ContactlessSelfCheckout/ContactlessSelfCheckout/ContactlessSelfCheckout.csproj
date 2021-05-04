@@ -79,6 +79,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Db_ProductsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FormEnding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEnding.Designer.cs">
+      <DependentUpon>FormEnding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPay.Designer.cs">
+      <DependentUpon>FormPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPaymentMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPaymentMethod.Designer.cs">
+      <DependentUpon>FormPaymentMethod.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQuantityScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +142,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormEnding.resx">
+      <DependentUpon>FormEnding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPay.resx">
+      <DependentUpon>FormPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPaymentMethod.resx">
+      <DependentUpon>FormPaymentMethod.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormQuantityScreen.resx">
       <DependentUpon>FormQuantityScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +225,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>Db_Products.mdf</DependentUpon>
     </Content>
+    <Content Include="media\card.png" />
+    <Content Include="media\cash.png" />
+    <Content Include="media\coupon.png" />
+    <Content Include="media\loading.gif" />
+    <Content Include="media\loading2.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
