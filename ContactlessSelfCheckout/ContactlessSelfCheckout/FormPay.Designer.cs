@@ -40,8 +40,12 @@ namespace ContactlessSelfCheckout
             this.btnCard = new System.Windows.Forms.Button();
             this.btnCoupon = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.lblToPay = new System.Windows.Forms.Label();
+            this.lblToPaySum = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgTitleBorder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTotalBorder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFormTitle
@@ -67,7 +71,7 @@ namespace ContactlessSelfCheckout
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblTotal.Location = new System.Drawing.Point(215, 143);
+            this.lblTotal.Location = new System.Drawing.Point(219, 110);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(56, 25);
             this.lblTotal.TabIndex = 31;
@@ -77,7 +81,7 @@ namespace ContactlessSelfCheckout
             // 
             this.lblTotalSum.AutoSize = true;
             this.lblTotalSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblTotalSum.Location = new System.Drawing.Point(728, 143);
+            this.lblTotalSum.Location = new System.Drawing.Point(732, 110);
             this.lblTotalSum.Name = "lblTotalSum";
             this.lblTotalSum.Size = new System.Drawing.Size(39, 25);
             this.lblTotalSum.TabIndex = 30;
@@ -86,7 +90,7 @@ namespace ContactlessSelfCheckout
             // imgTotalBorder
             // 
             this.imgTotalBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgTotalBorder.Location = new System.Drawing.Point(202, 131);
+            this.imgTotalBorder.Location = new System.Drawing.Point(206, 98);
             this.imgTotalBorder.Name = "imgTotalBorder";
             this.imgTotalBorder.Size = new System.Drawing.Size(605, 50);
             this.imgTotalBorder.TabIndex = 32;
@@ -96,7 +100,7 @@ namespace ContactlessSelfCheckout
             // 
             this.lblInstruction.AutoSize = true;
             this.lblInstruction.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
-            this.lblInstruction.Location = new System.Drawing.Point(320, 230);
+            this.lblInstruction.Location = new System.Drawing.Point(319, 254);
             this.lblInstruction.Name = "lblInstruction";
             this.lblInstruction.Size = new System.Drawing.Size(368, 29);
             this.lblInstruction.TabIndex = 33;
@@ -123,6 +127,7 @@ namespace ContactlessSelfCheckout
             this.btnCash.TabIndex = 35;
             this.btnCash.Text = "Cash";
             this.btnCash.UseVisualStyleBackColor = true;
+            this.btnCash.Click += new System.EventHandler(this.BtnCash_Click);
             // 
             // btnCard
             // 
@@ -132,6 +137,7 @@ namespace ContactlessSelfCheckout
             this.btnCard.TabIndex = 36;
             this.btnCard.Text = "Visa/Credit Card";
             this.btnCard.UseVisualStyleBackColor = true;
+            this.btnCard.Click += new System.EventHandler(this.BtnCard_Click);
             // 
             // btnCoupon
             // 
@@ -141,6 +147,7 @@ namespace ContactlessSelfCheckout
             this.btnCoupon.TabIndex = 37;
             this.btnCoupon.Text = "Coupon";
             this.btnCoupon.UseVisualStyleBackColor = true;
+            this.btnCoupon.Click += new System.EventHandler(this.BtnCoupon_Click);
             // 
             // btnBack
             // 
@@ -155,11 +162,43 @@ namespace ContactlessSelfCheckout
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
+            // lblToPay
+            // 
+            this.lblToPay.AutoSize = true;
+            this.lblToPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblToPay.Location = new System.Drawing.Point(219, 189);
+            this.lblToPay.Name = "lblToPay";
+            this.lblToPay.Size = new System.Drawing.Size(102, 25);
+            this.lblToPay.TabIndex = 40;
+            this.lblToPay.Text = "Left to pay";
+            // 
+            // lblToPaySum
+            // 
+            this.lblToPaySum.AutoSize = true;
+            this.lblToPaySum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblToPaySum.Location = new System.Drawing.Point(732, 189);
+            this.lblToPaySum.Name = "lblToPaySum";
+            this.lblToPaySum.Size = new System.Drawing.Size(39, 25);
+            this.lblToPaySum.TabIndex = 39;
+            this.lblToPaySum.Text = "£ 0";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(206, 177);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(605, 50);
+            this.pictureBox1.TabIndex = 41;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormPay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.lblToPay);
+            this.Controls.Add(this.lblToPaySum);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnCoupon);
             this.Controls.Add(this.btnCard);
@@ -179,6 +218,7 @@ namespace ContactlessSelfCheckout
             this.Click += new System.EventHandler(this.FormPay_Click);
             ((System.ComponentModel.ISupportInitialize)(this.imgTitleBorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTotalBorder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +237,8 @@ namespace ContactlessSelfCheckout
         private System.Windows.Forms.Button btnCard;
         private System.Windows.Forms.Button btnCoupon;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label lblToPay;
+        private System.Windows.Forms.Label lblToPaySum;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

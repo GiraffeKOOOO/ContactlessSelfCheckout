@@ -65,6 +65,7 @@
             // lblBasketList
             // 
             this.lblBasketList.AutoSize = true;
+            this.lblBasketList.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblBasketList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblBasketList.Location = new System.Drawing.Point(12, 16);
             this.lblBasketList.Name = "lblBasketList";
@@ -75,6 +76,7 @@
             // lblInstruction
             // 
             this.lblInstruction.AutoSize = true;
+            this.lblInstruction.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblInstruction.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
             this.lblInstruction.Location = new System.Drawing.Point(650, 41);
             this.lblInstruction.Name = "lblInstruction";
@@ -85,6 +87,7 @@
             // lblBasket
             // 
             this.lblBasket.AutoSize = true;
+            this.lblBasket.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblBasket.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblBasket.Location = new System.Drawing.Point(299, 18);
             this.lblBasket.Name = "lblBasket";
@@ -94,6 +97,7 @@
             // 
             // imgShoppingCart
             // 
+            this.imgShoppingCart.Cursor = System.Windows.Forms.Cursors.Default;
             this.imgShoppingCart.Image = ((System.Drawing.Image)(resources.GetObject("imgShoppingCart.Image")));
             this.imgShoppingCart.Location = new System.Drawing.Point(209, 14);
             this.imgShoppingCart.Name = "imgShoppingCart";
@@ -105,6 +109,7 @@
             // btnHelp
             // 
             this.btnHelp.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnHelp.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.btnHelp.Location = new System.Drawing.Point(12, 627);
@@ -118,6 +123,7 @@
             // btnPay
             // 
             this.btnPay.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnPay.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.btnPay.Location = new System.Drawing.Point(697, 568);
@@ -131,6 +137,7 @@
             // btnVegetables
             // 
             this.btnVegetables.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnVegetables.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnVegetables.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVegetables.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.btnVegetables.Location = new System.Drawing.Point(629, 107);
@@ -145,6 +152,7 @@
             // 
             this.btnFruit.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnFruit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnFruit.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnFruit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFruit.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.btnFruit.Location = new System.Drawing.Point(820, 107);
@@ -157,6 +165,7 @@
             // btnBakery
             // 
             this.btnBakery.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnBakery.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnBakery.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBakery.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.btnBakery.Location = new System.Drawing.Point(629, 253);
@@ -169,6 +178,7 @@
             // btnDrink
             // 
             this.btnDrink.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnDrink.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnDrink.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDrink.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.btnDrink.Location = new System.Drawing.Point(820, 253);
@@ -181,6 +191,7 @@
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.btnSearch.Location = new System.Drawing.Point(629, 389);
@@ -193,6 +204,7 @@
             // btnBarcode
             // 
             this.btnBarcode.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnBarcode.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnBarcode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnBarcode.Location = new System.Drawing.Point(820, 391);
@@ -205,6 +217,7 @@
             // lblBasketCounter
             // 
             this.lblBasketCounter.AutoSize = true;
+            this.lblBasketCounter.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblBasketCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblBasketCounter.Location = new System.Drawing.Point(250, 18);
             this.lblBasketCounter.Name = "lblBasketCounter";
@@ -216,6 +229,7 @@
             // btnRemoveItem
             // 
             this.btnRemoveItem.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnRemoveItem.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRemoveItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.btnRemoveItem.Location = new System.Drawing.Point(263, 627);
@@ -229,6 +243,7 @@
             // lblItemName
             // 
             this.lblItemName.AutoSize = true;
+            this.lblItemName.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblItemName.Location = new System.Drawing.Point(17, 11);
             this.lblItemName.Name = "lblItemName";
@@ -244,6 +259,7 @@
             this.pnlBasketList.Controls.Add(this.pictureBox2);
             this.pnlBasketList.Controls.Add(this.lblItemPrice);
             this.pnlBasketList.Controls.Add(this.lblItemName);
+            this.pnlBasketList.Cursor = System.Windows.Forms.Cursors.Default;
             this.pnlBasketList.Location = new System.Drawing.Point(5, 59);
             this.pnlBasketList.Name = "pnlBasketList";
             this.pnlBasketList.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -253,6 +269,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBox1.Location = new System.Drawing.Point(2, 46);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(600, 1);
@@ -262,6 +279,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Black;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBox2.Location = new System.Drawing.Point(476, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(1, 498);
@@ -271,6 +289,7 @@
             // lblItemPrice
             // 
             this.lblItemPrice.AutoSize = true;
+            this.lblItemPrice.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblItemPrice.Location = new System.Drawing.Point(512, 13);
             this.lblItemPrice.Name = "lblItemPrice";
@@ -281,6 +300,7 @@
             // imgItemCounterBorder
             // 
             this.imgItemCounterBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgItemCounterBorder.Cursor = System.Windows.Forms.Cursors.Default;
             this.imgItemCounterBorder.Location = new System.Drawing.Point(197, 10);
             this.imgItemCounterBorder.Name = "imgItemCounterBorder";
             this.imgItemCounterBorder.Size = new System.Drawing.Size(286, 43);
@@ -290,6 +310,7 @@
             // imgTitleBorder
             // 
             this.imgTitleBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgTitleBorder.Cursor = System.Windows.Forms.Cursors.Default;
             this.imgTitleBorder.Location = new System.Drawing.Point(5, 10);
             this.imgTitleBorder.Name = "imgTitleBorder";
             this.imgTitleBorder.Size = new System.Drawing.Size(169, 43);
@@ -299,6 +320,7 @@
             // lblTotalSum
             // 
             this.lblTotalSum.AutoSize = true;
+            this.lblTotalSum.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblTotalSum.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblTotalSum.Location = new System.Drawing.Point(535, 583);
             this.lblTotalSum.Name = "lblTotalSum";
@@ -309,6 +331,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
+            this.lblTotal.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblTotal.Location = new System.Drawing.Point(22, 583);
             this.lblTotal.Name = "lblTotal";
@@ -319,6 +342,7 @@
             // imgTotalBorder
             // 
             this.imgTotalBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgTotalBorder.Cursor = System.Windows.Forms.Cursors.Default;
             this.imgTotalBorder.Location = new System.Drawing.Point(9, 571);
             this.imgTotalBorder.Name = "imgTotalBorder";
             this.imgTotalBorder.Size = new System.Drawing.Size(605, 50);
@@ -350,6 +374,7 @@
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblInstruction);
             this.Controls.Add(this.pnlBasketList);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormBasketList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
