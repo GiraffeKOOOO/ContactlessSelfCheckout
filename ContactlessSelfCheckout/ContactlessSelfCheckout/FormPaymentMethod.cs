@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -86,6 +87,20 @@ namespace ContactlessSelfCheckout
             CursorAnimate();
             this.Hide();
             parent.TotalPaid();
+        }
+        private void CloseProcess(string name)
+        {
+            foreach (Process process in Process.GetProcesses())
+            {
+                if (process.ProcessName.Contains(name))
+                {
+                    process.Kill();
+                }
+            }
+        }
+        private void FormPaymentMethod_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CloseProcess("KinectV2MouseControl");
         }
     }
 }

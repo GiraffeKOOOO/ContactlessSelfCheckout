@@ -93,6 +93,7 @@ namespace ContactlessSelfCheckout
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormEnding";
             this.Text = "Contactless Self-Checkout";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormEnding_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

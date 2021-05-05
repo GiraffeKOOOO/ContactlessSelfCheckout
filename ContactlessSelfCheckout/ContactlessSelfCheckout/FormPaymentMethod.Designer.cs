@@ -147,6 +147,7 @@ namespace ContactlessSelfCheckout
             this.Name = "FormPaymentMethod";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contactless Self-Checkout";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPaymentMethod_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.imgTitleBorder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgLoading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPaymentType)).EndInit();

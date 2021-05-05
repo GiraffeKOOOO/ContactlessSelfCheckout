@@ -214,6 +214,7 @@ namespace ContactlessSelfCheckout
             this.Name = "FormPay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contactless Self-Checkout";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPay_FormClosed);
             this.Load += new System.EventHandler(this.FormPay_Load);
             this.Click += new System.EventHandler(this.FormPay_Click);
             ((System.ComponentModel.ISupportInitialize)(this.imgTitleBorder)).EndInit();

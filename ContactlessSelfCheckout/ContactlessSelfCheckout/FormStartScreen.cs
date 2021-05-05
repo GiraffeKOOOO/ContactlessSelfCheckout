@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Threading;
+using System.Diagnostics;
 
 namespace ContactlessSelfCheckout
 {
@@ -19,6 +20,37 @@ namespace ContactlessSelfCheckout
         {
             InitializeComponent();
             this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
+
+            if (!IsProcessOpen("KinectV2MouseControl"))
+            {
+                Process kinectMouseControls = new Process();
+                kinectMouseControls.StartInfo.FileName = @"G:\VisualStudioRepos\kinectv2mousecontrol\src\KinectV2MouseControl\bin\Debug\KinectV2MouseControl.exe";
+                kinectMouseControls.Start();
+            }
+            
+        }
+
+        private bool IsProcessOpen(string name)
+        {
+            foreach (Process process in Process.GetProcesses())
+            {
+                if (process.ProcessName.Contains(name))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void CloseProcess(string name)
+        {
+            foreach (Process process in Process.GetProcesses())
+            {
+                if (process.ProcessName.Contains(name))
+                {
+                    process.Kill();
+                }
+            }
         }
 
         private void CursorAnimate()
@@ -63,6 +95,11 @@ namespace ContactlessSelfCheckout
         private void FormStartScreen_Click(object sender, EventArgs e)
         {
             CursorAnimate();
+        }
+
+        private void FormStartScreen_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CloseProcess("KinectV2MouseControl");
         }
     }
 }

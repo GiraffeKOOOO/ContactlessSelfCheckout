@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,11 +23,6 @@ namespace ContactlessSelfCheckout
             
         }
 
-        private void CallibrationForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
-
         private void Button2_Click(object sender, EventArgs e)
         {
 
@@ -37,5 +33,20 @@ namespace ContactlessSelfCheckout
 
         }
 
+        private void CloseProcess(string name)
+        {
+            foreach (Process process in Process.GetProcesses())
+            {
+                if (process.ProcessName.Contains(name))
+                {
+                    process.Kill();
+                }
+            }
+        }
+
+        private void FormCallibration_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CloseProcess("KinectV2MouseControl");
+        }
     }
 }

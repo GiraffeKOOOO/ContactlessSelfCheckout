@@ -111,6 +111,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contactless Self-checkout";
             this.TopMost = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormStartScreen_FormClosed);
             this.Click += new System.EventHandler(this.FormStartScreen_Click);
             this.ResumeLayout(false);
             this.PerformLayout();

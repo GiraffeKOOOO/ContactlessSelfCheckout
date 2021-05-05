@@ -379,6 +379,7 @@
             this.Name = "FormBasketList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contactless Self-Checkout";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormBasketList_FormClosed);
             this.Click += new System.EventHandler(this.FormBasketList_Click);
             ((System.ComponentModel.ISupportInitialize)(this.imgShoppingCart)).EndInit();
             this.pnlBasketList.ResumeLayout(false);

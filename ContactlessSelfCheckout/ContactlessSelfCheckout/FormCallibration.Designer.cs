@@ -125,7 +125,7 @@
             this.Name = "FormCallibration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contactless Self-Checkout";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CallibrationForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCallibration_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.imgCameraDisplay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

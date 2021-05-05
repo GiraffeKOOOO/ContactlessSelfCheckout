@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Collections;
 using System.Threading;
+using System.Diagnostics;
 
 namespace ContactlessSelfCheckout
 {
@@ -172,6 +173,22 @@ namespace ContactlessSelfCheckout
             formPay.Left = this.Left;
             formPay.Top = this.Top;
             this.Hide();
+        }
+
+        private void FormBasketList_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CloseProcess("KinectV2MouseControl");
+        }
+
+        private void CloseProcess(string name)
+        {
+            foreach (Process process in Process.GetProcesses())
+            {
+                if (process.ProcessName.Contains(name))
+                {
+                    process.Kill();
+                }
+            }
         }
     }
 }
