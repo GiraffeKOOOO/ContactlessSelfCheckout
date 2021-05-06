@@ -77,10 +77,11 @@
             this.pnlBackground.Controls.Add(this.imgCart);
             this.pnlBackground.Controls.Add(this.imgHandWave);
             this.pnlBackground.Controls.Add(this.btnHelp);
+            this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlBackground.ForeColor = System.Drawing.Color.White;
-            this.pnlBackground.Location = new System.Drawing.Point(1, 0);
+            this.pnlBackground.Location = new System.Drawing.Point(0, 0);
             this.pnlBackground.Name = "pnlBackground";
-            this.pnlBackground.Size = new System.Drawing.Size(467, 738);
+            this.pnlBackground.Size = new System.Drawing.Size(467, 729);
             this.pnlBackground.TabIndex = 6;
             // 
             // lblAppName2
@@ -163,7 +164,7 @@
             // 
             // btnStart
             // 
-            this.btnStart.Image = global::ContactlessSelfCheckout.Properties.Resources.start_button;
+            this.btnStart.Image = ((System.Drawing.Image)(resources.GetObject("btnStart.Image")));
             this.btnStart.Location = new System.Drawing.Point(540, 393);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(395, 81);
@@ -178,6 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.lblInstructions2);
             this.Controls.Add(this.btnOwnBag);
@@ -187,6 +189,9 @@
             this.Controls.Add(this.lblScreenTitle);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormStartScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contactless Self-checkout";

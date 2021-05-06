@@ -11,25 +11,6 @@ namespace ContactlessSelfCheckout
         {
             InitializeComponent();
             this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
-
-            if (!IsProcessOpen("KinectV2MouseControl"))
-            {
-                Process kinectMouseControls = new Process();
-                kinectMouseControls.StartInfo.FileName = @"G:\VisualStudioRepos\kinectv2mousecontrol\src\KinectV2MouseControl\bin\Debug\KinectV2MouseControl.exe";
-                kinectMouseControls.Start();
-            }
-            
-        }
-        private bool IsProcessOpen(string name)
-        {
-            foreach (Process process in Process.GetProcesses())
-            {
-                if (process.ProcessName.Contains(name))
-                {
-                    return true;
-                }
-            }
-            return false;
         }
 
         private void CloseProcess(string name)

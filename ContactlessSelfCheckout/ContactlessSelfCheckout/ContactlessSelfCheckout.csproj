@@ -54,6 +54,9 @@
     <Reference Include="KinectControls.v2">
       <HintPath>..\..\..\kinect-controls\KinectControls\KinectControls.v2\bin\Debug\KinectControls.v2.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Kinect, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Kinect.2.0.1410.19000\lib\net45\Microsoft.Kinect.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System">
@@ -193,6 +196,7 @@
     <None Include="Db_ProductsDataSet.xss">
       <DependentUpon>Db_ProductsDataSet.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -230,7 +234,6 @@
     <Content Include="media\buttons\hand-wave.png" />
     <Content Include="media\buttons\help-button-hover.png" />
     <Content Include="media\buttons\help-button.png" />
-    <Content Include="media\buttons\logo.png" />
     <Content Include="media\buttons\own-bag-button-hover.png" />
     <Content Include="media\buttons\own-bag-button.png" />
     <Content Include="media\buttons\start-button-hover.png" />
@@ -238,8 +241,10 @@
     <Content Include="media\card.png" />
     <Content Include="media\cash.png" />
     <Content Include="media\coupon.png" />
+    <Content Include="media\icon_gqp_icon.ico" />
     <Content Include="media\loading.gif" />
     <Content Include="media\loading2.gif" />
+    <Content Include="media\person-outline.png" />
     <None Include="Resources\start-button.bmp" />
   </ItemGroup>
   <ItemGroup />

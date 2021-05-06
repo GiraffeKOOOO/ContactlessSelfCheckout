@@ -28,19 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCallibration));
             this.lblScreenTitle = new System.Windows.Forms.Label();
             this.lblInstruction = new System.Windows.Forms.Label();
-            this.imgCameraDisplay = new System.Windows.Forms.PictureBox();
+            this.lblInstruction2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnStart = new System.Windows.Forms.PictureBox();
             this.btnHelp = new System.Windows.Forms.PictureBox();
-            this.lblInstructions2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCameraDisplay)).BeginInit();
+            this.imgCameraDisplay = new System.Windows.Forms.PictureBox();
+            this.lblErrorMessage2 = new System.Windows.Forms.Label();
+            this.lblErrorMessage1 = new System.Windows.Forms.Label();
+            this.lblErrorTitle = new System.Windows.Forms.Label();
+            this.pnlErrorBackground = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCameraDisplay)).BeginInit();
+            this.pnlErrorBackground.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblScreenTitle
             // 
             this.lblScreenTitle.AutoSize = true;
+            this.lblScreenTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(132)))), ((int)(((byte)(0)))));
             this.lblScreenTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScreenTitle.ForeColor = System.Drawing.Color.Black;
             this.lblScreenTitle.Location = new System.Drawing.Point(415, 9);
             this.lblScreenTitle.Name = "lblScreenTitle";
             this.lblScreenTitle.Size = new System.Drawing.Size(178, 73);
@@ -51,22 +63,50 @@
             // lblInstruction
             // 
             this.lblInstruction.AutoSize = true;
+            this.lblInstruction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(132)))), ((int)(((byte)(0)))));
             this.lblInstruction.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.lblInstruction.Location = new System.Drawing.Point(62, 99);
+            this.lblInstruction.ForeColor = System.Drawing.Color.Black;
+            this.lblInstruction.Location = new System.Drawing.Point(62, 95);
             this.lblInstruction.Name = "lblInstruction";
             this.lblInstruction.Size = new System.Drawing.Size(884, 31);
             this.lblInstruction.TabIndex = 2;
             this.lblInstruction.Text = "Please stand in the outlined area and wave until the cursor starts moving";
             // 
-            // imgCameraDisplay
+            // lblInstruction2
             // 
-            this.imgCameraDisplay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgCameraDisplay.Location = new System.Drawing.Point(222, 201);
-            this.imgCameraDisplay.Name = "imgCameraDisplay";
-            this.imgCameraDisplay.Size = new System.Drawing.Size(565, 399);
-            this.imgCameraDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgCameraDisplay.TabIndex = 6;
-            this.imgCameraDisplay.TabStop = false;
+            this.lblInstruction2.AutoSize = true;
+            this.lblInstruction2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(132)))), ((int)(((byte)(0)))));
+            this.lblInstruction2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.lblInstruction2.ForeColor = System.Drawing.Color.Black;
+            this.lblInstruction2.Location = new System.Drawing.Point(177, 138);
+            this.lblInstruction2.Name = "lblInstruction2";
+            this.lblInstruction2.Size = new System.Drawing.Size(655, 31);
+            this.lblInstruction2.TabIndex = 8;
+            this.lblInstruction2.Text = "When you\'re ready click the start button to get started";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(132)))), ((int)(((byte)(0)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblErrorTitle);
+            this.panel1.Controls.Add(this.pnlErrorBackground);
+            this.panel1.Location = new System.Drawing.Point(-5, -1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1018, 192);
+            this.panel1.TabIndex = 10;
+            // 
+            // btnStart
+            // 
+            this.btnStart.Image = global::ContactlessSelfCheckout.Properties.Resources.start_button;
+            this.btnStart.Location = new System.Drawing.Point(307, 636);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(395, 81);
+            this.btnStart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnStart.TabIndex = 9;
+            this.btnStart.TabStop = false;
+            this.btnStart.Click += new System.EventHandler(this.BtnStart_Click);
+            this.btnStart.MouseEnter += new System.EventHandler(this.BtnStart_MouseEnter);
+            this.btnStart.MouseLeave += new System.EventHandler(this.BtnStart_MouseLeave);
             // 
             // btnHelp
             // 
@@ -81,33 +121,98 @@
             this.btnHelp.MouseEnter += new System.EventHandler(this.BtnHelp_MouseEnter);
             this.btnHelp.MouseLeave += new System.EventHandler(this.BtnHelp_MouseLeave);
             // 
-            // lblInstructions2
+            // imgCameraDisplay
             // 
-            this.lblInstructions2.AutoSize = true;
-            this.lblInstructions2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.lblInstructions2.Location = new System.Drawing.Point(177, 142);
-            this.lblInstructions2.Name = "lblInstructions2";
-            this.lblInstructions2.Size = new System.Drawing.Size(655, 31);
-            this.lblInstructions2.TabIndex = 8;
-            this.lblInstructions2.Text = "When you\'re ready click the start button to get started";
+            this.imgCameraDisplay.BackColor = System.Drawing.SystemColors.Control;
+            this.imgCameraDisplay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgCameraDisplay.Location = new System.Drawing.Point(199, 206);
+            this.imgCameraDisplay.Name = "imgCameraDisplay";
+            this.imgCameraDisplay.Size = new System.Drawing.Size(610, 416);
+            this.imgCameraDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgCameraDisplay.TabIndex = 6;
+            this.imgCameraDisplay.TabStop = false;
+            // 
+            // lblErrorMessage2
+            // 
+            this.lblErrorMessage2.AutoSize = true;
+            this.lblErrorMessage2.BackColor = System.Drawing.Color.Black;
+            this.lblErrorMessage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.lblErrorMessage2.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorMessage2.Location = new System.Drawing.Point(15, 113);
+            this.lblErrorMessage2.Name = "lblErrorMessage2";
+            this.lblErrorMessage2.Size = new System.Drawing.Size(885, 31);
+            this.lblErrorMessage2.TabIndex = 13;
+            this.lblErrorMessage2.Text = "Control Software is installed on the machine, then restart the application.";
+            this.lblErrorMessage2.Visible = false;
+            // 
+            // lblErrorMessage1
+            // 
+            this.lblErrorMessage1.AutoSize = true;
+            this.lblErrorMessage1.BackColor = System.Drawing.Color.Black;
+            this.lblErrorMessage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.lblErrorMessage1.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorMessage1.Location = new System.Drawing.Point(3, 72);
+            this.lblErrorMessage1.Name = "lblErrorMessage1";
+            this.lblErrorMessage1.Size = new System.Drawing.Size(910, 31);
+            this.lblErrorMessage1.TabIndex = 12;
+            this.lblErrorMessage1.Text = "Kinect Mouse Control Software not found. Please make sure Kinect Mouse";
+            this.lblErrorMessage1.Visible = false;
+            // 
+            // lblErrorTitle
+            // 
+            this.lblErrorTitle.AutoSize = true;
+            this.lblErrorTitle.BackColor = System.Drawing.Color.Black;
+            this.lblErrorTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorTitle.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorTitle.Location = new System.Drawing.Point(419, 5);
+            this.lblErrorTitle.Name = "lblErrorTitle";
+            this.lblErrorTitle.Size = new System.Drawing.Size(174, 73);
+            this.lblErrorTitle.TabIndex = 11;
+            this.lblErrorTitle.Text = "Error";
+            this.lblErrorTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblErrorTitle.Visible = false;
+            // 
+            // pnlErrorBackground
+            // 
+            this.pnlErrorBackground.BackColor = System.Drawing.Color.Black;
+            this.pnlErrorBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlErrorBackground.Controls.Add(this.lblErrorMessage2);
+            this.pnlErrorBackground.Controls.Add(this.lblErrorMessage1);
+            this.pnlErrorBackground.Location = new System.Drawing.Point(50, 5);
+            this.pnlErrorBackground.Name = "pnlErrorBackground";
+            this.pnlErrorBackground.Size = new System.Drawing.Size(910, 182);
+            this.pnlErrorBackground.TabIndex = 14;
+            this.pnlErrorBackground.Visible = false;
             // 
             // FormCallibration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
-            this.Controls.Add(this.lblInstructions2);
+            this.Controls.Add(this.btnStart);
+            this.Controls.Add(this.lblInstruction2);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.imgCameraDisplay);
             this.Controls.Add(this.lblInstruction);
             this.Controls.Add(this.lblScreenTitle);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormCallibration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contactless Self-Checkout";
+            this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCallibration_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.imgCameraDisplay)).EndInit();
+            this.Load += new System.EventHandler(this.FormCallibration_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCameraDisplay)).EndInit();
+            this.pnlErrorBackground.ResumeLayout(false);
+            this.pnlErrorBackground.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,6 +224,12 @@
         private System.Windows.Forms.Label lblInstruction;
         private System.Windows.Forms.PictureBox imgCameraDisplay;
         private System.Windows.Forms.PictureBox btnHelp;
-        private System.Windows.Forms.Label lblInstructions2;
+        private System.Windows.Forms.Label lblInstruction2;
+        private System.Windows.Forms.PictureBox btnStart;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblErrorTitle;
+        private System.Windows.Forms.Panel pnlErrorBackground;
+        private System.Windows.Forms.Label lblErrorMessage2;
+        private System.Windows.Forms.Label lblErrorMessage1;
     }
 }
