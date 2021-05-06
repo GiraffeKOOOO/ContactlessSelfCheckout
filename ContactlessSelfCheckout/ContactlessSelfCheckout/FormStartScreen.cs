@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using System.Threading;
 using System.Diagnostics;
 
@@ -15,7 +7,6 @@ namespace ContactlessSelfCheckout
 {
     public partial class FormStartScreen : Form
     {
-        public string formTitle = "Start";
         public FormStartScreen()
         {
             InitializeComponent();
@@ -29,7 +20,6 @@ namespace ContactlessSelfCheckout
             }
             
         }
-
         private bool IsProcessOpen(string name)
         {
             foreach (Process process in Process.GetProcesses())
@@ -53,14 +43,7 @@ namespace ContactlessSelfCheckout
             }
         }
 
-        private void CursorAnimate()
-        {
-            this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
-            Thread.Sleep(100);
-            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
-        }
-
-        private void StartButton_Click(object sender, EventArgs e)
+        private void BtnStart_Click(object sender, EventArgs e)
         {
             CursorAnimate();
             // This function creates a new object for the FormBasketList, hides the current form, and shows the new form
@@ -70,19 +53,42 @@ namespace ContactlessSelfCheckout
             formBasketList.Top = this.Top;
             this.Hide();
         }
+        private void BtnStart_MouseEnter(object sender, EventArgs e)
+        {
+            btnStart.Image = Properties.Resources.start_button_hover;
+            btnStart.Refresh();
+        }
 
-        private void OwnBagButton_Click(object sender, EventArgs e)
+        private void BtnStart_MouseLeave(object sender, EventArgs e)
+        {
+            btnStart.Image = Properties.Resources.start_button;
+            btnStart.Refresh();
+        }
+
+        private void BtnOwnBag_Click(object sender, EventArgs e)
         {
             CursorAnimate();
             // This function creates a new object for the FormOwnBag, hides the current form, and shows the new form
-            FormOwnBag formOwnBag= new FormOwnBag();
+            FormOwnBag formOwnBag = new FormOwnBag();
             formOwnBag.Show();
             formOwnBag.Left = this.Left;
             formOwnBag.Top = this.Top;
             this.Hide();
         }
 
-        private void HelpButton_Click(object sender, EventArgs e)
+        private void BtnOwnBag_MouseEnter(object sender, EventArgs e)
+        {
+            btnOwnBag.Image = Properties.Resources.own_bag_button_hover;
+            btnOwnBag.Refresh();
+        }
+
+        private void BtnOwnBag_MouseLeave(object sender, EventArgs e)
+        {
+            btnOwnBag.Image = Properties.Resources.own_bag_button;
+            btnOwnBag.Refresh();
+        }
+
+        private void BtnHelp_Click(object sender, EventArgs e)
         {
             CursorAnimate();
             // This function creates a new object for the FormHelp, hides the current form, and shows the new form
@@ -90,6 +96,18 @@ namespace ContactlessSelfCheckout
             formHelp.Show();
             formHelp.Left = this.Left;
             formHelp.Top = this.Top;
+        }
+
+        private void BtnHelp_MouseEnter(object sender, EventArgs e)
+        {
+            btnHelp.Image = Properties.Resources.help_button_hover;
+            btnHelp.Refresh();
+        }
+
+        private void BtnHelp_MouseLeave(object sender, EventArgs e)
+        {
+            btnHelp.Image = Properties.Resources.help_button;
+            btnHelp.Refresh();
         }
 
         private void FormStartScreen_Click(object sender, EventArgs e)
@@ -101,5 +119,14 @@ namespace ContactlessSelfCheckout
         {
             CloseProcess("KinectV2MouseControl");
         }
+
+        private void CursorAnimate()
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
+            Thread.Sleep(100);
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
+        }
+
+
     }
 }

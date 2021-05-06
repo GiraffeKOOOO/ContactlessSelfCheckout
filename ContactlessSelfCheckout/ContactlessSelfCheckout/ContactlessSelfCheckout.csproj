@@ -180,6 +180,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Db_ProductsDataSet.xsc">
       <DependentUpon>Db_ProductsDataSet.xsd</DependentUpon>
@@ -225,11 +226,22 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>Db_Products.mdf</DependentUpon>
     </Content>
+    <Content Include="media\buttons\cart.png" />
+    <Content Include="media\buttons\hand-wave.png" />
+    <Content Include="media\buttons\help-button-hover.png" />
+    <Content Include="media\buttons\help-button.png" />
+    <Content Include="media\buttons\logo.png" />
+    <Content Include="media\buttons\own-bag-button-hover.png" />
+    <Content Include="media\buttons\own-bag-button.png" />
+    <Content Include="media\buttons\start-button-hover.png" />
+    <Content Include="media\buttons\start-button.png" />
     <Content Include="media\card.png" />
     <Content Include="media\cash.png" />
     <Content Include="media\coupon.png" />
     <Content Include="media\loading.gif" />
     <Content Include="media\loading2.gif" />
+    <None Include="Resources\start-button.bmp" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
