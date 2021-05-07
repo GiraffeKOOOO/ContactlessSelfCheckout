@@ -121,14 +121,23 @@
   <data name="help-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\media\buttons\help-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hand-wave" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\media\buttons\hand-wave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="help-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\help-background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="own-bag-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\own-bag-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\media\buttons\cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="hand-wave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\hand-wave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="start-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\media\buttons\start-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\back-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="person-outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\media\person-outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,13 +145,13 @@
   <data name="help-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\media\buttons\help-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="start-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\media\buttons\start-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="own-bag-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\media\buttons\own-bag-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="own-bag-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\media\buttons\own-bag-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="start-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\start-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\back-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

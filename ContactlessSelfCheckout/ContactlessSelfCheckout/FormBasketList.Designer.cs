@@ -33,33 +33,19 @@
             this.lblInstruction = new System.Windows.Forms.Label();
             this.lblBasket = new System.Windows.Forms.Label();
             this.imgShoppingCart = new System.Windows.Forms.PictureBox();
-            this.btnHelp = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
             this.btnVegetables = new System.Windows.Forms.Button();
-            this.btnFruit = new System.Windows.Forms.Button();
-            this.btnBakery = new System.Windows.Forms.Button();
-            this.btnDrink = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnBarcode = new System.Windows.Forms.Button();
             this.lblBasketCounter = new System.Windows.Forms.Label();
             this.btnRemoveItem = new System.Windows.Forms.Button();
             this.lblItemName = new System.Windows.Forms.Label();
             this.pnlBasketList = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblItemPrice = new System.Windows.Forms.Label();
-            this.imgItemCounterBorder = new System.Windows.Forms.PictureBox();
-            this.imgTitleBorder = new System.Windows.Forms.PictureBox();
             this.lblTotalSum = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.imgTotalBorder = new System.Windows.Forms.PictureBox();
+            this.btnHelp = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgShoppingCart)).BeginInit();
             this.pnlBasketList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgItemCounterBorder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgTitleBorder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgTotalBorder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBasketList
@@ -106,20 +92,6 @@
             this.imgShoppingCart.TabIndex = 3;
             this.imgShoppingCart.TabStop = false;
             // 
-            // btnHelp
-            // 
-            this.btnHelp.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnHelp.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.btnHelp.Location = new System.Drawing.Point(12, 627);
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(118, 90);
-            this.btnHelp.TabIndex = 6;
-            this.btnHelp.Text = "Help";
-            this.btnHelp.UseVisualStyleBackColor = false;
-            this.btnHelp.Click += new System.EventHandler(this.BtnHelp_Click);
-            // 
             // btnPay
             // 
             this.btnPay.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -147,72 +119,6 @@
             this.btnVegetables.Text = "Vegetables";
             this.btnVegetables.UseVisualStyleBackColor = false;
             this.btnVegetables.Click += new System.EventHandler(this.BtnVegetables_Click);
-            // 
-            // btnFruit
-            // 
-            this.btnFruit.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnFruit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnFruit.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnFruit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFruit.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.btnFruit.Location = new System.Drawing.Point(820, 107);
-            this.btnFruit.Name = "btnFruit";
-            this.btnFruit.Size = new System.Drawing.Size(181, 101);
-            this.btnFruit.TabIndex = 11;
-            this.btnFruit.Text = "Fruit";
-            this.btnFruit.UseVisualStyleBackColor = false;
-            // 
-            // btnBakery
-            // 
-            this.btnBakery.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnBakery.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnBakery.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBakery.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.btnBakery.Location = new System.Drawing.Point(629, 253);
-            this.btnBakery.Name = "btnBakery";
-            this.btnBakery.Size = new System.Drawing.Size(181, 101);
-            this.btnBakery.TabIndex = 12;
-            this.btnBakery.Text = "Bakery";
-            this.btnBakery.UseVisualStyleBackColor = false;
-            // 
-            // btnDrink
-            // 
-            this.btnDrink.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnDrink.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnDrink.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDrink.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.btnDrink.Location = new System.Drawing.Point(820, 253);
-            this.btnDrink.Name = "btnDrink";
-            this.btnDrink.Size = new System.Drawing.Size(181, 101);
-            this.btnDrink.TabIndex = 13;
-            this.btnDrink.Text = "Drinks";
-            this.btnDrink.UseVisualStyleBackColor = false;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.btnSearch.Location = new System.Drawing.Point(629, 389);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(181, 101);
-            this.btnSearch.TabIndex = 14;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // btnBarcode
-            // 
-            this.btnBarcode.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnBarcode.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnBarcode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnBarcode.Location = new System.Drawing.Point(820, 391);
-            this.btnBarcode.Name = "btnBarcode";
-            this.btnBarcode.Size = new System.Drawing.Size(181, 101);
-            this.btnBarcode.TabIndex = 15;
-            this.btnBarcode.Text = "Enter barcode number";
-            this.btnBarcode.UseVisualStyleBackColor = false;
             // 
             // lblBasketCounter
             // 
@@ -255,8 +161,6 @@
             // 
             this.pnlBasketList.AutoScroll = true;
             this.pnlBasketList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlBasketList.Controls.Add(this.pictureBox1);
-            this.pnlBasketList.Controls.Add(this.pictureBox2);
             this.pnlBasketList.Controls.Add(this.lblItemPrice);
             this.pnlBasketList.Controls.Add(this.lblItemName);
             this.pnlBasketList.Cursor = System.Windows.Forms.Cursors.Default;
@@ -265,26 +169,6 @@
             this.pnlBasketList.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.pnlBasketList.Size = new System.Drawing.Size(609, 506);
             this.pnlBasketList.TabIndex = 22;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 46);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(600, 1);
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Black;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox2.Location = new System.Drawing.Point(476, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1, 498);
-            this.pictureBox2.TabIndex = 28;
-            this.pictureBox2.TabStop = false;
             // 
             // lblItemPrice
             // 
@@ -296,26 +180,6 @@
             this.lblItemPrice.Size = new System.Drawing.Size(56, 25);
             this.lblItemPrice.TabIndex = 26;
             this.lblItemPrice.Text = "Price";
-            // 
-            // imgItemCounterBorder
-            // 
-            this.imgItemCounterBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgItemCounterBorder.Cursor = System.Windows.Forms.Cursors.Default;
-            this.imgItemCounterBorder.Location = new System.Drawing.Point(197, 10);
-            this.imgItemCounterBorder.Name = "imgItemCounterBorder";
-            this.imgItemCounterBorder.Size = new System.Drawing.Size(286, 43);
-            this.imgItemCounterBorder.TabIndex = 25;
-            this.imgItemCounterBorder.TabStop = false;
-            // 
-            // imgTitleBorder
-            // 
-            this.imgTitleBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgTitleBorder.Cursor = System.Windows.Forms.Cursors.Default;
-            this.imgTitleBorder.Location = new System.Drawing.Point(5, 10);
-            this.imgTitleBorder.Name = "imgTitleBorder";
-            this.imgTitleBorder.Size = new System.Drawing.Size(169, 43);
-            this.imgTitleBorder.TabIndex = 26;
-            this.imgTitleBorder.TabStop = false;
             // 
             // lblTotalSum
             // 
@@ -339,39 +203,35 @@
             this.lblTotal.TabIndex = 28;
             this.lblTotal.Text = "Total";
             // 
-            // imgTotalBorder
+            // btnHelp
             // 
-            this.imgTotalBorder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgTotalBorder.Cursor = System.Windows.Forms.Cursors.Default;
-            this.imgTotalBorder.Location = new System.Drawing.Point(9, 571);
-            this.imgTotalBorder.Name = "imgTotalBorder";
-            this.imgTotalBorder.Size = new System.Drawing.Size(605, 50);
-            this.imgTotalBorder.TabIndex = 29;
-            this.imgTotalBorder.TabStop = false;
+            this.btnHelp.Image = global::ContactlessSelfCheckout.Properties.Resources.help_button;
+            this.btnHelp.Location = new System.Drawing.Point(12, 617);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(100, 100);
+            this.btnHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnHelp.TabIndex = 29;
+            this.btnHelp.TabStop = false;
+            this.btnHelp.Click += new System.EventHandler(this.BtnHelp_Click);
+            this.btnHelp.MouseEnter += new System.EventHandler(this.BtnHelp_MouseEnter);
+            this.btnHelp.MouseLeave += new System.EventHandler(this.BtnHelp_MouseLeave);
             // 
             // FormBasketList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblTotalSum);
-            this.Controls.Add(this.imgTotalBorder);
             this.Controls.Add(this.lblBasketList);
-            this.Controls.Add(this.imgTitleBorder);
             this.Controls.Add(this.lblBasketCounter);
             this.Controls.Add(this.imgShoppingCart);
             this.Controls.Add(this.lblBasket);
-            this.Controls.Add(this.imgItemCounterBorder);
             this.Controls.Add(this.btnRemoveItem);
-            this.Controls.Add(this.btnBarcode);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.btnDrink);
-            this.Controls.Add(this.btnBakery);
-            this.Controls.Add(this.btnFruit);
             this.Controls.Add(this.btnVegetables);
             this.Controls.Add(this.btnPay);
-            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblInstruction);
             this.Controls.Add(this.pnlBasketList);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -384,11 +244,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgShoppingCart)).EndInit();
             this.pnlBasketList.ResumeLayout(false);
             this.pnlBasketList.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgItemCounterBorder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgTitleBorder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgTotalBorder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,25 +256,15 @@
         private System.Windows.Forms.Label lblInstruction;
         private System.Windows.Forms.Label lblBasket;
         private System.Windows.Forms.PictureBox imgShoppingCart;
-        private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Button btnVegetables;
-        private System.Windows.Forms.Button btnFruit;
-        private System.Windows.Forms.Button btnBakery;
-        private System.Windows.Forms.Button btnDrink;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnBarcode;
         private System.Windows.Forms.Label lblBasketCounter;
         private System.Windows.Forms.Button btnRemoveItem;
         private System.Windows.Forms.Label lblItemName;
         private System.Windows.Forms.Panel pnlBasketList;
         private System.Windows.Forms.Label lblItemPrice;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox imgItemCounterBorder;
-        private System.Windows.Forms.PictureBox imgTitleBorder;
         private System.Windows.Forms.Label lblTotalSum;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.PictureBox imgTotalBorder;
+        private System.Windows.Forms.PictureBox btnHelp;
     }
 }

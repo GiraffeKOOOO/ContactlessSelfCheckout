@@ -33,18 +33,19 @@
             this.lblInstruction = new System.Windows.Forms.Label();
             this.lblInstruction2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblErrorTitle = new System.Windows.Forms.Label();
+            this.pnlErrorBackground = new System.Windows.Forms.Panel();
+            this.lblErrorMessage2 = new System.Windows.Forms.Label();
+            this.lblErrorMessage1 = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.PictureBox();
             this.btnHelp = new System.Windows.Forms.PictureBox();
             this.imgCameraDisplay = new System.Windows.Forms.PictureBox();
-            this.lblErrorMessage2 = new System.Windows.Forms.Label();
-            this.lblErrorMessage1 = new System.Windows.Forms.Label();
-            this.lblErrorTitle = new System.Windows.Forms.Label();
-            this.pnlErrorBackground = new System.Windows.Forms.Panel();
+            this.lblKinectFeed = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.pnlErrorBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnStart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCameraDisplay)).BeginInit();
-            this.pnlErrorBackground.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblScreenTitle
@@ -87,13 +88,64 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(132)))), ((int)(((byte)(0)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.lblErrorTitle);
             this.panel1.Controls.Add(this.pnlErrorBackground);
             this.panel1.Location = new System.Drawing.Point(-5, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1018, 192);
             this.panel1.TabIndex = 10;
+            // 
+            // lblErrorTitle
+            // 
+            this.lblErrorTitle.AutoSize = true;
+            this.lblErrorTitle.BackColor = System.Drawing.Color.Black;
+            this.lblErrorTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorTitle.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorTitle.Location = new System.Drawing.Point(419, 5);
+            this.lblErrorTitle.Name = "lblErrorTitle";
+            this.lblErrorTitle.Size = new System.Drawing.Size(174, 73);
+            this.lblErrorTitle.TabIndex = 11;
+            this.lblErrorTitle.Text = "Error";
+            this.lblErrorTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblErrorTitle.Visible = false;
+            // 
+            // pnlErrorBackground
+            // 
+            this.pnlErrorBackground.BackColor = System.Drawing.Color.Black;
+            this.pnlErrorBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlErrorBackground.Controls.Add(this.lblErrorMessage2);
+            this.pnlErrorBackground.Controls.Add(this.lblErrorMessage1);
+            this.pnlErrorBackground.Location = new System.Drawing.Point(50, 5);
+            this.pnlErrorBackground.Name = "pnlErrorBackground";
+            this.pnlErrorBackground.Size = new System.Drawing.Size(910, 182);
+            this.pnlErrorBackground.TabIndex = 14;
+            this.pnlErrorBackground.Visible = false;
+            // 
+            // lblErrorMessage2
+            // 
+            this.lblErrorMessage2.AutoSize = true;
+            this.lblErrorMessage2.BackColor = System.Drawing.Color.Black;
+            this.lblErrorMessage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.lblErrorMessage2.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorMessage2.Location = new System.Drawing.Point(15, 113);
+            this.lblErrorMessage2.Name = "lblErrorMessage2";
+            this.lblErrorMessage2.Size = new System.Drawing.Size(885, 31);
+            this.lblErrorMessage2.TabIndex = 13;
+            this.lblErrorMessage2.Text = "Control Software is installed on the machine, then restart the application.";
+            this.lblErrorMessage2.Visible = false;
+            // 
+            // lblErrorMessage1
+            // 
+            this.lblErrorMessage1.AutoSize = true;
+            this.lblErrorMessage1.BackColor = System.Drawing.Color.Black;
+            this.lblErrorMessage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.lblErrorMessage1.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorMessage1.Location = new System.Drawing.Point(3, 72);
+            this.lblErrorMessage1.Name = "lblErrorMessage1";
+            this.lblErrorMessage1.Size = new System.Drawing.Size(910, 31);
+            this.lblErrorMessage1.TabIndex = 12;
+            this.lblErrorMessage1.Text = "Kinect Mouse Control Software not found. Please make sure Kinect Mouse";
+            this.lblErrorMessage1.Visible = false;
             // 
             // btnStart
             // 
@@ -123,72 +175,31 @@
             // 
             // imgCameraDisplay
             // 
-            this.imgCameraDisplay.BackColor = System.Drawing.SystemColors.Control;
+            this.imgCameraDisplay.BackColor = System.Drawing.Color.White;
             this.imgCameraDisplay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgCameraDisplay.Location = new System.Drawing.Point(199, 206);
+            this.imgCameraDisplay.Location = new System.Drawing.Point(199, 217);
             this.imgCameraDisplay.Name = "imgCameraDisplay";
-            this.imgCameraDisplay.Size = new System.Drawing.Size(610, 416);
+            this.imgCameraDisplay.Size = new System.Drawing.Size(610, 405);
             this.imgCameraDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgCameraDisplay.TabIndex = 6;
             this.imgCameraDisplay.TabStop = false;
             // 
-            // lblErrorMessage2
+            // lblKinectFeed
             // 
-            this.lblErrorMessage2.AutoSize = true;
-            this.lblErrorMessage2.BackColor = System.Drawing.Color.Black;
-            this.lblErrorMessage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.lblErrorMessage2.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorMessage2.Location = new System.Drawing.Point(15, 113);
-            this.lblErrorMessage2.Name = "lblErrorMessage2";
-            this.lblErrorMessage2.Size = new System.Drawing.Size(885, 31);
-            this.lblErrorMessage2.TabIndex = 13;
-            this.lblErrorMessage2.Text = "Control Software is installed on the machine, then restart the application.";
-            this.lblErrorMessage2.Visible = false;
-            // 
-            // lblErrorMessage1
-            // 
-            this.lblErrorMessage1.AutoSize = true;
-            this.lblErrorMessage1.BackColor = System.Drawing.Color.Black;
-            this.lblErrorMessage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.lblErrorMessage1.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorMessage1.Location = new System.Drawing.Point(3, 72);
-            this.lblErrorMessage1.Name = "lblErrorMessage1";
-            this.lblErrorMessage1.Size = new System.Drawing.Size(910, 31);
-            this.lblErrorMessage1.TabIndex = 12;
-            this.lblErrorMessage1.Text = "Kinect Mouse Control Software not found. Please make sure Kinect Mouse";
-            this.lblErrorMessage1.Visible = false;
-            // 
-            // lblErrorTitle
-            // 
-            this.lblErrorTitle.AutoSize = true;
-            this.lblErrorTitle.BackColor = System.Drawing.Color.Black;
-            this.lblErrorTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorTitle.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorTitle.Location = new System.Drawing.Point(419, 5);
-            this.lblErrorTitle.Name = "lblErrorTitle";
-            this.lblErrorTitle.Size = new System.Drawing.Size(174, 73);
-            this.lblErrorTitle.TabIndex = 11;
-            this.lblErrorTitle.Text = "Error";
-            this.lblErrorTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblErrorTitle.Visible = false;
-            // 
-            // pnlErrorBackground
-            // 
-            this.pnlErrorBackground.BackColor = System.Drawing.Color.Black;
-            this.pnlErrorBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlErrorBackground.Controls.Add(this.lblErrorMessage2);
-            this.pnlErrorBackground.Controls.Add(this.lblErrorMessage1);
-            this.pnlErrorBackground.Location = new System.Drawing.Point(50, 5);
-            this.pnlErrorBackground.Name = "pnlErrorBackground";
-            this.pnlErrorBackground.Size = new System.Drawing.Size(910, 182);
-            this.pnlErrorBackground.TabIndex = 14;
-            this.pnlErrorBackground.Visible = false;
+            this.lblKinectFeed.AutoSize = true;
+            this.lblKinectFeed.Location = new System.Drawing.Point(196, 200);
+            this.lblKinectFeed.Name = "lblKinectFeed";
+            this.lblKinectFeed.Size = new System.Drawing.Size(64, 13);
+            this.lblKinectFeed.TabIndex = 11;
+            this.lblKinectFeed.Text = "Kinect Feed";
             // 
             // FormCallibration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.lblKinectFeed);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblInstruction2);
             this.Controls.Add(this.btnHelp);
@@ -208,11 +219,11 @@
             this.Load += new System.EventHandler(this.FormCallibration_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.pnlErrorBackground.ResumeLayout(false);
+            this.pnlErrorBackground.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnStart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCameraDisplay)).EndInit();
-            this.pnlErrorBackground.ResumeLayout(false);
-            this.pnlErrorBackground.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,5 +242,6 @@
         private System.Windows.Forms.Panel pnlErrorBackground;
         private System.Windows.Forms.Label lblErrorMessage2;
         private System.Windows.Forms.Label lblErrorMessage1;
+        private System.Windows.Forms.Label lblKinectFeed;
     }
 }

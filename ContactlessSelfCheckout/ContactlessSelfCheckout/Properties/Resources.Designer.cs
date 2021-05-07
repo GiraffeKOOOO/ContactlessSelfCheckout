@@ -63,6 +63,26 @@ namespace ContactlessSelfCheckout.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back_button {
+            get {
+                object obj = ResourceManager.GetObject("back-button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap back_button_hover {
+            get {
+                object obj = ResourceManager.GetObject("back-button-hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cart {
             get {
                 object obj = ResourceManager.GetObject("cart", resourceCulture);
@@ -76,6 +96,16 @@ namespace ContactlessSelfCheckout.Properties {
         internal static System.Drawing.Bitmap hand_wave {
             get {
                 object obj = ResourceManager.GetObject("hand-wave", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap help_background {
+            get {
+                object obj = ResourceManager.GetObject("help-background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

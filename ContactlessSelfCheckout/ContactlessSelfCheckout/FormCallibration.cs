@@ -23,8 +23,8 @@ namespace ContactlessSelfCheckout
                 try
                 {
                     Process kinectMouseControls = new Process();
-                    //kinectMouseControls.StartInfo.FileName = @"G:\VisualStudioRepos\kinectv2mousecontrol\src\KinectV2MouseControl\bin\Debug\KinectV2MouseControl.exe";
-                    kinectMouseControls.StartInfo.FileName = @"E:\VisualStudioRepos\kinectv2mousecontrol\src\KinectV2MouseControl\bin\Debug\KinectV2MouseControl.exe";
+                    kinectMouseControls.StartInfo.FileName = @"G:\VisualStudioRepos\kinectv2mousecontrol\src\KinectV2MouseControl\bin\Debug\KinectV2MouseControl.exe";
+                    //kinectMouseControls.StartInfo.FileName = @"E:\VisualStudioRepos\kinectv2mousecontrol\src\KinectV2MouseControl\bin\Debug\KinectV2MouseControl.exe";
                     kinectMouseControls.Start();
                 }
                 catch (Exception kinectMouseControlNotFound)
@@ -35,6 +35,7 @@ namespace ContactlessSelfCheckout
                 
             }
         }
+
         private void NoKinectControls() 
         {
             lblScreenTitle.Visible = false;
@@ -88,6 +89,7 @@ namespace ContactlessSelfCheckout
             myReader.MultiSourceFrameArrived += MyReader_MultiSourceFrameArrived;
 
         }
+
         private void MyReader_MultiSourceFrameArrived(object sender, MultiSourceFrameArrivedEventArgs e)
         {
             var reference = e.FrameReference.AcquireFrame();
@@ -164,6 +166,7 @@ namespace ContactlessSelfCheckout
         {
             CloseProcess("KinectV2MouseControl");
         }
+
         private void CursorAnimate()
         {
             this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");

@@ -34,6 +34,7 @@ namespace ContactlessSelfCheckout
             formBasketList.Top = this.Top;
             this.Hide();
         }
+
         private void BtnStart_MouseEnter(object sender, EventArgs e)
         {
             btnStart.Image = Properties.Resources.start_button_hover;
@@ -107,7 +108,6 @@ namespace ContactlessSelfCheckout
             Thread.Sleep(100);
             this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
         }
-
 
     }
 }

@@ -230,6 +230,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>Db_Products.mdf</DependentUpon>
     </Content>
+    <Content Include="media\buttons\back-button-hover.png" />
+    <Content Include="media\buttons\back-button.png" />
     <Content Include="media\buttons\cart.png" />
     <Content Include="media\buttons\hand-wave.png" />
     <Content Include="media\buttons\help-button-hover.png" />
@@ -241,6 +243,7 @@
     <Content Include="media\card.png" />
     <Content Include="media\cash.png" />
     <Content Include="media\coupon.png" />
+    <Content Include="media\help-background.png" />
     <Content Include="media\icon_gqp_icon.ico" />
     <Content Include="media\loading.gif" />
     <Content Include="media\loading2.gif" />

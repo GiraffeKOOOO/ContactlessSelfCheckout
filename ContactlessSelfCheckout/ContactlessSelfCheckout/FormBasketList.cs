@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Collections;
 using System.Threading;
 using System.Diagnostics;
 
@@ -14,7 +11,6 @@ namespace ContactlessSelfCheckout
 {
     public partial class FormBasketList : Form
     {
-        public string formTitle = "BasketList";
         // this list is used for storing of products selected by the users, this allows to show the list and calculate the cost
         public List<Product> basketList = new List<Product>();
         public decimal basketTotal = 0;
@@ -22,12 +18,6 @@ namespace ContactlessSelfCheckout
         public FormBasketList()
         {
             InitializeComponent();
-            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
-        }
-        private void CursorAnimate()
-        {
-            this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
-            Thread.Sleep(100);
             this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
         }
 
@@ -48,6 +38,7 @@ namespace ContactlessSelfCheckout
             // this function should be called whenever the counter needs to be refreshed
             lblBasketCounter.Text = CounterStringFormatting(basketList.Count);
         }
+
         private string CounterStringFormatting(int counterSize)
         {
             // this function is for formatting the counter display, making sure the zeros appear even if the basket count is single or double digit
@@ -143,6 +134,17 @@ namespace ContactlessSelfCheckout
             formHelp.Left = this.Left;
             formHelp.Top = this.Top;
         }
+        private void BtnHelp_MouseEnter(object sender, EventArgs e)
+        {
+            btnHelp.Image = Properties.Resources.help_button_hover;
+            btnHelp.Refresh();
+        }
+
+        private void BtnHelp_MouseLeave(object sender, EventArgs e)
+        {
+            btnHelp.Image = Properties.Resources.help_button;
+            btnHelp.Refresh();
+        }
 
         private void BtnVegetables_Click(object sender, EventArgs e)
         {
@@ -160,11 +162,6 @@ namespace ContactlessSelfCheckout
             CursorAnimate();
         }
 
-        private void FormBasketList_Click(object sender, EventArgs e)
-        {
-            CursorAnimate();
-        }
-
         private void BtnPay_Click(object sender, EventArgs e)
         {
             CursorAnimate();
@@ -175,9 +172,20 @@ namespace ContactlessSelfCheckout
             this.Hide();
         }
 
+        private void FormBasketList_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+        }
+
         private void FormBasketList_FormClosed(object sender, FormClosedEventArgs e)
         {
             CloseProcess("KinectV2MouseControl");
+        }
+        private void CursorAnimate()
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
+            Thread.Sleep(100);
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
         }
 
         private void CloseProcess(string name)
@@ -190,5 +198,6 @@ namespace ContactlessSelfCheckout
                 }
             }
         }
+        
     }
 }
