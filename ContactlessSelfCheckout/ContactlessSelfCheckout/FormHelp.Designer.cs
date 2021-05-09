@@ -42,11 +42,11 @@
             this.lblInstruction.AutoSize = true;
             this.lblInstruction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(132)))), ((int)(((byte)(0)))));
             this.lblInstruction.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F);
-            this.lblInstruction.Location = new System.Drawing.Point(37, 42);
+            this.lblInstruction.Location = new System.Drawing.Point(44, 42);
             this.lblInstruction.Name = "lblInstruction";
-            this.lblInstruction.Size = new System.Drawing.Size(943, 51);
+            this.lblInstruction.Size = new System.Drawing.Size(931, 51);
             this.lblInstruction.TabIndex = 8;
-            this.lblInstruction.Text = "Please wait, an assistant will come and help you";
+            this.lblInstruction.Text = "Please wait an assistant will come and help you";
             // 
             // btnBack
             // 

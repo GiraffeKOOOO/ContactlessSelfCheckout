@@ -152,7 +152,7 @@
             // btnHelp
             // 
             this.btnHelp.Image = global::ContactlessSelfCheckout.Properties.Resources.help_button;
-            this.btnHelp.Location = new System.Drawing.Point(11, 617);
+            this.btnHelp.Location = new System.Drawing.Point(7, 622);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Size = new System.Drawing.Size(100, 100);
             this.btnHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

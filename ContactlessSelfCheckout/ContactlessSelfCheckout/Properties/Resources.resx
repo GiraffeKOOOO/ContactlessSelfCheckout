@@ -118,40 +118,109 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="help-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\media\buttons\help-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="card-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\card-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="help-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\media\help-background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="own-bag-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\media\buttons\own-bag-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\media\buttons\cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hand-wave" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\media\buttons\hand-wave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="start-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\media\buttons\start-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="back-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\media\buttons\back-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="person-outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\media\person-outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="help-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\media\buttons\help-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="own-bag-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\media\buttons\own-bag-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="panel-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\panel-background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="start-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\media\buttons\start-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="remove-item-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\remove-item-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="start-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\start-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="person-outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\person-outline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fruit-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\fruit-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vegetables-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\vegetables-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="help-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\help-background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="finish-and-pay-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\finish-and-pay-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bakery-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\bakery-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fruit-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\fruit-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\search-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hand-wave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\hand-wave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="finish-and-pay-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\finish-and-pay-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barcode-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\barcode-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drinks-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\drinks-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="own-bag-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\own-bag-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="own-bag-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\own-bag-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cash-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\cash-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="remove-item-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\remove-item-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vegetables-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\vegetables-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="help-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\help-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barcode-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\barcode-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\search-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="card-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\card-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="help-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\help-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cash-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\cash-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\back-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="back-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\media\buttons\back-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bakery-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\bakery-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drinks-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\drinks-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coupon-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\coupon-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coupon-button-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\media\buttons\coupon-button-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

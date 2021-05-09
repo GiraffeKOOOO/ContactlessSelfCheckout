@@ -19,6 +19,7 @@ namespace ContactlessSelfCheckout
         {
             InitializeComponent();
             this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
+            UpdateTotalLbl();
         }
 
         public void AddProductToList(Product product) 
@@ -96,8 +97,8 @@ namespace ContactlessSelfCheckout
             var priceLabels = pnlBasketList.Controls.OfType<Label>().Where(label => label.Name.StartsWith("lblPrice"));
 
             // new location starting points
-            Point productPoint = new Point(5, 60);
-            Point pricePoint = new Point(500, 60);
+            Point productPoint = new Point(5, 45);
+            Point pricePoint = new Point(500, 45);
 
             // for each loops to reposition the labels
             foreach (var label in productLabels)
@@ -125,6 +126,153 @@ namespace ContactlessSelfCheckout
             lblTotalSum.Text = "£ " + basketTotal.ToString();   
         }
 
+        private void BtnFruit_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+        }
+
+        private void BtnFruit_MouseEnter(object sender, EventArgs e)
+        {
+            btnFruit.Image = Properties.Resources.fruit_button_hover;
+            btnFruit.Refresh();
+        }
+
+        private void BtnFruit_MouseLeave(object sender, EventArgs e)
+        {
+            btnFruit.Image = Properties.Resources.fruit_button;
+            btnFruit.Refresh();
+        }
+
+        private void BtnVegetable_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+            // This function creates a new object for the FormVegetables, and shows the new form directly on top of the previous form
+            FormVegetables formVegetables = new FormVegetables(this);
+            formVegetables.Show();
+            formVegetables.Left = this.Left;
+            formVegetables.Top = this.Top;
+            this.Hide();
+        }
+
+        private void BtnVegetable_MouseEnter(object sender, EventArgs e)
+        {
+            btnVegetable.Image = Properties.Resources.vegetables_button_hover;
+            btnVegetable.Refresh();
+        }
+
+        private void BtnVegetable_MouseLeave(object sender, EventArgs e)
+        {
+            btnVegetable.Image = Properties.Resources.vegetables_button;
+            btnVegetable.Refresh();
+        }
+
+        private void BtnDrinks_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+        }
+
+        private void BtnDrinks_MouseEnter(object sender, EventArgs e)
+        {
+            btnDrinks.Image = Properties.Resources.drinks_button_hover;
+            btnDrinks.Refresh();
+        }
+
+        private void BtnDrinks_MouseLeave(object sender, EventArgs e)
+        {
+            btnDrinks.Image = Properties.Resources.drinks_button;
+            btnDrinks.Refresh();
+        }
+
+        private void BtnBakery_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+        }
+
+        private void BtnBakery_MouseEnter(object sender, EventArgs e)
+        {
+            btnBakery.Image = Properties.Resources.bakery_button_hover;
+            btnBakery.Refresh();
+        }
+
+        private void BtnBakery_MouseLeave(object sender, EventArgs e)
+        {
+            btnBakery.Image = Properties.Resources.bakery_button;
+            btnBakery.Refresh();
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+        }
+
+        private void BtnSearch_MouseEnter(object sender, EventArgs e)
+        {
+            btnSearch.Image = Properties.Resources.search_button_hover;
+            btnSearch.Refresh();
+        }
+
+        private void BtnSearch_MouseLeave(object sender, EventArgs e)
+        {
+            btnSearch.Image = Properties.Resources.search_button;
+            btnSearch.Refresh();
+        }
+
+        private void BtnBarcode_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+        }
+
+        private void BtnBarcode_MouseEnter(object sender, EventArgs e)
+        {
+            btnBarcode.Image = Properties.Resources.barcode_button_hover;
+            btnBarcode.Refresh();
+        }
+
+        private void BtnBarcode_MouseLeave(object sender, EventArgs e)
+        {
+            btnBarcode.Image = Properties.Resources.barcode_button;
+            btnBarcode.Refresh();
+        }
+
+        private void BtnRemoveItem_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+        }
+
+        private void BtnRemoveItem_MouseEnter(object sender, EventArgs e)
+        {
+            btnRemoveItem.Image = Properties.Resources.remove_item_button_hover;
+            btnRemoveItem.Refresh();
+        }
+
+        private void BtnRemoveItem_MouseLeave(object sender, EventArgs e)
+        {
+            btnRemoveItem.Image = Properties.Resources.remove_item_button;
+            btnRemoveItem.Refresh();
+        }
+
+        private void BtnPay_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+            FormPay formPay = new FormPay(this);
+            formPay.Show();
+            formPay.Left = this.Left;
+            formPay.Top = this.Top;
+            this.Hide();
+        }
+
+        private void BtnPay_MouseEnter(object sender, EventArgs e)
+        {
+            btnPay.Image = Properties.Resources.finish_and_pay_button_hover;
+            btnPay.Refresh();
+        }
+
+        private void BtnPay_MouseLeave(object sender, EventArgs e)
+        {
+            btnPay.Image = Properties.Resources.finish_and_pay_button;
+            btnPay.Refresh();
+        }
+
         private void BtnHelp_Click(object sender, EventArgs e)
         {
             CursorAnimate();
@@ -144,32 +292,6 @@ namespace ContactlessSelfCheckout
         {
             btnHelp.Image = Properties.Resources.help_button;
             btnHelp.Refresh();
-        }
-
-        private void BtnVegetables_Click(object sender, EventArgs e)
-        {
-            CursorAnimate();
-            // This function creates a new object for the FormVegetables, and shows the new form directly on top of the previous form
-            FormVegetables formVegetables = new FormVegetables(this);
-            formVegetables.Show();
-            formVegetables.Left = this.Left;
-            formVegetables.Top = this.Top;
-            this.Hide();
-        }
-
-        private void BtnRemoveItem_Click(object sender, EventArgs e)
-        {
-            CursorAnimate();
-        }
-
-        private void BtnPay_Click(object sender, EventArgs e)
-        {
-            CursorAnimate();
-            FormPay formPay = new FormPay(this);
-            formPay.Show();
-            formPay.Left = this.Left;
-            formPay.Top = this.Top;
-            this.Hide();
         }
 
         private void FormBasketList_Click(object sender, EventArgs e)
@@ -198,6 +320,7 @@ namespace ContactlessSelfCheckout
                 }
             }
         }
+
         
     }
 }
