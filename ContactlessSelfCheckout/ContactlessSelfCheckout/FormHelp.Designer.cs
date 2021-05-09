@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHelp));
             this.lblInstruction = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.PictureBox();
             this.imgAssistant = new System.Windows.Forms.PictureBox();
@@ -70,6 +71,7 @@
             this.imgAssistant.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgAssistant.TabIndex = 9;
             this.imgAssistant.TabStop = false;
+            this.imgAssistant.Click += new System.EventHandler(this.ImgAssistant_Click);
             // 
             // panel1
             // 
@@ -90,6 +92,9 @@
             this.Controls.Add(this.imgAssistant);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormHelp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contactless Self-Checkout";

@@ -29,13 +29,16 @@ namespace ContactlessSelfCheckout
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuantityScreen));
             this.lblInstruction = new System.Windows.Forms.Label();
-            this.btnHelp = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.pnlNumpad = new System.Windows.Forms.TableLayoutPanel();
+            this.btnHelp = new System.Windows.Forms.PictureBox();
+            this.btnBack = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInstruction
@@ -47,32 +50,6 @@ namespace ContactlessSelfCheckout
             this.lblInstruction.Size = new System.Drawing.Size(285, 29);
             this.lblInstruction.TabIndex = 2;
             this.lblInstruction.Text = "Please select the quantity";
-            // 
-            // btnHelp
-            // 
-            this.btnHelp.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.btnHelp.Location = new System.Drawing.Point(12, 627);
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(118, 90);
-            this.btnHelp.TabIndex = 7;
-            this.btnHelp.Text = "Help";
-            this.btnHelp.UseVisualStyleBackColor = false;
-            this.btnHelp.Click += new System.EventHandler(this.BtnHelp_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.btnBack.Location = new System.Drawing.Point(430, 627);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(149, 90);
-            this.btnBack.TabIndex = 10;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // lblQuantity
             // 
@@ -91,7 +68,7 @@ namespace ContactlessSelfCheckout
             this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.btnSubmit.Location = new System.Drawing.Point(523, 519);
+            this.btnSubmit.Location = new System.Drawing.Point(519, 505);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(149, 90);
             this.btnSubmit.TabIndex = 13;
@@ -104,7 +81,7 @@ namespace ContactlessSelfCheckout
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.btnClear.Location = new System.Drawing.Point(344, 519);
+            this.btnClear.Location = new System.Drawing.Point(340, 505);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(149, 90);
             this.btnClear.TabIndex = 14;
@@ -128,23 +105,56 @@ namespace ContactlessSelfCheckout
             this.pnlNumpad.Size = new System.Drawing.Size(518, 348);
             this.pnlNumpad.TabIndex = 15;
             // 
+            // btnHelp
+            // 
+            this.btnHelp.Image = global::ContactlessSelfCheckout.Properties.Resources.help_button;
+            this.btnHelp.Location = new System.Drawing.Point(7, 622);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(100, 100);
+            this.btnHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnHelp.TabIndex = 43;
+            this.btnHelp.TabStop = false;
+            this.btnHelp.Click += new System.EventHandler(this.BtnBack_Click);
+            this.btnHelp.MouseEnter += new System.EventHandler(this.BtnHelp_MouseEnter);
+            this.btnHelp.MouseLeave += new System.EventHandler(this.BtnHelp_MouseLeave);
+            // 
+            // btnBack
+            // 
+            this.btnBack.Image = global::ContactlessSelfCheckout.Properties.Resources.back_button;
+            this.btnBack.Location = new System.Drawing.Point(307, 636);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(395, 81);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnBack.TabIndex = 44;
+            this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
+            this.btnBack.MouseEnter += new System.EventHandler(this.BtnBack_MouseEnter);
+            this.btnBack.MouseLeave += new System.EventHandler(this.BtnBack_MouseLeave);
+            // 
             // FormQuantityScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.pnlNumpad);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.lblQuantity);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblInstruction);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormQuantityScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quantity select";
             this.Load += new System.EventHandler(this.FormQuantityScreen_Load);
+            this.Click += new System.EventHandler(this.FormQuantityScreen_Click);
+            ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,11 +163,11 @@ namespace ContactlessSelfCheckout
         #endregion
 
         private System.Windows.Forms.Label lblInstruction;
-        private System.Windows.Forms.Button btnHelp;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.TableLayoutPanel pnlNumpad;
+        private System.Windows.Forms.PictureBox btnHelp;
+        private System.Windows.Forms.PictureBox btnBack;
     }
 }

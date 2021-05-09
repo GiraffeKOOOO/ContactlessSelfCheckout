@@ -217,6 +217,7 @@
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCallibration_FormClosed);
             this.Load += new System.EventHandler(this.FormCallibration_Load);
+            this.Click += new System.EventHandler(this.FormCallibration_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlErrorBackground.ResumeLayout(false);

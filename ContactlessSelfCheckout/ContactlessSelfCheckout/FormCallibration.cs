@@ -13,6 +13,7 @@ namespace ContactlessSelfCheckout
     {
         private KinectSensor mySensor = null;
         private MultiSourceFrameReader myReader = null;
+
         public FormCallibration()
         {
             InitializeComponent();
@@ -160,6 +161,11 @@ namespace ContactlessSelfCheckout
         {
             btnHelp.Image = Properties.Resources.help_button;
             btnHelp.Refresh();
+        }
+
+        private void FormCallibration_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
         }
 
         private void FormCallibration_FormClosed(object sender, FormClosedEventArgs e)

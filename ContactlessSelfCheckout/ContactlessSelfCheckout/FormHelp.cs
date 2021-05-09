@@ -30,6 +30,11 @@ namespace ContactlessSelfCheckout
             btnBack.Refresh();
         }
 
+        private void ImgAssistant_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+        }
+
         private void FormHelp_Click(object sender, EventArgs e)
         {
             CursorAnimate();
@@ -41,5 +46,7 @@ namespace ContactlessSelfCheckout
             Thread.Sleep(100);
             this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
         }
+
+        
     }
 }
