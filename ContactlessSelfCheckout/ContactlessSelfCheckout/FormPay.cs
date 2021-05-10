@@ -99,6 +99,7 @@ namespace ContactlessSelfCheckout
             formPaymentMethod.Show();
             formPaymentMethod.Left = this.Left;
             formPaymentMethod.Top = this.Top;
+            this.Hide();
         }
 
         private void BtnCash_MouseEnter(object sender, EventArgs e)
@@ -120,6 +121,7 @@ namespace ContactlessSelfCheckout
             formPaymentMethod.Show();
             formPaymentMethod.Left = this.Left;
             formPaymentMethod.Top = this.Top;
+            this.Hide();
         }
 
         private void BtnCard_MouseEnter(object sender, EventArgs e)
@@ -141,6 +143,7 @@ namespace ContactlessSelfCheckout
             formPaymentMethod.Show();
             formPaymentMethod.Left = this.Left;
             formPaymentMethod.Top = this.Top;
+            this.Hide();
         }
 
         private void BtnCoupon_MouseEnter(object sender, EventArgs e)

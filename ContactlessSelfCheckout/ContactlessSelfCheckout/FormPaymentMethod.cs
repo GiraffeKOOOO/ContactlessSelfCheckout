@@ -9,10 +9,10 @@ namespace ContactlessSelfCheckout
 {
     public partial class FormPaymentMethod : Form
     {
-        private readonly FormPay parent;
-        public FormPaymentMethod(FormPay _parent, string paymentMethod)
+        private readonly FormPay formPay;
+        public FormPaymentMethod(FormPay formPayRef, string paymentMethod)
         {
-            parent = _parent;
+            formPay = formPayRef;
             InitializeComponent();
             this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
             ChangeLblTitle(paymentMethod);
@@ -56,6 +56,9 @@ namespace ContactlessSelfCheckout
         private void BtnBack_Click(object sender, EventArgs e)
         {
             CursorAnimate();
+            formPay.Show();
+            formPay.Left = this.Left;
+            formPay.Top = this.Top;
             this.Hide();
         }
 
@@ -97,7 +100,7 @@ namespace ContactlessSelfCheckout
         {
             CursorAnimate();
             this.Hide();
-            parent.TotalPaid();
+            formPay.TotalPaid();
         }
 
         private void FormPaymentMethod_Click(object sender, EventArgs e)
@@ -107,7 +110,10 @@ namespace ContactlessSelfCheckout
 
         private void FormPaymentMethod_FormClosed(object sender, FormClosedEventArgs e)
         {
-            CloseProcess("KinectV2MouseControl");
+            formPay.Show();
+            formPay.Left = this.Left;
+            formPay.Top = this.Top;
+            this.Hide();
         }
 
         private void CursorAnimate()
