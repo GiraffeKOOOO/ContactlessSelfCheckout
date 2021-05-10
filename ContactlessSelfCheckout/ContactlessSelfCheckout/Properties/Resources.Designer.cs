@@ -293,6 +293,26 @@ namespace ContactlessSelfCheckout.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap no_button {
+            get {
+                object obj = ResourceManager.GetObject("no-button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap no_button_hover {
+            get {
+                object obj = ResourceManager.GetObject("no-button-hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap own_bag_button {
             get {
                 object obj = ResourceManager.GetObject("own-bag-button", resourceCulture);
@@ -406,6 +426,26 @@ namespace ContactlessSelfCheckout.Properties {
         internal static System.Drawing.Bitmap vegetables_button_hover {
             get {
                 object obj = ResourceManager.GetObject("vegetables-button-hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yes_button {
+            get {
+                object obj = ResourceManager.GetObject("yes-button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yes_button_hover {
+            get {
+                object obj = ResourceManager.GetObject("yes-button-hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

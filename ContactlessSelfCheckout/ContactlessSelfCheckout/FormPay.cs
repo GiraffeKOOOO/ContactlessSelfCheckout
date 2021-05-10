@@ -42,10 +42,10 @@ namespace ContactlessSelfCheckout
             loadingGif.Top = 500;
 
             this.Hide();
-            FormEnding formEnding = new FormEnding();
-            formEnding.Show();
-            formEnding.Left = this.Left;
-            formEnding.Top = this.Top;
+            FormReceipt formReceipt = new FormReceipt();
+            formReceipt.Show();
+            formReceipt.Left = this.Left;
+            formReceipt.Top = this.Top;
         }
 
         private void BtnBack_Click(object sender, EventArgs e)

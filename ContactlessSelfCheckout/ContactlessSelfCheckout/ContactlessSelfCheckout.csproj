@@ -106,6 +106,12 @@
     <Compile Include="FormQuantityScreen.Designer.cs">
       <DependentUpon>FormQuantityScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReceipt.Designer.cs">
+      <DependentUpon>FormReceipt.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormVegetables.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuantityScreen.resx">
       <DependentUpon>FormQuantityScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReceipt.resx">
+      <DependentUpon>FormReceipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVegetables.resx">
       <DependentUpon>FormVegetables.cs</DependentUpon>
@@ -252,6 +261,8 @@
     <Content Include="media\buttons\hand-wave.png" />
     <Content Include="media\buttons\help-button-hover.png" />
     <Content Include="media\buttons\help-button.png" />
+    <Content Include="media\buttons\no-button-hover.png" />
+    <Content Include="media\buttons\no-button.png" />
     <Content Include="media\buttons\own-bag-button-hover.png" />
     <Content Include="media\buttons\own-bag-button.png" />
     <Content Include="media\buttons\remove-item-button-hover.png" />
@@ -262,6 +273,8 @@
     <Content Include="media\buttons\start-button.png" />
     <Content Include="media\buttons\vegetables-button.png" />
     <Content Include="media\buttons\vegetables-button-hover.png" />
+    <Content Include="media\buttons\yes-button-hover.png" />
+    <Content Include="media\buttons\yes-button.png" />
     <Content Include="media\card.png" />
     <Content Include="media\cash.png" />
     <Content Include="media\coupon.png" />

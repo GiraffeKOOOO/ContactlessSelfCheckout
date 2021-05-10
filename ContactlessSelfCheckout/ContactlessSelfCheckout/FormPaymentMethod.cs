@@ -122,18 +122,6 @@ namespace ContactlessSelfCheckout
             Thread.Sleep(100);
             this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
         }
-
-        private void CloseProcess(string name)
-        {
-            foreach (Process process in Process.GetProcesses())
-            {
-                if (process.ProcessName.Contains(name))
-                {
-                    process.Kill();
-                }
-            }
-        }
-
         
     }
 }
