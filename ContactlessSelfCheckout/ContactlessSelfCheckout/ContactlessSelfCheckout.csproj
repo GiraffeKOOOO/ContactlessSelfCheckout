@@ -282,6 +282,7 @@
     <Content Include="media\icon_gqp_icon.ico" />
     <Content Include="media\loading.gif" />
     <Content Include="media\loading2.gif" />
+    <Content Include="media\orange_circle.png" />
     <Content Include="media\panel-background.png" />
     <Content Include="media\person-outline.png" />
     <None Include="Resources\start-button.bmp" />

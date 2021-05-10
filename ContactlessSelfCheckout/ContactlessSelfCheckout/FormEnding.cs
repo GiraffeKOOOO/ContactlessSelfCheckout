@@ -20,13 +20,7 @@ namespace ContactlessSelfCheckout
             this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
             InitializeComponent();
         }
-        private void CursorAnimate()
-        {
-            this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
-            Thread.Sleep(100);
-            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
-        }
-
+        
         private void BtnHelp_Click(object sender, EventArgs e)
         {
             CursorAnimate();
@@ -37,10 +31,27 @@ namespace ContactlessSelfCheckout
             formHelp.Top = this.Top;
         }
 
+        private void BtnHelp_MouseEnter(object sender, EventArgs e)
+        {
+            btnHelp.Image = Properties.Resources.help_button_hover;
+            btnHelp.Refresh();
+        }
+
+        private void BtnHelp_MouseLeave(object sender, EventArgs e)
+        {
+            btnHelp.Image = Properties.Resources.help_button;
+            btnHelp.Refresh();
+        }
+
         private void BtnRestart_Click(object sender, EventArgs e)
         {
             CursorAnimate();
             Application.Restart();
+        }
+
+        private void FormEnding_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CloseProcess("KinectV2MouseControl");
         }
 
         private void CloseProcess(string name)
@@ -54,9 +65,12 @@ namespace ContactlessSelfCheckout
             }
         }
 
-        private void FormEnding_FormClosed(object sender, FormClosedEventArgs e)
+        private void CursorAnimate()
         {
-            CloseProcess("KinectV2MouseControl");
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
+            Thread.Sleep(100);
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
         }
+
     }
 }
