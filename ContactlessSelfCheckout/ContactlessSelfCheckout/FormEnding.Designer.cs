@@ -32,7 +32,6 @@ namespace ContactlessSelfCheckout
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEnding));
             this.lblFormTitle = new System.Windows.Forms.Label();
             this.lblInstruction = new System.Windows.Forms.Label();
-            this.btnRestart = new System.Windows.Forms.Button();
             this.imgOrangeCircle = new System.Windows.Forms.PictureBox();
             this.btnHelp = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgOrangeCircle)).BeginInit();
@@ -61,19 +60,6 @@ namespace ContactlessSelfCheckout
             this.lblInstruction.TabIndex = 34;
             this.lblInstruction.Text = "Please take your shopping";
             // 
-            // btnRestart
-            // 
-            this.btnRestart.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnRestart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRestart.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.btnRestart.Location = new System.Drawing.Point(878, 627);
-            this.btnRestart.Name = "btnRestart";
-            this.btnRestart.Size = new System.Drawing.Size(118, 90);
-            this.btnRestart.TabIndex = 36;
-            this.btnRestart.Text = "Start Over";
-            this.btnRestart.UseVisualStyleBackColor = false;
-            this.btnRestart.Click += new System.EventHandler(this.BtnRestart_Click);
-            // 
             // imgOrangeCircle
             // 
             this.imgOrangeCircle.Image = global::ContactlessSelfCheckout.Properties.Resources.orange_circle;
@@ -83,6 +69,7 @@ namespace ContactlessSelfCheckout
             this.imgOrangeCircle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgOrangeCircle.TabIndex = 38;
             this.imgOrangeCircle.TabStop = false;
+            this.imgOrangeCircle.Click += new System.EventHandler(this.ImgOrangeCircle_Click);
             // 
             // btnHelp
             // 
@@ -104,7 +91,6 @@ namespace ContactlessSelfCheckout
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.btnHelp);
-            this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.lblInstruction);
             this.Controls.Add(this.lblFormTitle);
             this.Controls.Add(this.imgOrangeCircle);
@@ -115,6 +101,8 @@ namespace ContactlessSelfCheckout
             this.Name = "FormEnding";
             this.Text = "Contactless Self-Checkout";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormEnding_FormClosed);
+            this.Shown += new System.EventHandler(this.FormEnding_Shown);
+            this.Click += new System.EventHandler(this.FormEnding_Click);
             ((System.ComponentModel.ISupportInitialize)(this.imgOrangeCircle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).EndInit();
             this.ResumeLayout(false);
@@ -126,7 +114,6 @@ namespace ContactlessSelfCheckout
 
         private System.Windows.Forms.Label lblFormTitle;
         private System.Windows.Forms.Label lblInstruction;
-        private System.Windows.Forms.Button btnRestart;
         private System.Windows.Forms.PictureBox btnHelp;
         private System.Windows.Forms.PictureBox imgOrangeCircle;
     }

@@ -39,15 +39,20 @@ namespace ContactlessSelfCheckout
 
         private void NoKinectControls() 
         {
+            /*
+            // hide the current titles and labels
             lblScreenTitle.Visible = false;
-            lblErrorTitle.Visible = true;
 
-            lblInstruction.Visible = false;
-            lblInstruction2.Visible = false;
+            lblInstruction1.Visible = false;
+            lblInstructions5.Visible = false;
+            /*
 
+            // add a panel, error title, and 2 error descriptions
+            /*
             pnlErrorBackground.Visible = true;
             lblErrorMessage1.Visible = true;
             lblErrorMessage2.Visible = true;
+            */
         }
 
         private bool IsProcessOpen(string name)
@@ -88,7 +93,6 @@ namespace ContactlessSelfCheckout
 
             myReader = mySensor.OpenMultiSourceFrameReader(FrameSourceTypes.Color);
             myReader.MultiSourceFrameArrived += MyReader_MultiSourceFrameArrived;
-
         }
 
         private void MyReader_MultiSourceFrameArrived(object sender, MultiSourceFrameArrivedEventArgs e)

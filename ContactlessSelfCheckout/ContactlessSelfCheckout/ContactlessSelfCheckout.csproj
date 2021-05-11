@@ -278,6 +278,8 @@
     <Content Include="media\card.png" />
     <Content Include="media\cash.png" />
     <Content Include="media\coupon.png" />
+    <Content Include="media\hand-anim.gif" />
+    <Content Include="media\hand-grasp.gif" />
     <Content Include="media\help-background.png" />
     <Content Include="media\icon_gqp_icon.ico" />
     <Content Include="media\loading.gif" />

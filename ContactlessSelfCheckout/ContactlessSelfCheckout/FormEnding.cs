@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ContactlessSelfCheckout
@@ -20,7 +13,12 @@ namespace ContactlessSelfCheckout
             this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
             InitializeComponent();
         }
-        
+
+        private void ImgOrangeCircle_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+        }
+
         private void BtnHelp_Click(object sender, EventArgs e)
         {
             CursorAnimate();
@@ -43,10 +41,15 @@ namespace ContactlessSelfCheckout
             btnHelp.Refresh();
         }
 
-        private void BtnRestart_Click(object sender, EventArgs e)
+        private void FormEnding_Shown(object sender, EventArgs e)
+        {
+            //Thread.Sleep(5000);
+            //Application.Restart();
+        }
+
+        private void FormEnding_Click(object sender, EventArgs e)
         {
             CursorAnimate();
-            Application.Restart();
         }
 
         private void FormEnding_FormClosed(object sender, FormClosedEventArgs e)
@@ -72,5 +75,6 @@ namespace ContactlessSelfCheckout
             this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
         }
 
+        
     }
 }
