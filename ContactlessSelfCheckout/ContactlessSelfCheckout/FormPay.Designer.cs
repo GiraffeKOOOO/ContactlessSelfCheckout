@@ -33,7 +33,7 @@ namespace ContactlessSelfCheckout
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblTotalSum = new System.Windows.Forms.Label();
             this.lblInstruction = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlTitleBackground = new System.Windows.Forms.Panel();
             this.btnCoupon = new System.Windows.Forms.PictureBox();
             this.btnCard = new System.Windows.Forms.PictureBox();
             this.btnCash = new System.Windows.Forms.PictureBox();
@@ -78,13 +78,13 @@ namespace ContactlessSelfCheckout
             this.lblInstruction.TabIndex = 33;
             this.lblInstruction.Text = "Please select method of payment";
             // 
-            // panel1
+            // pnlTitleBackground
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(132)))), ((int)(((byte)(0)))));
-            this.panel1.Location = new System.Drawing.Point(-1, -2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1018, 192);
-            this.panel1.TabIndex = 44;
+            this.pnlTitleBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(132)))), ((int)(((byte)(0)))));
+            this.pnlTitleBackground.Location = new System.Drawing.Point(-1, -2);
+            this.pnlTitleBackground.Name = "pnlTitleBackground";
+            this.pnlTitleBackground.Size = new System.Drawing.Size(1018, 192);
+            this.pnlTitleBackground.TabIndex = 44;
             // 
             // btnCoupon
             // 
@@ -165,7 +165,7 @@ namespace ContactlessSelfCheckout
             this.Controls.Add(this.lblInstruction);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblTotalSum);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlTitleBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -192,7 +192,7 @@ namespace ContactlessSelfCheckout
         private System.Windows.Forms.Label lblInstruction;
         private System.Windows.Forms.PictureBox btnHelp;
         private System.Windows.Forms.PictureBox btnBack;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlTitleBackground;
         private System.Windows.Forms.PictureBox btnCash;
         private System.Windows.Forms.PictureBox btnCard;
         private System.Windows.Forms.PictureBox btnCoupon;

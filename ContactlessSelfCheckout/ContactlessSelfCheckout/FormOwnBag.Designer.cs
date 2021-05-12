@@ -34,11 +34,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnHelp = new System.Windows.Forms.PictureBox();
             this.btnStart = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlTitleBackground = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnStart)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnlTitleBackground.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblInstruction
@@ -97,15 +97,15 @@
             this.btnStart.MouseEnter += new System.EventHandler(this.BtnStart_MouseEnter);
             this.btnStart.MouseLeave += new System.EventHandler(this.BtnStart_MouseLeave);
             // 
-            // panel1
+            // pnlTitleBackground
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(132)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.lblInstruction);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-5, -3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1018, 147);
-            this.panel1.TabIndex = 16;
+            this.pnlTitleBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(132)))), ((int)(((byte)(0)))));
+            this.pnlTitleBackground.Controls.Add(this.lblInstruction);
+            this.pnlTitleBackground.Controls.Add(this.label1);
+            this.pnlTitleBackground.Location = new System.Drawing.Point(-5, -3);
+            this.pnlTitleBackground.Name = "pnlTitleBackground";
+            this.pnlTitleBackground.Size = new System.Drawing.Size(1018, 147);
+            this.pnlTitleBackground.TabIndex = 16;
             // 
             // FormOwnBag
             // 
@@ -113,7 +113,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 729);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlTitleBackground);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.pictureBox1);
@@ -129,8 +129,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnStart)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlTitleBackground.ResumeLayout(false);
+            this.pnlTitleBackground.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -142,6 +142,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox btnHelp;
         private System.Windows.Forms.PictureBox btnStart;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlTitleBackground;
     }
 }

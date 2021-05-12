@@ -31,11 +31,11 @@ namespace ContactlessSelfCheckout
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReceipt));
             this.lbFormTitle = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlTitleBackground = new System.Windows.Forms.Panel();
             this.btnYes = new System.Windows.Forms.PictureBox();
             this.btnNo = new System.Windows.Forms.PictureBox();
             this.btnHelp = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.pnlTitleBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnYes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).BeginInit();
@@ -52,14 +52,14 @@ namespace ContactlessSelfCheckout
             this.lbFormTitle.TabIndex = 32;
             this.lbFormTitle.Text = "Would you like a receipt?";
             // 
-            // panel1
+            // pnlTitleBackground
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(132)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.lbFormTitle);
-            this.panel1.Location = new System.Drawing.Point(-5, -1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1018, 192);
-            this.panel1.TabIndex = 46;
+            this.pnlTitleBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(132)))), ((int)(((byte)(0)))));
+            this.pnlTitleBackground.Controls.Add(this.lbFormTitle);
+            this.pnlTitleBackground.Location = new System.Drawing.Point(-5, -1);
+            this.pnlTitleBackground.Name = "pnlTitleBackground";
+            this.pnlTitleBackground.Size = new System.Drawing.Size(1018, 192);
+            this.pnlTitleBackground.TabIndex = 46;
             // 
             // btnYes
             // 
@@ -109,7 +109,7 @@ namespace ContactlessSelfCheckout
             this.Controls.Add(this.btnYes);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnHelp);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlTitleBackground);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -117,8 +117,8 @@ namespace ContactlessSelfCheckout
             this.Text = "Contactless Self-checkout";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormReceipt_FormClosed);
             this.Click += new System.EventHandler(this.FormReceipt_Click);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlTitleBackground.ResumeLayout(false);
+            this.pnlTitleBackground.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnYes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).EndInit();
@@ -129,7 +129,7 @@ namespace ContactlessSelfCheckout
         #endregion
 
         private System.Windows.Forms.Label lbFormTitle;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlTitleBackground;
         private System.Windows.Forms.PictureBox btnHelp;
         private System.Windows.Forms.PictureBox btnNo;
         private System.Windows.Forms.PictureBox btnYes;

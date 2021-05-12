@@ -32,10 +32,10 @@
             this.lblInstruction = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.PictureBox();
             this.imgAssistant = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlTitleBackground = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAssistant)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnlTitleBackground.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblInstruction
@@ -73,14 +73,14 @@
             this.imgAssistant.TabStop = false;
             this.imgAssistant.Click += new System.EventHandler(this.ImgAssistant_Click);
             // 
-            // panel1
+            // pnlTitleBackground
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(132)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.lblInstruction);
-            this.panel1.Location = new System.Drawing.Point(-4, -5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1018, 124);
-            this.panel1.TabIndex = 11;
+            this.pnlTitleBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(132)))), ((int)(((byte)(0)))));
+            this.pnlTitleBackground.Controls.Add(this.lblInstruction);
+            this.pnlTitleBackground.Location = new System.Drawing.Point(-4, -5);
+            this.pnlTitleBackground.Name = "pnlTitleBackground";
+            this.pnlTitleBackground.Size = new System.Drawing.Size(1018, 124);
+            this.pnlTitleBackground.TabIndex = 11;
             // 
             // FormHelp
             // 
@@ -90,7 +90,7 @@
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.imgAssistant);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlTitleBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -102,8 +102,8 @@
             this.Click += new System.EventHandler(this.FormHelp_Click);
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgAssistant)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlTitleBackground.ResumeLayout(false);
+            this.pnlTitleBackground.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -112,6 +112,6 @@
         private System.Windows.Forms.Label lblInstruction;
         private System.Windows.Forms.PictureBox imgAssistant;
         private System.Windows.Forms.PictureBox btnBack;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlTitleBackground;
     }
 }

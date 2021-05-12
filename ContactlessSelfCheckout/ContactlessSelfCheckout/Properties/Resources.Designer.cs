@@ -223,6 +223,16 @@ namespace ContactlessSelfCheckout.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap finish_and_pay_button_grey {
+            get {
+                object obj = ResourceManager.GetObject("finish-and-pay-button-grey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap finish_and_pay_button_hover {
             get {
                 object obj = ResourceManager.GetObject("finish-and-pay-button-hover", resourceCulture);
@@ -306,6 +316,36 @@ namespace ContactlessSelfCheckout.Properties {
         internal static System.Drawing.Bitmap help_button_hover {
             get {
                 object obj = ResourceManager.GetObject("help-button-hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap next_button {
+            get {
+                object obj = ResourceManager.GetObject("next-button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap next_button_grey {
+            get {
+                object obj = ResourceManager.GetObject("next-button-grey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap next_button_hover {
+            get {
+                object obj = ResourceManager.GetObject("next-button-hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -35,11 +35,9 @@
             this.lblKinectFeed = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblInstructions8 = new System.Windows.Forms.Label();
             this.lblInstructions2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblInstructions9 = new System.Windows.Forms.Label();
             this.lblInstructions4 = new System.Windows.Forms.Label();
             this.lblInstructions3 = new System.Windows.Forms.Label();
@@ -47,16 +45,20 @@
             this.lblInstructions7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblInstructions10 = new System.Windows.Forms.Label();
+            this.btnNextGrey = new System.Windows.Forms.PictureBox();
             this.imgCameraDisplay = new System.Windows.Forms.PictureBox();
-            this.btnStart = new System.Windows.Forms.PictureBox();
+            this.btnNext = new System.Windows.Forms.PictureBox();
             this.btnHelp = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNextGrey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCameraDisplay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnStart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblScreenTitle
@@ -128,16 +130,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "sensor until the cursor";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ContactlessSelfCheckout.Properties.Resources.hand_anim;
-            this.pictureBox1.Location = new System.Drawing.Point(-30, 174);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(433, 260);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
             // lblInstructions8
             // 
             this.lblInstructions8.AutoSize = true;
@@ -171,16 +163,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(329, 463);
             this.panel2.TabIndex = 15;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::ContactlessSelfCheckout.Properties.Resources.hand_grasp;
-            this.pictureBox2.Location = new System.Drawing.Point(88, 224);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(144, 115);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 19;
-            this.pictureBox2.TabStop = false;
             // 
             // lblInstructions9
             // 
@@ -262,6 +244,17 @@
             this.lblInstructions10.TabIndex = 15;
             this.lblInstructions10.Text = "3";
             // 
+            // btnNextGrey
+            // 
+            this.btnNextGrey.Image = global::ContactlessSelfCheckout.Properties.Resources.next_button_grey;
+            this.btnNextGrey.Location = new System.Drawing.Point(716, 595);
+            this.btnNextGrey.Name = "btnNextGrey";
+            this.btnNextGrey.Size = new System.Drawing.Size(266, 59);
+            this.btnNextGrey.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnNextGrey.TabIndex = 17;
+            this.btnNextGrey.TabStop = false;
+            this.btnNextGrey.Visible = false;
+            // 
             // imgCameraDisplay
             // 
             this.imgCameraDisplay.BackColor = System.Drawing.Color.White;
@@ -273,18 +266,18 @@
             this.imgCameraDisplay.TabIndex = 6;
             this.imgCameraDisplay.TabStop = false;
             // 
-            // btnStart
+            // btnNext
             // 
-            this.btnStart.Image = global::ContactlessSelfCheckout.Properties.Resources.start_button;
-            this.btnStart.Location = new System.Drawing.Point(716, 595);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(266, 59);
-            this.btnStart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnStart.TabIndex = 9;
-            this.btnStart.TabStop = false;
-            this.btnStart.Click += new System.EventHandler(this.BtnStart_Click);
-            this.btnStart.MouseEnter += new System.EventHandler(this.BtnStart_MouseEnter);
-            this.btnStart.MouseLeave += new System.EventHandler(this.BtnStart_MouseLeave);
+            this.btnNext.Image = global::ContactlessSelfCheckout.Properties.Resources.next_button;
+            this.btnNext.Location = new System.Drawing.Point(716, 595);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(266, 59);
+            this.btnNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnNext.TabIndex = 9;
+            this.btnNext.TabStop = false;
+            this.btnNext.Click += new System.EventHandler(this.BtnNext_Click);
+            this.btnNext.MouseEnter += new System.EventHandler(this.BtnNext_MouseEnter);
+            this.btnNext.MouseLeave += new System.EventHandler(this.BtnNext_MouseLeave);
             // 
             // btnHelp
             // 
@@ -300,6 +293,26 @@
             this.btnHelp.MouseEnter += new System.EventHandler(this.BtnHelp_MouseEnter);
             this.btnHelp.MouseLeave += new System.EventHandler(this.BtnHelp_MouseLeave);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ContactlessSelfCheckout.Properties.Resources.hand_anim;
+            this.pictureBox1.Location = new System.Drawing.Point(-30, 174);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(433, 260);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::ContactlessSelfCheckout.Properties.Resources.hand_grasp;
+            this.pictureBox2.Location = new System.Drawing.Point(88, 224);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(144, 115);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
+            // 
             // FormCallibration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,7 +320,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.imgCameraDisplay);
-            this.Controls.Add(this.btnStart);
+            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.lblInstructions10);
             this.Controls.Add(this.lblScreenTitle);
             this.Controls.Add(this.panel3);
@@ -318,6 +331,7 @@
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btnNextGrey);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -331,13 +345,14 @@
             this.Click += new System.EventHandler(this.FormCallibration_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNextGrey)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCameraDisplay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnStart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,7 +365,7 @@
         private System.Windows.Forms.PictureBox imgCameraDisplay;
         private System.Windows.Forms.PictureBox btnHelp;
         private System.Windows.Forms.Label lblInstructions5;
-        private System.Windows.Forms.PictureBox btnStart;
+        private System.Windows.Forms.PictureBox btnNext;
         private System.Windows.Forms.Label lblKinectFeed;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -366,5 +381,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox btnNextGrey;
     }
 }

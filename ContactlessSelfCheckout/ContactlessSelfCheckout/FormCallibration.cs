@@ -39,20 +39,94 @@ namespace ContactlessSelfCheckout
 
         private void NoKinectControls() 
         {
-            /*
-            // hide the current titles and labels
-            lblScreenTitle.Visible = false;
+            int windowWidth = this.ClientRectangle.Width;
+            int windowHeight = this.ClientRectangle.Height;
 
-            lblInstruction1.Visible = false;
-            lblInstructions5.Visible = false;
-            /*
+            // hiding the next button and making the greyed out button visible
+            btnNext.Visible = false;
+            btnNextGrey.Visible = true;
 
-            // add a panel, error title, and 2 error descriptions
-            /*
-            pnlErrorBackground.Visible = true;
-            lblErrorMessage1.Visible = true;
-            lblErrorMessage2.Visible = true;
-            */
+            // creating the black panel for the error background
+            Panel pnlErrorBackground = new Panel
+            {
+                Size = new Size(windowWidth - 50, 400),
+                Name = "pnlErrorBackground",
+                BackColor = Color.Black,
+                TabIndex = 21
+            };
+            pnlErrorBackground.Location = new Point((windowWidth - pnlErrorBackground.Size.Width) / 2, (windowHeight - pnlErrorBackground.Height) / 2);
+            Controls.Add(pnlErrorBackground);
+            pnlErrorBackground.BringToFront();
+
+            // creating the error title label
+            Label lblErrorTitle = new Label
+            {
+                Name = "lblErrorTitle",
+                Text = "Error",
+                ForeColor = Color.Red,
+                BackColor = Color.Black,
+                Font = new Font("Microsoft Sans Serif", 60),
+                AutoSize = true
+            };
+            lblErrorTitle.Location = new Point((pnlErrorBackground.Location.X + (pnlErrorBackground.Size.Width/2) - (lblErrorTitle.Size.Width / 2)) - 50, pnlErrorBackground.Location.Y);
+            Controls.Add(lblErrorTitle);
+            lblErrorTitle.BringToFront();
+
+            // creating the error instruction 1st line label
+            Label lblErrorInstruction1 = new Label
+            {
+                Name = "lblErrorInstruction1",
+                Text = "Kinect Mouse Control Software was not found.",
+                ForeColor = Color.Red,
+                BackColor = Color.Black,
+                Font = new Font("Microsoft Sans Serif", 25),
+                AutoSize = true
+            };
+            lblErrorInstruction1.Location = new Point(pnlErrorBackground.Location.X + 126, (pnlErrorBackground.Location.Y + lblErrorTitle.Size.Height));
+            Controls.Add(lblErrorInstruction1);
+            lblErrorInstruction1.BringToFront();
+
+            // creating the error instruction 2nd line label
+            Label lblErrorInstruction2 = new Label
+            {
+                Name = "lblErrorInstruction2",
+                Text = "Please make sure Kinect Mouse Control Software is installed",
+                ForeColor = Color.Red,
+                BackColor = Color.Black,
+                Font = new Font("Microsoft Sans Serif", 25),
+                AutoSize = true
+            };
+            lblErrorInstruction2.Location = new Point(pnlErrorBackground.Location.X + 11, (lblErrorInstruction1.Location.Y + lblErrorInstruction1.Size.Height + 10));
+            Controls.Add(lblErrorInstruction2);
+            lblErrorInstruction2.BringToFront();
+
+            // creating the error instruction 3rd line label
+            Label lblErrorInstruction3 = new Label
+            {
+                Name = "lblErrorInstruction3",
+                Text = "on this machine, and the correct path to the software is",
+                ForeColor = Color.Red,
+                BackColor = Color.Black,
+                Font = new Font("Microsoft Sans Serif", 25),
+                AutoSize = true
+            };
+            lblErrorInstruction3.Location = new Point(pnlErrorBackground.Location.X + 60, (lblErrorInstruction2.Location.Y + lblErrorInstruction2.Size.Height + 10));
+            Controls.Add(lblErrorInstruction3);
+            lblErrorInstruction3.BringToFront();
+
+            // creating the error instruction 4th line label
+            Label lblErrorInstruction4 = new Label
+            {
+                Name = "lblErrorInstruction4",
+                Text = "specified in this program, then restart this application.",
+                ForeColor = Color.Red,
+                BackColor = Color.Black,
+                Font = new Font("Microsoft Sans Serif", 25),
+                AutoSize = true
+            };
+            lblErrorInstruction4.Location = new Point(pnlErrorBackground.Location.X + 75, (lblErrorInstruction3.Location.Y + lblErrorInstruction3.Size.Height + 10));
+            Controls.Add(lblErrorInstruction4);
+            lblErrorInstruction4.BringToFront();
         }
 
         private bool IsProcessOpen(string name)
@@ -118,7 +192,7 @@ namespace ContactlessSelfCheckout
             }
         }
 
-        private void BtnStart_Click(object sender, EventArgs e)
+        private void BtnNext_Click(object sender, EventArgs e)
         {
             CursorAnimate();
 
@@ -133,16 +207,16 @@ namespace ContactlessSelfCheckout
             this.Hide();
         }
 
-        private void BtnStart_MouseEnter(object sender, EventArgs e)
+        private void BtnNext_MouseEnter(object sender, EventArgs e)
         {
-            btnStart.Image = Properties.Resources.start_button_hover;
-            btnStart.Refresh();
+            btnNext.Image = Properties.Resources.next_button_hover;
+            btnNext.Refresh();
         }
 
-        private void BtnStart_MouseLeave(object sender, EventArgs e)
+        private void BtnNext_MouseLeave(object sender, EventArgs e)
         {
-            btnStart.Image = Properties.Resources.start_button;
-            btnStart.Refresh();
+            btnNext.Image = Properties.Resources.next_button;
+            btnNext.Refresh();
         }
 
         private void BtnHelp_Click(object sender, EventArgs e)
