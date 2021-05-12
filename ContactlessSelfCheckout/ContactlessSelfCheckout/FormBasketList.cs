@@ -38,6 +38,18 @@ namespace ContactlessSelfCheckout
         {
             // this function should be called whenever the counter needs to be refreshed
             lblBasketCounter.Text = CounterStringFormatting(basketList.Count);
+            if (basketList.Count > 0)
+            {
+                // enable finish and pay button
+                btnPayGrey.Visible = false;
+                btnPay.Visible = true;
+            }
+            else
+            {
+                // disable finish and pay button
+                btnPayGrey.Visible = true;
+                btnPay.Visible = false;
+            }
         }
 
         private string CounterStringFormatting(int counterSize)
