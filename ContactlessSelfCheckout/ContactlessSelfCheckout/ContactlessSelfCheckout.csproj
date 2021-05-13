@@ -252,6 +252,8 @@
     <Content Include="media\buttons\cash-button.png" />
     <Content Include="media\buttons\coupon-button-hover.png" />
     <Content Include="media\buttons\coupon-button.png" />
+    <Content Include="media\buttons\delete-button-hover.png" />
+    <Content Include="media\buttons\delete-button.png" />
     <Content Include="media\buttons\drinks-button-hover.png" />
     <Content Include="media\buttons\drinks-button.png" />
     <Content Include="media\buttons\finish-and-pay-button-grey.png" />
@@ -269,6 +271,9 @@
     <Content Include="media\buttons\no-button.png" />
     <Content Include="media\buttons\own-bag-button-hover.png" />
     <Content Include="media\buttons\own-bag-button.png" />
+    <Content Include="media\buttons\remove-item-button-done-hover.png" />
+    <Content Include="media\buttons\remove-item-button-done.png" />
+    <Content Include="media\buttons\remove-item-button-grey.png" />
     <Content Include="media\buttons\remove-item-button-hover.png" />
     <Content Include="media\buttons\remove-item-button.png" />
     <Content Include="media\buttons\search-button-hover.png" />

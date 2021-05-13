@@ -14,6 +14,7 @@ namespace ContactlessSelfCheckout
         // this list is used for storing of products selected by the users, this allows to show the list and calculate the cost
         public List<Product> basketList = new List<Product>();
         public decimal basketTotal = 0;
+        public bool removeMode = false;
 
         public FormBasketList()
         {
@@ -28,7 +29,7 @@ namespace ContactlessSelfCheckout
             basketList.Add(product);
             UpdateCounter();
             CreateListLabel(product.productName, product.productPrice);
-            RepositionLabels();
+            RepositionLabels(0);
             CalculateTotal(product.productPrice);
             UpdateTotalLbl();
             
@@ -43,12 +44,18 @@ namespace ContactlessSelfCheckout
                 // enable finish and pay button
                 btnPayGrey.Visible = false;
                 btnPay.Visible = true;
+                // enable remove item button
+                btnRemoveItemGrey.Visible = false;
+                btnRemoveItem.Visible = true;
             }
             else
             {
                 // disable finish and pay button
                 btnPayGrey.Visible = true;
                 btnPay.Visible = false;
+                // disable remove item button
+                btnRemoveItemGrey.Visible = true;
+                btnRemoveItem.Visible = false;
             }
         }
 
@@ -81,7 +88,7 @@ namespace ContactlessSelfCheckout
             {
                 Name = "lblProduct",
                 Text = productName,
-                Font = new Font("Microsoft Sans Serif", 15),
+                Font = new Font("Microsoft Sans Serif", 25),
                 AutoSize = true,
                 ForeColor = Color.Black
             };
@@ -92,7 +99,7 @@ namespace ContactlessSelfCheckout
             {
                 Name = "lblPrice",
                 Text = "£ " + productPrice.ToString(),
-                Font = new Font("Microsoft Sans Serif", 15),
+                Font = new Font("Microsoft Sans Serif", 25),
                 AutoSize = true,
                 ForeColor = Color.Black
             };
@@ -100,7 +107,7 @@ namespace ContactlessSelfCheckout
             lblProductPrice.BringToFront();
         }
 
-        private void RepositionLabels()
+        private void RepositionLabels(int xPos)
         {
             // this function repositions the created labels
 
@@ -109,20 +116,20 @@ namespace ContactlessSelfCheckout
             var priceLabels = pnlBasketList.Controls.OfType<Label>().Where(label => label.Name.StartsWith("lblPrice"));
 
             // new location starting points
-            Point productPoint = new Point(5, 45);
-            Point pricePoint = new Point(500, 45);
+            Point productPoint = new Point(5 + xPos, 60);
+            Point pricePoint = new Point(480, 60);
 
             // for each loops to reposition the labels
             foreach (var label in productLabels)
             {
                 label.Location = productPoint;
-                productPoint.Offset(0, label.Height + 5);
+                productPoint.Offset(0, label.Height + 25);
             }
 
             foreach (var label in priceLabels)
             {
                 label.Location = pricePoint;
-                pricePoint.Offset(0, label.Height + 5);
+                pricePoint.Offset(0, label.Height + 25);
             }
         }
 
@@ -249,6 +256,37 @@ namespace ContactlessSelfCheckout
         private void BtnRemoveItem_Click(object sender, EventArgs e)
         {
             CursorAnimate();
+            removeMode = true;
+            // hide current button to show the done button
+            btnRemoveItem.Visible = false;
+            btnRemoveItemDone.Visible = true;
+
+            if (removeMode == true)
+            {
+                RepositionLabels(50);
+
+                // start with creating variables that store all the labels
+                var productLabels = pnlBasketList.Controls.OfType<Label>().Where(label => label.Name.StartsWith("lblProduct"));
+
+                Point newLocation = new Point(10, 60);
+
+                foreach (var product in productLabels)
+                {
+                    PictureBox btnDeleteItem = new PictureBox
+                    {
+                        Name = $"btnItemDelete{product.Text}",
+                        Size = new Size(39, 39),
+                        Location = newLocation,
+                        SizeMode = PictureBoxSizeMode.StretchImage,
+                        BackColor = Color.Black
+                    };
+
+                    // adjusting the location for the next button
+                    pnlBasketList.Controls.Add(btnDeleteItem);
+                    newLocation.Offset(0, btnDeleteItem.Size.Height + 25);
+                }
+            }
+
         }
 
         private void BtnRemoveItem_MouseEnter(object sender, EventArgs e)
@@ -261,6 +299,38 @@ namespace ContactlessSelfCheckout
         {
             btnRemoveItem.Image = Properties.Resources.remove_item_button;
             btnRemoveItem.Refresh();
+        }
+
+        private void BtnRemoveItemDone_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+            removeMode = false;
+            // hide current done button to show the remove item button
+            btnRemoveItemDone.Visible = false;
+            btnRemoveItem.Visible = true;
+            // start with creating variables that store all the delete buttons
+            var deleteButtons = pnlBasketList.Controls.OfType<PictureBox>().Where(btnDeleteItem => btnDeleteItem.Name.StartsWith("btnItemDelete"));
+
+            if (removeMode == false)
+            {
+                foreach (var deleteButton in deleteButtons)
+                {
+                    //pnlBasketList.Controls.Remove(deleteButton);
+                    Console.WriteLine(deleteButton.Name.ToString());
+                }
+            }
+        }
+
+        private void BtnRemoveItemDone_MouseEnter(object sender, EventArgs e)
+        {
+            btnRemoveItemDone.Image = Properties.Resources.remove_item_button_done_hover;
+            Refresh();
+        }
+
+        private void BtnRemoveItemDone_MouseLeave(object sender, EventArgs e)
+        {
+            btnRemoveItemDone.Image = Properties.Resources.remove_item_button_done;
+            Refresh();
         }
 
         private void BtnPay_Click(object sender, EventArgs e)

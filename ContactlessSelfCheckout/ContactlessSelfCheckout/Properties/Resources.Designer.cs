@@ -193,6 +193,26 @@ namespace ContactlessSelfCheckout.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_button {
+            get {
+                object obj = ResourceManager.GetObject("delete-button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_button_hover {
+            get {
+                object obj = ResourceManager.GetObject("delete-button-hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap drinks_button {
             get {
                 object obj = ResourceManager.GetObject("drinks-button", resourceCulture);
@@ -426,6 +446,36 @@ namespace ContactlessSelfCheckout.Properties {
         internal static System.Drawing.Bitmap remove_item_button {
             get {
                 object obj = ResourceManager.GetObject("remove-item-button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap remove_item_button_done {
+            get {
+                object obj = ResourceManager.GetObject("remove-item-button-done", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap remove_item_button_done_hover {
+            get {
+                object obj = ResourceManager.GetObject("remove-item-button-done-hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap remove_item_button_grey {
+            get {
+                object obj = ResourceManager.GetObject("remove-item-button-grey", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

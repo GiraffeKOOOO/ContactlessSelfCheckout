@@ -111,7 +111,6 @@ namespace ContactlessSelfCheckout
                     Location = newLocation,
                     Text = productName,
                     Font = new Font("Microsoft Sans Serif", 12),
-
                 };
 
                 button.Click += delegate

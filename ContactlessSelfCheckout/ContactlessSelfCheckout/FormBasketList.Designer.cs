@@ -37,6 +37,9 @@
             this.lblItemPrice = new System.Windows.Forms.Label();
             this.lblTotalSum = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.btnRemoveItemDone = new System.Windows.Forms.PictureBox();
+            this.btnRemoveItemGrey = new System.Windows.Forms.PictureBox();
+            this.btnPayGrey = new System.Windows.Forms.PictureBox();
             this.btnPay = new System.Windows.Forms.PictureBox();
             this.btnRemoveItem = new System.Windows.Forms.PictureBox();
             this.btnBarcode = new System.Windows.Forms.PictureBox();
@@ -49,8 +52,10 @@
             this.btnHelp = new System.Windows.Forms.PictureBox();
             this.imgTitleBackground = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnPayGrey = new System.Windows.Forms.PictureBox();
             this.pnlBasketList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRemoveItemDone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRemoveItemGrey)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPayGrey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRemoveItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBarcode)).BeginInit();
@@ -63,7 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTitleBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPayGrey)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInstruction
@@ -163,6 +167,40 @@
             this.lblTotal.TabIndex = 28;
             this.lblTotal.Text = "Total";
             // 
+            // btnRemoveItemDone
+            // 
+            this.btnRemoveItemDone.Image = global::ContactlessSelfCheckout.Properties.Resources.remove_item_button_done;
+            this.btnRemoveItemDone.Location = new System.Drawing.Point(269, 625);
+            this.btnRemoveItemDone.Name = "btnRemoveItemDone";
+            this.btnRemoveItemDone.Size = new System.Drawing.Size(173, 95);
+            this.btnRemoveItemDone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnRemoveItemDone.TabIndex = 43;
+            this.btnRemoveItemDone.TabStop = false;
+            this.btnRemoveItemDone.Visible = false;
+            this.btnRemoveItemDone.Click += new System.EventHandler(this.BtnRemoveItemDone_Click);
+            this.btnRemoveItemDone.MouseEnter += new System.EventHandler(this.BtnRemoveItemDone_MouseEnter);
+            this.btnRemoveItemDone.MouseLeave += new System.EventHandler(this.BtnRemoveItemDone_MouseLeave);
+            // 
+            // btnRemoveItemGrey
+            // 
+            this.btnRemoveItemGrey.Image = global::ContactlessSelfCheckout.Properties.Resources.remove_item_button_grey;
+            this.btnRemoveItemGrey.Location = new System.Drawing.Point(269, 625);
+            this.btnRemoveItemGrey.Name = "btnRemoveItemGrey";
+            this.btnRemoveItemGrey.Size = new System.Drawing.Size(173, 95);
+            this.btnRemoveItemGrey.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnRemoveItemGrey.TabIndex = 42;
+            this.btnRemoveItemGrey.TabStop = false;
+            // 
+            // btnPayGrey
+            // 
+            this.btnPayGrey.Image = global::ContactlessSelfCheckout.Properties.Resources.finish_and_pay_button_grey;
+            this.btnPayGrey.Location = new System.Drawing.Point(620, 597);
+            this.btnPayGrey.Name = "btnPayGrey";
+            this.btnPayGrey.Size = new System.Drawing.Size(366, 71);
+            this.btnPayGrey.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnPayGrey.TabIndex = 41;
+            this.btnPayGrey.TabStop = false;
+            // 
             // btnPay
             // 
             this.btnPay.Image = global::ContactlessSelfCheckout.Properties.Resources.finish_and_pay_button;
@@ -186,6 +224,7 @@
             this.btnRemoveItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnRemoveItem.TabIndex = 38;
             this.btnRemoveItem.TabStop = false;
+            this.btnRemoveItem.Visible = false;
             this.btnRemoveItem.Click += new System.EventHandler(this.BtnRemoveItem_Click);
             this.btnRemoveItem.MouseEnter += new System.EventHandler(this.BtnRemoveItem_MouseEnter);
             this.btnRemoveItem.MouseLeave += new System.EventHandler(this.BtnRemoveItem_MouseLeave);
@@ -313,22 +352,14 @@
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
             // 
-            // btnPayGrey
-            // 
-            this.btnPayGrey.Image = global::ContactlessSelfCheckout.Properties.Resources.finish_and_pay_button_grey;
-            this.btnPayGrey.Location = new System.Drawing.Point(620, 597);
-            this.btnPayGrey.Name = "btnPayGrey";
-            this.btnPayGrey.Size = new System.Drawing.Size(366, 71);
-            this.btnPayGrey.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnPayGrey.TabIndex = 41;
-            this.btnPayGrey.TabStop = false;
-            // 
             // FormBasketList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.btnRemoveItemGrey);
+            this.Controls.Add(this.btnRemoveItemDone);
             this.Controls.Add(this.btnPayGrey);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.btnRemoveItem);
@@ -360,6 +391,9 @@
             this.Click += new System.EventHandler(this.FormBasketList_Click);
             this.pnlBasketList.ResumeLayout(false);
             this.pnlBasketList.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRemoveItemDone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRemoveItemGrey)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPayGrey)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRemoveItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBarcode)).EndInit();
@@ -372,7 +406,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTitleBackground)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPayGrey)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,5 +433,7 @@
         private System.Windows.Forms.PictureBox btnRemoveItem;
         private System.Windows.Forms.PictureBox btnPay;
         private System.Windows.Forms.PictureBox btnPayGrey;
+        private System.Windows.Forms.PictureBox btnRemoveItemGrey;
+        private System.Windows.Forms.PictureBox btnRemoveItemDone;
     }
 }
