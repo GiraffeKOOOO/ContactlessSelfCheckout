@@ -280,6 +280,8 @@ namespace ContactlessSelfCheckout
                         SizeMode = PictureBoxSizeMode.StretchImage,
                         BackColor = Color.Black
                     };
+                    btnDeleteItem.Click += BtnDeleteItem_Click;
+
 
                     // adjusting the location for the next button
                     pnlBasketList.Controls.Add(btnDeleteItem);
@@ -287,6 +289,11 @@ namespace ContactlessSelfCheckout
                 }
             }
 
+        }
+
+        private void BtnDeleteItem_Click(object Sender, EventArgs e)
+        {
+            Console.WriteLine("remove button pressed");
         }
 
         private void BtnRemoveItem_MouseEnter(object sender, EventArgs e)
