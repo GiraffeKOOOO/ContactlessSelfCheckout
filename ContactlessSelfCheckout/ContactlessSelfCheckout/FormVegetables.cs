@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Collections;
 using System.Threading;
 
 namespace ContactlessSelfCheckout
@@ -22,19 +18,9 @@ namespace ContactlessSelfCheckout
             formBasketList = formBasketListRef;
             InitializeComponent();
             this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
-
         }
-        private void CursorAnimate()
-        {
-            this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
-            Thread.Sleep(100);
-            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
-        }
-        private void FormVegetables_Load(object sender, EventArgs e)
-        {
-            GenerateAlphabet();
-            GenerateButtons();
-        }
+        
+        
         private void GenerateAlphabet()
         {
             // this function generates the clickable alphabet at the top of the form that allows for filtering
@@ -125,7 +111,6 @@ namespace ContactlessSelfCheckout
                     Location = newLocation,
                     Text = productName,
                     Font = new Font("Microsoft Sans Serif", 12),
-
                 };
 
                 button.Click += delegate
@@ -161,6 +146,7 @@ namespace ContactlessSelfCheckout
             formBasketList.Top = this.Top;
             this.Hide();
         }
+        
 
         private void BtnHelp_Click(object sender, EventArgs e)
         {
@@ -173,6 +159,18 @@ namespace ContactlessSelfCheckout
 
         }
 
+        private void BtnHelp_MouseEnter(object sender, EventArgs e)
+        {
+            btnHelp.Image = Properties.Resources.help_button_hover;
+            btnHelp.Refresh();
+        }
+
+        private void BtnHelp_MouseLeave(object sender, EventArgs e)
+        {
+            btnHelp.Image = Properties.Resources.help_button;
+            btnHelp.Refresh();
+        }
+
         private void BtnBack_Click(object sender, EventArgs e)
         {
             CursorAnimate();
@@ -183,9 +181,45 @@ namespace ContactlessSelfCheckout
             this.Hide();
         }
 
+        private void BtnBack_MouseEnter(object sender, EventArgs e)
+        {
+            btnBack.Image = Properties.Resources.back_button_hover;
+            btnBack.Refresh();
+        }
+
+        private void BtnBack_MouseLeave(object sender, EventArgs e)
+        {
+            btnBack.Image = Properties.Resources.back_button;
+            btnBack.Refresh();
+        }
+
         private void FormVegetables_Click(object sender, EventArgs e)
         {
             CursorAnimate();
         }
+
+        private void FormVegetables_Load(object sender, EventArgs e)
+        {
+            GenerateAlphabet();
+            GenerateButtons();
+        }
+
+        private void FormVegetables_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // this function is for being used in the quantity screen for closing this form and going back to the basket list
+            formBasketList.Show();
+            formBasketList.Left = this.Left;
+            formBasketList.Top = this.Top;
+            this.Hide();
+        }
+
+        private void CursorAnimate()
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
+            Thread.Sleep(100);
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
+        }
+
+        
     }
 }

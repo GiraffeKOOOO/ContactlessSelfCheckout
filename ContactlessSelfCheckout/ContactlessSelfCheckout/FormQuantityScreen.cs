@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -12,7 +7,7 @@ namespace ContactlessSelfCheckout
 {
     public partial class FormQuantityScreen : Form
     {
-        private readonly FormVegetables parent;
+        private readonly FormVegetables formVegetables;
         // taking in paramaters for adding products
         private readonly int productIDRef;
         private readonly string productNameRef;
@@ -21,9 +16,9 @@ namespace ContactlessSelfCheckout
         private readonly int productStockRef;
 
         private int quantity;
-        public FormQuantityScreen(FormVegetables _parent, int productID, string productName, string productCategory, decimal productPrice, int productStock)
+        public FormQuantityScreen(FormVegetables formVegetablesRef, int productID, string productName, string productCategory, decimal productPrice, int productStock)
         {
-            parent = _parent;
+            formVegetables = formVegetablesRef;
             productIDRef = productID;
             productNameRef = productName;
             productCategoryRef = productCategory;
@@ -31,20 +26,6 @@ namespace ContactlessSelfCheckout
             productStockRef = productStock;
             InitializeComponent();
             this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
-        }
-
-        private void CursorAnimate()
-        {
-            this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
-            Thread.Sleep(100);
-            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
-        }
-
-        private void FormQuantityScreen_Load(object sender, EventArgs e)
-        {
-            quantity = 0;
-            UpdateQuantity();
-            GenerateButtons();
         }
 
         private void UpdateQuantity()
@@ -92,9 +73,9 @@ namespace ContactlessSelfCheckout
             // use the quantity in the for loop for creating products, then close both forms
             for (int i = 0; i < quantity; i++)
             {
-                parent.AddProduct(productIDRef, productNameRef, productCategoryRef, productPriceRef, productStockRef);
+                formVegetables.AddProduct(productIDRef, productNameRef, productCategoryRef, productPriceRef, productStockRef);
             }
-            parent.CloseVegetableForm();
+            formVegetables.CloseVegetableForm();
             this.Close();
         }
 
@@ -109,10 +90,22 @@ namespace ContactlessSelfCheckout
         private void BtnBack_Click(object sender, EventArgs e)
         {
             CursorAnimate();
-            parent.Show();
-            parent.Left = this.Left;
-            parent.Top = this.Top;
+            formVegetables.Show();
+            formVegetables.Left = this.Left;
+            formVegetables.Top = this.Top;
             this.Close();
+        }
+
+        private void BtnBack_MouseEnter(object sender, EventArgs e)
+        {
+            btnBack.Image = Properties.Resources.back_button_hover;
+            btnBack.Refresh();
+        }
+
+        private void BtnBack_MouseLeave(object sender, EventArgs e)
+        {
+            btnBack.Image = Properties.Resources.back_button;
+            btnBack.Refresh();
         }
 
         private void BtnHelp_Click(object sender, EventArgs e)
@@ -125,5 +118,37 @@ namespace ContactlessSelfCheckout
             formHelp.Top = this.Top;
         }
 
+        private void BtnHelp_MouseEnter(object sender, EventArgs e)
+        {
+            btnHelp.Image = Properties.Resources.help_button_hover;
+            btnHelp.Refresh();
+        }
+
+        private void BtnHelp_MouseLeave(object sender, EventArgs e)
+        {
+            btnHelp.Image = Properties.Resources.help_button;
+            btnHelp.Refresh();
+        }
+
+        private void FormQuantityScreen_Load(object sender, EventArgs e)
+        {
+            quantity = 0;
+            UpdateQuantity();
+            GenerateButtons();
+        }
+
+        private void FormQuantityScreen_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+        }
+
+        private void CursorAnimate()
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
+            Thread.Sleep(100);
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
+        }
+
+        
     }
 }

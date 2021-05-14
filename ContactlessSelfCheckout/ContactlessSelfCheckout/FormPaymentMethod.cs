@@ -1,34 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ContactlessSelfCheckout
 {
     public partial class FormPaymentMethod : Form
     {
-        private readonly FormPay parent;
-        public FormPaymentMethod(FormPay _parent, string paymentMethod)
+        private readonly FormPay formPay;
+        public FormPaymentMethod(FormPay formPayRef, string paymentMethod)
         {
-            parent = _parent;
+            formPay = formPayRef;
             InitializeComponent();
             this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
             ChangeLblTitle(paymentMethod);
-            ChangeInstruction(paymentMethod);
-        }
-
-        private void CursorAnimate()
-        {
-            this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
-            Thread.Sleep(100);
-            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
+            ChangeLblInstruction(paymentMethod);
         }
 
         private void ChangeLblTitle(string paymentMethod) 
@@ -38,7 +26,7 @@ namespace ContactlessSelfCheckout
             lblFormTitle.TextAlign = ContentAlignment.MiddleCenter;
             lblFormTitle.Dock = DockStyle.None;
         }
-        private void ChangeInstruction(string paymentMethod)
+        private void ChangeLblInstruction(string paymentMethod)
         {
             string path = Application.StartupPath;
 
@@ -65,6 +53,27 @@ namespace ContactlessSelfCheckout
             }
         }
 
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+            formPay.Show();
+            formPay.Left = this.Left;
+            formPay.Top = this.Top;
+            this.Hide();
+        }
+
+        private void BtnBack_MouseEnter(object sender, EventArgs e)
+        {
+            btnBack.Image = Properties.Resources.back_button_hover;
+            btnBack.Refresh();
+        }
+
+        private void BtnBack_MouseLeave(object sender, EventArgs e)
+        {
+            btnBack.Image = Properties.Resources.back_button;
+            btnBack.Refresh();
+        }
+
         private void BtnHelp_Click(object sender, EventArgs e)
         {
             CursorAnimate();
@@ -75,17 +84,44 @@ namespace ContactlessSelfCheckout
             formHelp.Top = this.Top;
         }
 
-        private void BtnBack_Click(object sender, EventArgs e)
+        private void BtnHelp_MouseEnter(object sender, EventArgs e)
         {
-            CursorAnimate();
-            this.Hide();
+            btnHelp.Image = Properties.Resources.help_button_hover;
+            btnHelp.Refresh();
+        }
+
+        private void BtnHelp_MouseLeave(object sender, EventArgs e)
+        {
+            btnHelp.Image = Properties.Resources.help_button;
+            btnHelp.Refresh();
         }
 
         private void BtnDone_Click(object sender, EventArgs e)
         {
             CursorAnimate();
             this.Hide();
-            parent.TotalPaid();
+            formPay.TotalPaid();
         }
+
+        private void FormPaymentMethod_Click(object sender, EventArgs e)
+        {
+            CursorAnimate();
+        }
+
+        private void FormPaymentMethod_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formPay.Show();
+            formPay.Left = this.Left;
+            formPay.Top = this.Top;
+            this.Hide();
+        }
+
+        private void CursorAnimate()
+        {
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
+            Thread.Sleep(100);
+            this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
+        }
+        
     }
 }

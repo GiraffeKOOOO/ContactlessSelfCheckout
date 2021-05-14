@@ -54,6 +54,9 @@
     <Reference Include="KinectControls.v2">
       <HintPath>..\..\..\kinect-controls\KinectControls\KinectControls.v2\bin\Debug\KinectControls.v2.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Kinect, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Kinect.2.0.1410.19000\lib\net45\Microsoft.Kinect.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System">
@@ -102,6 +105,12 @@
     </Compile>
     <Compile Include="FormQuantityScreen.Designer.cs">
       <DependentUpon>FormQuantityScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReceipt.Designer.cs">
+      <DependentUpon>FormReceipt.cs</DependentUpon>
     </Compile>
     <Compile Include="FormVegetables.cs">
       <SubType>Form</SubType>
@@ -154,6 +163,9 @@
     <EmbeddedResource Include="FormQuantityScreen.resx">
       <DependentUpon>FormQuantityScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReceipt.resx">
+      <DependentUpon>FormReceipt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormVegetables.resx">
       <DependentUpon>FormVegetables.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +192,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Db_ProductsDataSet.xsc">
       <DependentUpon>Db_ProductsDataSet.xsd</DependentUpon>
@@ -192,6 +205,7 @@
     <None Include="Db_ProductsDataSet.xss">
       <DependentUpon>Db_ProductsDataSet.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -225,11 +239,65 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>Db_Products.mdf</DependentUpon>
     </Content>
+    <Content Include="media\buttons\back-button-hover.png" />
+    <Content Include="media\buttons\back-button.png" />
+    <Content Include="media\buttons\bakery-button-hover.png" />
+    <Content Include="media\buttons\bakery-button.png" />
+    <Content Include="media\buttons\barcode-button-hover.png" />
+    <Content Include="media\buttons\barcode-button.png" />
+    <Content Include="media\buttons\card-button-hover.png" />
+    <Content Include="media\buttons\card-button.png" />
+    <Content Include="media\buttons\cart.png" />
+    <Content Include="media\buttons\cash-button-hover.png" />
+    <Content Include="media\buttons\cash-button.png" />
+    <Content Include="media\buttons\coupon-button-hover.png" />
+    <Content Include="media\buttons\coupon-button.png" />
+    <Content Include="media\buttons\delete-button-hover.png" />
+    <Content Include="media\buttons\delete-button.png" />
+    <Content Include="media\buttons\drinks-button-hover.png" />
+    <Content Include="media\buttons\drinks-button.png" />
+    <Content Include="media\buttons\finish-and-pay-button-grey.png" />
+    <Content Include="media\buttons\finish-and-pay-button-hover.png" />
+    <Content Include="media\buttons\finish-and-pay-button.png" />
+    <Content Include="media\buttons\fruit-button-hover.png" />
+    <Content Include="media\buttons\fruit-button.png" />
+    <Content Include="media\buttons\hand-wave.png" />
+    <Content Include="media\buttons\help-button-hover.png" />
+    <Content Include="media\buttons\help-button.png" />
+    <Content Include="media\buttons\next-button-grey.png" />
+    <Content Include="media\buttons\next-button-hover.png" />
+    <Content Include="media\buttons\next-button.png" />
+    <Content Include="media\buttons\no-button-hover.png" />
+    <Content Include="media\buttons\no-button.png" />
+    <Content Include="media\buttons\own-bag-button-hover.png" />
+    <Content Include="media\buttons\own-bag-button.png" />
+    <Content Include="media\buttons\remove-item-button-done-hover.png" />
+    <Content Include="media\buttons\remove-item-button-done.png" />
+    <Content Include="media\buttons\remove-item-button-grey.png" />
+    <Content Include="media\buttons\remove-item-button-hover.png" />
+    <Content Include="media\buttons\remove-item-button.png" />
+    <Content Include="media\buttons\search-button-hover.png" />
+    <Content Include="media\buttons\search-button.png" />
+    <Content Include="media\buttons\start-button-hover.png" />
+    <Content Include="media\buttons\start-button.png" />
+    <Content Include="media\buttons\vegetables-button.png" />
+    <Content Include="media\buttons\vegetables-button-hover.png" />
+    <Content Include="media\buttons\yes-button-hover.png" />
+    <Content Include="media\buttons\yes-button.png" />
     <Content Include="media\card.png" />
     <Content Include="media\cash.png" />
     <Content Include="media\coupon.png" />
+    <Content Include="media\hand-anim.gif" />
+    <Content Include="media\hand-grasp.gif" />
+    <Content Include="media\help-background.png" />
+    <Content Include="media\icon_gqp_icon.ico" />
     <Content Include="media\loading.gif" />
     <Content Include="media\loading2.gif" />
+    <Content Include="media\orange_circle.png" />
+    <Content Include="media\panel-background.png" />
+    <Content Include="media\person-outline.png" />
+    <None Include="Resources\start-button.bmp" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
