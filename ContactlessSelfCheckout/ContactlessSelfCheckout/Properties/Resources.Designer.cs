@@ -93,6 +93,16 @@ namespace ContactlessSelfCheckout.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bakery_button_grey {
+            get {
+                object obj = ResourceManager.GetObject("bakery-button-grey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bakery_button_hover {
             get {
                 object obj = ResourceManager.GetObject("bakery-button-hover", resourceCulture);
@@ -106,6 +116,16 @@ namespace ContactlessSelfCheckout.Properties {
         internal static System.Drawing.Bitmap barcode_button {
             get {
                 object obj = ResourceManager.GetObject("barcode-button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap barcode_button_grey {
+            get {
+                object obj = ResourceManager.GetObject("barcode-button-grey", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,6 +243,16 @@ namespace ContactlessSelfCheckout.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap drinks_button_grey {
+            get {
+                object obj = ResourceManager.GetObject("drinks-button-grey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap drinks_button_hover {
             get {
                 object obj = ResourceManager.GetObject("drinks-button-hover", resourceCulture);
@@ -266,6 +296,16 @@ namespace ContactlessSelfCheckout.Properties {
         internal static System.Drawing.Bitmap fruit_button {
             get {
                 object obj = ResourceManager.GetObject("fruit-button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fruit_button_grey {
+            get {
+                object obj = ResourceManager.GetObject("fruit-button-grey", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -503,6 +543,16 @@ namespace ContactlessSelfCheckout.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap search_button_grey {
+            get {
+                object obj = ResourceManager.GetObject("search-button-grey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search_button_hover {
             get {
                 object obj = ResourceManager.GetObject("search-button-hover", resourceCulture);
@@ -536,6 +586,16 @@ namespace ContactlessSelfCheckout.Properties {
         internal static System.Drawing.Bitmap vegetables_button {
             get {
                 object obj = ResourceManager.GetObject("vegetables-button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vegetables_button_grey {
+            get {
+                object obj = ResourceManager.GetObject("vegetables-button-grey", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
