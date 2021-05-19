@@ -52,9 +52,14 @@ namespace ContactlessSelfCheckout
                 // disable finish and pay button
                 btnPayGrey.Visible = true;
                 btnPay.Visible = false;
-                // disable remove item button
-                btnRemoveItemGrey.Visible = true;
-                btnRemoveItem.Visible = false;
+
+                if (removeMode == false)
+                {
+                    // disable remove item button
+                    btnRemoveItemGrey.Visible = true;
+                    btnRemoveItem.Visible = false;
+                }
+                
             }
         }
 
@@ -86,7 +91,7 @@ namespace ContactlessSelfCheckout
             Label lblProductName = new Label
             {
                 Name = $"lblProduct{arrayIndex}",
-                Text = arrayIndex+productName,
+                Text = productName,
                 Font = new Font("Microsoft Sans Serif", 25),
                 AutoSize = true,
                 ForeColor = Color.Black
@@ -97,14 +102,13 @@ namespace ContactlessSelfCheckout
             Label lblProductPrice = new Label
             {
                 Name = $"lblPrice{arrayIndex}",
-                Text = arrayIndex + "£ " + productPrice.ToString(),
+                Text = "£ " + productPrice.ToString(),
                 Font = new Font("Microsoft Sans Serif", 25),
                 AutoSize = true,
                 ForeColor = Color.Black
             };
             pnlBasketList.Controls.Add(lblProductPrice);
             lblProductPrice.BringToFront();
-            Console.WriteLine(lblProductName.Name);
         }
 
         private void RepositionLabels(int xPos)
@@ -114,10 +118,12 @@ namespace ContactlessSelfCheckout
             // start with creating variables that store all the labels
             var productLabels = pnlBasketList.Controls.OfType<Label>().Where(label => label.Name.StartsWith("lblProduct"));
             var priceLabels = pnlBasketList.Controls.OfType<Label>().Where(label => label.Name.StartsWith("lblPrice"));
+            
 
             // new location starting points
             Point productPoint = new Point(5 + xPos, 60);
             Point pricePoint = new Point(480, 60);
+            
 
             // for each loops to reposition the labels
             foreach (var label in productLabels)
@@ -130,6 +136,22 @@ namespace ContactlessSelfCheckout
             {
                 label.Location = pricePoint;
                 pricePoint.Offset(0, label.Height + 25);
+            }
+
+            
+        }
+
+        private void RepositionDeleteButtoins()
+        {
+            var deleteItemButtons = pnlBasketList.Controls.OfType<PictureBox>().Where(deleteItemButton => deleteItemButton.Name.StartsWith("btnDeleteItem"));
+
+            Point deleteButtonPoint = new Point(5 , 60);
+
+            foreach (var deleteButton in deleteItemButtons)
+            {
+                deleteButton.Location = deleteButtonPoint;
+                deleteButtonPoint.Offset(0, deleteButton.Height + 25);
+
             }
         }
 
@@ -146,6 +168,7 @@ namespace ContactlessSelfCheckout
             }
             return basketTotal;
         }
+
         private void UpdateTotalLbl()
         {
             // function for changing the text of the total cost label to match the total cost
@@ -311,7 +334,6 @@ namespace ContactlessSelfCheckout
                     {
                         RemoveItem(productNumber);
                     };
-                    Console.WriteLine(btnDeleteItem.Name);
 
                     // adjusting the location for the next button
                     pnlBasketList.Controls.Add(btnDeleteItem);
@@ -323,13 +345,11 @@ namespace ContactlessSelfCheckout
 
         private void RemoveItem(int basketListIndex)
         {
-            Console.WriteLine(basketList.Count());
-            Console.WriteLine("basketListIndex is: " + basketListIndex);
             RemoveComponents(basketListIndex);
-            //CalculateTotal(basketList.ElementAt(basketListIndex).productPrice, false);
-            UpdateTotalLbl();
             try
             {
+                CalculateTotal(basketList.ElementAt(basketListIndex).productPrice, false);
+                UpdateTotalLbl();
                 basketList.RemoveAt(basketListIndex);
             }
             catch (Exception e)
@@ -337,6 +357,8 @@ namespace ContactlessSelfCheckout
                 Console.WriteLine("Error occured: " + e );
             }
             UpdateCounter();
+            RepositionLabels(50);
+            RepositionDeleteButtoins();
 
         }
 
@@ -413,12 +435,9 @@ namespace ContactlessSelfCheckout
                 btnSearchGrey.Visible = false;
                 btnBarcodeGrey.Visible = false;
 
-                Console.WriteLine("count before the loop: " + deleteItemButtons.Count());
                 foreach (var deleteButton in deleteItemButtons)
                 {
-                    Console.WriteLine("count before removal: " + deleteItemButtons.Count());
                     pnlBasketList.Controls.Remove(deleteButton);
-                    Console.WriteLine("count after removal: " + deleteItemButtons.Count());
                 }
             }
         }
@@ -437,6 +456,7 @@ namespace ContactlessSelfCheckout
 
         private void BtnPay_Click(object sender, EventArgs e)
         {
+            BtnRemoveItemDone_Click(sender, e);
             CursorAnimate();
             FormPay formPay = new FormPay(this);
             formPay.Show();
