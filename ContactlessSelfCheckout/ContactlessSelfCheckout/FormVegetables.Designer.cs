@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVegetables));
             this.lblAlphabetTitle = new System.Windows.Forms.Label();
-            this.pnlVegetableItems = new System.Windows.Forms.Panel();
             this.db_ProductsDataSet = new ContactlessSelfCheckout.Db_ProductsDataSet();
             this.dbProductsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -40,6 +39,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnHelp = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.PictureBox();
+            this.pnlVegetableItems = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.db_ProductsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbProductsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableProductBindingSource)).BeginInit();
@@ -56,13 +56,6 @@
             this.lblAlphabetTitle.Size = new System.Drawing.Size(154, 25);
             this.lblAlphabetTitle.TabIndex = 1;
             this.lblAlphabetTitle.Text = "Alphabet search";
-            // 
-            // pnlVegetableItems
-            // 
-            this.pnlVegetableItems.Location = new System.Drawing.Point(12, 109);
-            this.pnlVegetableItems.Name = "pnlVegetableItems";
-            this.pnlVegetableItems.Size = new System.Drawing.Size(984, 502);
-            this.pnlVegetableItems.TabIndex = 8;
             // 
             // db_ProductsDataSet
             // 
@@ -85,10 +78,9 @@
             // 
             // pnlAlphabet
             // 
-            this.pnlAlphabet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlAlphabet.Location = new System.Drawing.Point(3, 37);
+            this.pnlAlphabet.Location = new System.Drawing.Point(2, 37);
             this.pnlAlphabet.Name = "pnlAlphabet";
-            this.pnlAlphabet.Size = new System.Drawing.Size(1001, 52);
+            this.pnlAlphabet.Size = new System.Drawing.Size(1001, 138);
             this.pnlAlphabet.TabIndex = 10;
             // 
             // btnHelp
@@ -117,6 +109,26 @@
             this.btnBack.MouseEnter += new System.EventHandler(this.BtnBack_MouseEnter);
             this.btnBack.MouseLeave += new System.EventHandler(this.BtnBack_MouseLeave);
             // 
+            // pnlVegetableItems
+            // 
+            this.pnlVegetableItems.AutoSize = true;
+            this.pnlVegetableItems.ColumnCount = 5;
+            this.pnlVegetableItems.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlVegetableItems.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlVegetableItems.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlVegetableItems.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlVegetableItems.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlVegetableItems.Location = new System.Drawing.Point(12, 196);
+            this.pnlVegetableItems.Name = "pnlVegetableItems";
+            this.pnlVegetableItems.RowCount = 5;
+            this.pnlVegetableItems.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlVegetableItems.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlVegetableItems.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlVegetableItems.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlVegetableItems.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.pnlVegetableItems.Size = new System.Drawing.Size(976, 402);
+            this.pnlVegetableItems.TabIndex = 45;
+            // 
             // FormVegetables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,10 +136,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.pnlVegetableItems);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.pnlAlphabet);
-            this.Controls.Add(this.pnlVegetableItems);
             this.Controls.Add(this.lblAlphabetTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -151,7 +163,6 @@
 
         #endregion
         private System.Windows.Forms.Label lblAlphabetTitle;
-        private System.Windows.Forms.Panel pnlVegetableItems;
         private System.Windows.Forms.BindingSource dbProductsDataSetBindingSource;
         private Db_ProductsDataSet db_ProductsDataSet;
         private System.Windows.Forms.BindingSource tableProductBindingSource;
@@ -160,5 +171,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.PictureBox btnHelp;
         private System.Windows.Forms.PictureBox btnBack;
+        private System.Windows.Forms.TableLayoutPanel pnlVegetableItems;
     }
 }
