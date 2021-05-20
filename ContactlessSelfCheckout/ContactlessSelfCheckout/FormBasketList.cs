@@ -136,9 +136,7 @@ namespace ContactlessSelfCheckout
             {
                 label.Location = pricePoint;
                 pricePoint.Offset(0, label.Height + 25);
-            }
-
-            
+            }   
         }
 
         private void RepositionDeleteButtoins()

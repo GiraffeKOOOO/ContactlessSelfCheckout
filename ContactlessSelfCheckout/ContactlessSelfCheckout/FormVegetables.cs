@@ -26,17 +26,20 @@ namespace ContactlessSelfCheckout
             // this function generates the clickable alphabet at the top of the form that allows for filtering
 
             // initialising the alphabet array
-            char[] alphabet = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+            char[] alphabet = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M' };
+            char[] alphabet2 = { 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
 
             // initialising the array of buttons created
             var vegetableButtons = pnlVegetableItems.Controls.OfType<Button>();
 
             // dimensions of the panel, used for calculations of button width
             int maxWidth = pnlAlphabet.Width;
-            int maxButtonWidth = maxWidth / alphabet.Length;
+            int maxHeight = pnlAlphabet.Height;
+            int maxButtonWidth = (maxWidth / (alphabet.Length + alphabet2.Length)) * 2;
 
             // creating a new point variable to allow for the product buttons to be in different locations
-            Point newLocation = new Point(4, 6);
+            Point newLocation = new Point(4, 3);
+            Point newLocation2 = new Point(4, 70);
 
             // foreach loop to go over the characters in the alphabet and create them in to buttons
             foreach (char letter in alphabet)
@@ -44,10 +47,11 @@ namespace ContactlessSelfCheckout
                 Button characterButton = new Button
                 {
                     Name = letter.ToString(),
-                    Size = new Size(maxButtonWidth - 5, 35),
+                    Size = new Size(maxButtonWidth - 5, (maxHeight / 2) - 3),
                     Location = newLocation,
                     Text = letter.ToString(),
                     Font = new Font("Microsoft Sans Serif", 16),
+                    BackColor = Color.Orange
                 };
 
                 characterButton.Click += delegate
@@ -73,6 +77,45 @@ namespace ContactlessSelfCheckout
 
                 // adjusting the location for the next button
                 newLocation.Offset(characterButton.Width + 5, 0);
+                // adding the character buttons to the alphabet search panel
+                pnlAlphabet.Controls.Add(characterButton);
+            }
+
+            foreach (char letter in alphabet2)
+            {
+                Button characterButton = new Button
+                {
+                    Name = letter.ToString(),
+                    Size = new Size(maxButtonWidth - 5, (maxHeight / 2) - 3),
+                    Location = newLocation2,
+                    Text = letter.ToString(),
+                    Font = new Font("Microsoft Sans Serif", 16),
+                    BackColor = Color.Orange
+                };
+
+                characterButton.Click += delegate
+                {
+                    CursorAnimate();
+                    Point sortedLocation = new Point(5, 5);
+                    foreach (var vegetableButton in vegetableButtons)
+                    {
+                        // show all the buttons to allow for looping
+                        vegetableButton.Show();
+
+                        if (!vegetableButton.Text.StartsWith(characterButton.Name))
+                        {
+                            vegetableButton.Hide();
+                        }
+                        else
+                        {
+                            vegetableButton.Location = sortedLocation;
+                            sortedLocation.Offset(vegetableButton.Width + 30, 0);
+                        }
+                    }
+                };
+
+                // adjusting the location for the next button
+                newLocation2.Offset(characterButton.Width + 5, 0);
                 // adding the character buttons to the alphabet search panel
                 pnlAlphabet.Controls.Add(characterButton);
             }
@@ -107,7 +150,7 @@ namespace ContactlessSelfCheckout
                 Button button = new Button
                 {
                     Name = productName,
-                    Size = new Size(120, 80),
+                    Size = new Size(160, 75),
                     Location = newLocation,
                     Text = productName,
                     Font = new Font("Microsoft Sans Serif", 12),
@@ -146,7 +189,6 @@ namespace ContactlessSelfCheckout
             formBasketList.Top = this.Top;
             this.Hide();
         }
-        
 
         private void BtnHelp_Click(object sender, EventArgs e)
         {
