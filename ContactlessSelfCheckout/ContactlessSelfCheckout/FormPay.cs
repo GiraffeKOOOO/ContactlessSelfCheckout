@@ -196,10 +196,6 @@ namespace ContactlessSelfCheckout
         {
             lblTotalSum.Text = "£ " + basketTotal.ToString();
             lblTotalSum.Location = new Point ((pnlTitleBackground.Size.Width - lblTotalSum.Size.Width) / 2, lblTotal.Location.Y + lblTotal.Size.Height + 10);
-            Console.WriteLine(pnlTitleBackground.Size.Width);
-            Console.WriteLine(lblTotalSum.Size.Width);
-            Console.WriteLine(pnlTitleBackground.Size.Width - lblTotalSum.Size.Width);
-            Console.WriteLine((pnlTitleBackground.Size.Width - lblTotalSum.Size.Width) / 2);
         }
 
         private void FormPay_Click(object sender, EventArgs e)
