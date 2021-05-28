@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ContactlessSelfCheckout
 {
+    /// <summary>
+    /// This is the Product class, which allows for the creation of products, and to use them throughout the program
+    /// </summary>
     public class Product
     {
         public int productID;

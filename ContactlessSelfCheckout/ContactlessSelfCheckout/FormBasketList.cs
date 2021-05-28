@@ -23,9 +23,13 @@ namespace ContactlessSelfCheckout
             UpdateTotalLbl();
         }
 
+        /// <summary>
+        /// This function is called to create a product object. The product object is then added to the basket list which is a list of Product objects
+        /// This function also calls other smaller function which are used to create visual elements to display the product objects from the product object list
+        /// </summary>
+        /// <param name="product">The product object that is going to be added to the list of product objects, and for which other functions take data from</param>
         public void AddProductToList(Product product) 
         {
-            // this function creates a product and adds it to the list, then creates labels to appear in the basket list and repositions them
             basketList.Add(product);
             UpdateCounter();
             CreateListLabel(product.productName, product.productPrice, basketList.IndexOf(product));
@@ -34,9 +38,12 @@ namespace ContactlessSelfCheckout
             UpdateTotalLbl();
         }
 
+        /// <summary>
+        /// This is a function that updates the counter displayed on the Basket list form
+        /// This function should be called whenever the counter needs to be refreshed
+        /// </summary>
         public void UpdateCounter() 
         {
-            // this function should be called whenever the counter needs to be refreshed
             lblBasketCounter.Text = CounterStringFormatting(basketList.Count);
             if (basketList.Count > 0)
             {
@@ -63,9 +70,13 @@ namespace ContactlessSelfCheckout
             }
         }
 
+        /// <summary>
+        /// This function changes the label next to the item counter. The label changes the amount of 0s in the item counter label as more items get added to the basket list
+        /// </summary>
+        /// <param name="counterSize">This variable is passed from the length of the product object list</param>
+        /// <returns></returns>
         private string CounterStringFormatting(int counterSize)
         {
-            // this function is for formatting the counter display, making sure the zeros appear even if the basket count is single or double digit
             string formattedString = "0";
 
             if (counterSize < 10) 
@@ -85,9 +96,14 @@ namespace ContactlessSelfCheckout
 
         }
 
+        /// <summary>
+        /// this function creates new text labels for the product and the price, to appear in the list of products in the basket
+        /// </summary>
+        /// <param name="productName">String variable passed in from the product object, this is used for the text of the name label</param>
+        /// <param name="productPrice">Decimal variable passed in from the product object, this is used for the text of the price label</param>
+        /// <param name="arrayIndex">Integer variable passed in from the product object list, this is used to identify the label for manipulation of the label</param>
         private void CreateListLabel(String productName, decimal productPrice, int arrayIndex)
         {
-            // this function creates new text labels for the product and the price, to appear in the list of products in the basket
             Label lblProductName = new Label
             {
                 Name = $"lblProduct{arrayIndex}",
@@ -111,19 +127,20 @@ namespace ContactlessSelfCheckout
             lblProductPrice.BringToFront();
         }
 
+        /// <summary>
+        /// This function repositions the created labels
+        /// </summary>
+        /// <param name="xPos">Integer variable which gets passed to define how much the labels are repositioned by on the x-axis</param>
         private void RepositionLabels(int xPos)
         {
-            // this function repositions the created labels
 
             // start with creating variables that store all the labels
             var productLabels = pnlBasketList.Controls.OfType<Label>().Where(label => label.Name.StartsWith("lblProduct"));
             var priceLabels = pnlBasketList.Controls.OfType<Label>().Where(label => label.Name.StartsWith("lblPrice"));
-            
 
             // new location starting points
             Point productPoint = new Point(5 + xPos, 60);
             Point pricePoint = new Point(480, 60);
-            
 
             // for each loops to reposition the labels
             foreach (var label in productLabels)
@@ -139,7 +156,10 @@ namespace ContactlessSelfCheckout
             }   
         }
 
-        private void RepositionDeleteButtoins()
+        /// <summary>
+        /// This function is called to reposition the item delete buttons
+        /// </summary>
+        private void RepositionDeleteButtons()
         {
             var deleteItemButtons = pnlBasketList.Controls.OfType<PictureBox>().Where(deleteItemButton => deleteItemButton.Name.StartsWith("btnDeleteItem"));
 
@@ -153,6 +173,12 @@ namespace ContactlessSelfCheckout
             }
         }
 
+        /// <summary>
+        /// This function calculates the total of the products in the basket list
+        /// </summary>
+        /// <param name="productCost">Decimal variable of the product price which is obtained from the product object</param>
+        /// <param name="addingProduct">Boolean variable to determine if the cost needs to be added to the total, or subtracted from the total</param>
+        /// <returns>Returned is the basket total, which allows for the updating of the total label and to be used in the pay screen</returns>
         private decimal CalculateTotal(decimal productCost, bool addingProduct)
         {
             // function for calculating the basket total
@@ -167,9 +193,11 @@ namespace ContactlessSelfCheckout
             return basketTotal;
         }
 
+        /// <summary>
+        /// function for changing the text of the total cost label to match the total cost
+        /// </summary>
         private void UpdateTotalLbl()
         {
-            // function for changing the text of the total cost label to match the total cost
             lblTotalSum.Text = "£ " + basketTotal.ToString();   
         }
 
@@ -190,10 +218,14 @@ namespace ContactlessSelfCheckout
             btnFruit.Refresh();
         }
 
+        /// <summary>
+        /// This function creates a new object for the FormVegetables, shows the new form directly on top of the previous form and hides the basketListForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnVegetable_Click(object sender, EventArgs e)
         {
             CursorAnimate();
-            // This function creates a new object for the FormVegetables, and shows the new form directly on top of the previous form
             FormVegetables formVegetables = new FormVegetables(this);
             formVegetables.Show();
             formVegetables.Left = this.Left;
@@ -281,6 +313,14 @@ namespace ContactlessSelfCheckout
             btnBarcode.Refresh();
         }
 
+        /// <summary>
+        /// This function carries out several tasks that are required to allow the user to delete items from the basket list
+        /// Firstly the removeMode boolean is set to true to allow for conditional checks
+        /// After which the product buttons are greyed out to indicate to the user that they cannot add more products whilst removing products
+        /// Then the remove buttons need to be added next to the product labels to allow for product deletion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRemoveItem_Click(object sender, EventArgs e)
         {
             CursorAnimate();
@@ -341,6 +381,10 @@ namespace ContactlessSelfCheckout
 
         }
 
+        /// <summary>
+        /// This function removes the selected product from the basket list
+        /// </summary>
+        /// <param name="basketListIndex">Integer variable passed in from the delete button to identify which product was requested to be removed</param>
         private void RemoveItem(int basketListIndex)
         {
             RemoveComponents(basketListIndex);
@@ -356,16 +400,22 @@ namespace ContactlessSelfCheckout
             }
             UpdateCounter();
             RepositionLabels(50);
-            RepositionDeleteButtoins();
+            RepositionDeleteButtons();
 
         }
 
+        /// <summary>
+        /// This function loops through the currently listed labels and removes the labels and delete button when an item has been selected for deletion
+        /// </summary>
+        /// <param name="basketListIndex">Integer variable passed in from the delete button to identify which product was requested to be removed</param>
         private void RemoveComponents(int basketListIndex)
         {
+            // obtain the list of labels, name, price and delete buttons
             var productLabels = pnlBasketList.Controls.OfType<Label>().Where(label => label.Name.StartsWith("lblProduct"));
             var priceLabels = pnlBasketList.Controls.OfType<Label>().Where(label => label.Name.StartsWith("lblPrice"));
             var deleteItemButtons = pnlBasketList.Controls.OfType<PictureBox>().Where(deleteItemButton => deleteItemButton.Name.StartsWith("btnDeleteItem"));
 
+            // loop through each label and if it matches it gets removed
             foreach (var productLabel in productLabels)
             {
                 if (productLabel.Name.Contains(basketListIndex.ToString()))
@@ -403,6 +453,12 @@ namespace ContactlessSelfCheckout
             btnRemoveItem.Refresh();
         }
 
+        /// <summary>
+        /// This function is called when the the done button is pressed, which changes the removeMode boolean back to false which allows the checkout to return to product addition mode
+        /// This function also restored the previously clickable product buttons, indicating to the user that they can add more products
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRemoveItemDone_Click(object sender, EventArgs e)
         {
             CursorAnimate();
@@ -452,6 +508,12 @@ namespace ContactlessSelfCheckout
             Refresh();
         }
 
+        /// <summary>
+        /// This function calls the remove item done function to ensure that the checkout is done with the process of removing items before continued to the payment screen
+        /// Then this fucntion creates a new object for the FormPay, hides the current form, and shows the new form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnPay_Click(object sender, EventArgs e)
         {
             BtnRemoveItemDone_Click(sender, e);
@@ -475,10 +537,14 @@ namespace ContactlessSelfCheckout
             btnPay.Refresh();
         }
 
+        /// <summary>
+        /// This function creates a new object for the FormHelp, hides the current form, and shows the new form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnHelp_Click(object sender, EventArgs e)
         {
             CursorAnimate();
-            // This function creates a new object for the FormHelp, hides the current form, and shows the new form
             FormHelp formHelp = new FormHelp();
             formHelp.Show();
             formHelp.Left = this.Left;
@@ -507,6 +573,9 @@ namespace ContactlessSelfCheckout
             CloseProcess("KinectV2MouseControl");
         }
 
+        /// <summary>
+        /// This function is called when the mouse is clicked, this function shows a little animation of the hand cursor being grasped by simply changing the image and changing it back
+        /// </summary>
         private void CursorAnimate()
         {
             this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
@@ -514,6 +583,10 @@ namespace ContactlessSelfCheckout
             this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
         }
 
+        /// <summary>
+        /// This function is used for closing the kinect sensor mouse control application when the form is closed
+        /// </summary>
+        /// <param name="name">String variable for identifying the process to be terminated</param>
         private void CloseProcess(string name)
         {
             foreach (Process process in Process.GetProcesses())

@@ -13,6 +13,10 @@ namespace ContactlessSelfCheckout
         readonly DatabaseHelper databaseHelper = new DatabaseHelper();
         readonly DataTable dataTable = new DataTable();
 
+        /// <summary>
+        /// This is the form constructor which tkaes in the form basket lsit reference to maintain state
+        /// </summary>
+        /// <param name="formBasketListRef">FormBasketList object that gets passed in to maintain state</param>
         public FormVegetables(FormBasketList formBasketListRef)
         {
             formBasketList = formBasketListRef;
@@ -21,6 +25,9 @@ namespace ContactlessSelfCheckout
         }
         
         
+        /// <summary>
+        /// This function creates the alphabet search buttons, utilising loops and arrays to create the buttons
+        /// </summary>
         private void GenerateAlphabet()
         {
             // this function generates the clickable alphabet at the top of the form that allows for filtering
@@ -121,6 +128,9 @@ namespace ContactlessSelfCheckout
             }
         }
 
+        /// <summary>
+        /// This function creates the product buttons by getting the data from the database, and using loops to create all the buttons that get returned
+        /// </summary>
         private void GenerateButtons()
         {
             // this function collects all the items in the database that are vegetables, and creates them in to buttons
@@ -174,26 +184,40 @@ namespace ContactlessSelfCheckout
             databaseHelper.CloseConnection();
         }
 
+        /// <summary>
+        /// This function is called from the quantity selection screen, where the product gets created as quantity is assigned in that form
+        /// </summary>
+        /// <param name="productID"></param>
+        /// <param name="productName"></param>
+        /// <param name="productCategory"></param>
+        /// <param name="productPrice"></param>
+        /// <param name="productStock"></param>
         public void AddProduct(int productID, string productName, string productCategory, decimal productPrice, int productStock)
         {
             Product product = new Product(productID, productName, productCategory, productPrice, productStock);
             formBasketList.AddProductToList(product);
         }
 
+        /// <summary>
+        /// this function is for being used in the quantity screen for closing this form and going back to the basket list
+        /// </summary>
         public void CloseVegetableForm()
         {
             CursorAnimate();
-            // this function is for being used in the quantity screen for closing this form and going back to the basket list
             formBasketList.Show();
             formBasketList.Left = this.Left;
             formBasketList.Top = this.Top;
             this.Hide();
         }
 
+        /// <summary>
+        /// This function creates a new object for the FormHelp, hides the current form, and shows the new form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnHelp_Click(object sender, EventArgs e)
         {
             CursorAnimate();
-            // This function creates a new object for the FormHelp, hides the current form, and shows the new form
             FormHelp formHelp = new FormHelp();
             formHelp.Show();
             formHelp.Left = this.Left;
@@ -213,10 +237,14 @@ namespace ContactlessSelfCheckout
             btnHelp.Refresh();
         }
 
+        /// <summary>
+        /// This function hides the current form returning the user to the basket list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnBack_Click(object sender, EventArgs e)
         {
             CursorAnimate();
-            // This function hides the current form returning the user to the basket list
             formBasketList.Show();
             formBasketList.Left = this.Left;
             formBasketList.Top = this.Top;
@@ -246,15 +274,22 @@ namespace ContactlessSelfCheckout
             GenerateButtons();
         }
 
+        /// <summary>
+        /// this function is for being used in the quantity screen for closing this form and going back to the basket list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormVegetables_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // this function is for being used in the quantity screen for closing this form and going back to the basket list
             formBasketList.Show();
             formBasketList.Left = this.Left;
             formBasketList.Top = this.Top;
             this.Hide();
         }
 
+        /// <summary>
+        /// This function is called when the mouse is clicked, this function shows a little animation of the hand cursor being grasped by simply changing the image and changing it back
+        /// </summary>
         private void CursorAnimate()
         {
             this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");

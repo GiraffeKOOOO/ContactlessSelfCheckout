@@ -16,6 +16,17 @@ namespace ContactlessSelfCheckout
         private readonly int productStockRef;
 
         private int quantity;
+
+        /// <summary>
+        /// This function takes in the reference values from the vegetable product list form, this is because this form is where the product is created as it requires quantity
+        /// quantity is later on used to call the create product function depending on what the quantity has been set to
+        /// </summary>
+        /// <param name="formVegetablesRef">FormVegetable reference</param>
+        /// <param name="productID"></param>
+        /// <param name="productName"></param>
+        /// <param name="productCategory"></param>
+        /// <param name="productPrice"></param>
+        /// <param name="productStock"></param>
         public FormQuantityScreen(FormVegetables formVegetablesRef, int productID, string productName, string productCategory, decimal productPrice, int productStock)
         {
             formVegetables = formVegetablesRef;
@@ -28,11 +39,17 @@ namespace ContactlessSelfCheckout
             this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
         }
 
+        /// <summary>
+        /// This function updates the quantity label
+        /// </summary>
         private void UpdateQuantity()
         {
             lblQuantity.Text = quantity.ToString();
         }
 
+        /// <summary>
+        /// This function generates the numpad buttons and assigns them to the numpad grid
+        /// </summary>
         private void GenerateButtons() 
         {
             int[] numpadNumbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
@@ -108,10 +125,14 @@ namespace ContactlessSelfCheckout
             btnBack.Refresh();
         }
 
+        /// <summary>
+        /// This function creates a new object for the FormHelp, hides the current form, and shows the new form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnHelp_Click(object sender, EventArgs e)
         {
             CursorAnimate();
-            // This function creates a new object for the FormHelp, hides the current form, and shows the new form
             FormHelp formHelp = new FormHelp();
             formHelp.Show();
             formHelp.Left = this.Left;
@@ -142,6 +163,9 @@ namespace ContactlessSelfCheckout
             CursorAnimate();
         }
 
+        /// <summary>
+        /// This function is called when the mouse is clicked, this function shows a little animation of the hand cursor being grasped by simply changing the image and changing it back
+        /// </summary>
         private void CursorAnimate()
         {
             this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");

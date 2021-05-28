@@ -35,8 +35,6 @@ namespace ContactlessSelfCheckout
             btnNo.Refresh();
         }
 
-        
-
         private void BtnYes_Click(object sender, EventArgs e)
         {
             CursorAnimate();
@@ -59,10 +57,14 @@ namespace ContactlessSelfCheckout
             btnYes.Refresh();
         }
 
+        /// <summary>
+        /// This function creates a new object for the FormHelp, hides the current form, and shows the new form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnHelp_Click(object sender, EventArgs e)
         {
             CursorAnimate();
-            // This function creates a new object for the FormHelp, hides the current form, and shows the new form
             FormHelp formHelp = new FormHelp();
             formHelp.Show();
             formHelp.Left = this.Left;
@@ -91,6 +93,9 @@ namespace ContactlessSelfCheckout
             CloseProcess("KinectV2MouseControl");
         }
 
+        /// <summary>
+        /// This function is called when the mouse is clicked, this function shows a little animation of the hand cursor being grasped by simply changing the image and changing it back
+        /// </summary>
         private void CursorAnimate()
         {
             this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
@@ -98,6 +103,10 @@ namespace ContactlessSelfCheckout
             this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
         }
 
+        /// <summary>
+        /// This function is used for closing the kinect sensor mouse control application when the form is closed
+        /// </summary>
+        /// <param name="name">String variable for identifying the process to be terminated</param>
         private void CloseProcess(string name)
         {
             foreach (Process process in Process.GetProcesses())

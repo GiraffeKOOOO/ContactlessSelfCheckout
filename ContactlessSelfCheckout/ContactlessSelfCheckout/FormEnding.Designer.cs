@@ -101,7 +101,6 @@ namespace ContactlessSelfCheckout
             this.Name = "FormEnding";
             this.Text = "Contactless Self-Checkout";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormEnding_FormClosed);
-            this.Shown += new System.EventHandler(this.FormEnding_Shown);
             this.Click += new System.EventHandler(this.FormEnding_Click);
             ((System.ComponentModel.ISupportInitialize)(this.imgOrangeCircle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHelp)).EndInit();

@@ -12,6 +12,10 @@ namespace ContactlessSelfCheckout
         private readonly FormBasketList formBasketList;
         private decimal basketTotal;
 
+        /// <summary>
+        /// This is the constructor form, which takes the basket list form as a reference variable, to be able to maintain state through out the program
+        /// </summary>
+        /// <param name="formBasketListRef">FormBasketList object that gets passed in to allow for reading of the total from the basket list form</param>
         public FormPay(FormBasketList formBasketListRef)
         {
             formBasketList = formBasketListRef;
@@ -20,11 +24,18 @@ namespace ContactlessSelfCheckout
             basketTotal = formBasketList.basketTotal;
         }
 
+        /// <summary>
+        /// This function gets called from the payment method form when the override button is pressed
+        /// This runs the ending for this program
+        /// </summary>
         public void TotalPaid()
         {
             LoadEnding();
         }
 
+        /// <summary>
+        /// This function creates an animation before moving on to the receipt form.
+        /// </summary>
         private void LoadEnding()
         {
             string path = Application.StartupPath;
@@ -48,10 +59,14 @@ namespace ContactlessSelfCheckout
             formReceipt.Top = this.Top;
         }
 
+        /// <summary>
+        /// This function hides the current form returning the user to the basket list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnBack_Click(object sender, EventArgs e)
         {
             CursorAnimate();
-            // This function hides the current form returning the user to the basket list
             formBasketList.Show();
             formBasketList.Left = this.Left;
             formBasketList.Top = this.Top;
@@ -70,10 +85,14 @@ namespace ContactlessSelfCheckout
             btnBack.Refresh();
         }
 
+        /// <summary>
+        /// This function creates a new object for the FormHelp, hides the current form, and shows the new form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnHelp_Click(object sender, EventArgs e)
         {
             CursorAnimate();
-            // This function creates a new object for the FormHelp, hides the current form, and shows the new form
             FormHelp formHelp = new FormHelp();
             formHelp.Show();
             formHelp.Left = this.Left;
@@ -92,6 +111,11 @@ namespace ContactlessSelfCheckout
             btnHelp.Refresh();
         }
 
+        /// <summary>
+        /// This function creates a new object for the FormPaymentMethod and passing in the chosen method of payment, hides the current form, and shows the new form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnCash_Click(object sender, EventArgs e)
         {
             CursorAnimate();
@@ -114,6 +138,11 @@ namespace ContactlessSelfCheckout
             btnCash.Refresh();
         }
 
+        /// <summary>
+        /// This function creates a new object for the FormPaymentMethod and passing in the chosen method of payment, hides the current form, and shows the new form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnCard_Click(object sender, EventArgs e)
         {
             CursorAnimate();
@@ -136,6 +165,11 @@ namespace ContactlessSelfCheckout
             btnCard.Refresh();
         }
 
+        /// <summary>
+        /// This function creates a new object for the FormPaymentMethod and passing in the chosen method of payment, hides the current form, and shows the new form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnCoupon_Click(object sender, EventArgs e)
         {
             CursorAnimate();
@@ -178,6 +212,9 @@ namespace ContactlessSelfCheckout
             CloseProcess("KinectV2MouseControl");
         }
 
+        /// <summary>
+        /// This function is called when the mouse is clicked, this function shows a little animation of the hand cursor being grasped by simply changing the image and changing it back
+        /// </summary>
         private void CursorAnimate()
         {
             this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
@@ -185,6 +222,10 @@ namespace ContactlessSelfCheckout
             this.Cursor = new Cursor(Application.StartupPath + "\\hand.cur");
         }
 
+        /// <summary>
+        /// This function is used for closing the kinect sensor mouse control application when the form is closed
+        /// </summary>
+        /// <param name="name">String variable for identifying the process to be terminated</param>
         private void CloseProcess(string name)
         {
             foreach (Process process in Process.GetProcesses())

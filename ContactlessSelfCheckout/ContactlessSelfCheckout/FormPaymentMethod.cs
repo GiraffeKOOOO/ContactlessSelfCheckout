@@ -18,6 +18,10 @@ namespace ContactlessSelfCheckout
             ChangeLblInstruction(paymentMethod);
         }
 
+        /// <summary>
+        /// This function changes the title label on this form depending on what string is passed in from the pay form
+        /// </summary>
+        /// <param name="paymentMethod"></param>
         private void ChangeLblTitle(string paymentMethod) 
         {
             lblFormTitle.Text = paymentMethod + " payment";
@@ -25,6 +29,11 @@ namespace ContactlessSelfCheckout
             lblFormTitle.TextAlign = ContentAlignment.MiddleCenter;
             lblFormTitle.Dock = DockStyle.None;
         }
+
+        /// <summary>
+        /// This function changes the instruction label on this form depending on what string is passed in from the pay form
+        /// </summary>
+        /// <param name="paymentMethod">String variable which determines which instruction needs to be displayed</param>
         private void ChangeLblInstruction(string paymentMethod)
         {
             string path = Application.StartupPath;
@@ -115,6 +124,9 @@ namespace ContactlessSelfCheckout
             this.Hide();
         }
 
+        /// <summary>
+        /// This function is called when the mouse is clicked, this function shows a little animation of the hand cursor being grasped by simply changing the image and changing it back
+        /// </summary>
         private void CursorAnimate()
         {
             this.Cursor = new Cursor(Application.StartupPath + "\\hand-clicked.cur");
